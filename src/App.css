@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+.txt-col {
+  color: #1a1c20;
+}
+.grad-txt {
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cl-div {
+  background: rgba(189, 189, 189, 0.621);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  position: relative;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(46, 46, 46);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(to right, #fc5c7d, #6a82fb);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* hover */
+.btn:hover::before {
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:active:after {
+  background: transparent;
 }
 
-@keyframes App-logo-spin {
+.btn:active {
+  font-weight: bold;
+}
+
+.grad-img {
+  background-image: url("./assets/grad.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+.animate1 {
+  animation: slide-down 1s forwards;
+}
+.animate2 {
+  animation: slide-down 1.8s forwards;
+}
+.animate3 {
+  animation: slide-down 2.5s forwards;
+}
+
+@keyframes slide-down {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-50px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: none;
   }
+}
+
+.tile {
+  -webkit-transform: translateY(50px) rotate(-5deg) translateZ(0);
+  transform: translateY(50px) rotate(-5deg) translateZ(0);
+  -webkit-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+  -webkit-transition: 1.1s;
+  -o-transition: 1.1s;
+  transition: 1.1s;
+  opacity: 0;
+}
+.bottom-right.inView {
+  opacity: 1;
+  -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
+  transform: translateY(0px) rotate(0deg) translateZ(0);
+}
+.inView {
+  opacity: 1;
+  -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
+  transform: translateY(0px) rotate(0deg) translateZ(0);
 }
