@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import linkme from "../assets/linkme.png";
 import senju from "../assets/senju.png";
 import buycoffee from "../assets/buycoffee.png";
+import simple from "../assets/simple.png";
 import { FaRegEye, FaGithub } from "react-icons/fa";
 import onec from "../assets/onec.png";
 
@@ -12,6 +13,14 @@ const ProjectsData = [
     url: "https://senju.in/",
     github: "https://senju.in",
     techStack: ["MERN", "TailwindCSS", "Onec Dev Tools"],
+    type: "Web3",
+  },
+  {
+    title: "Simple",
+    image: simple,
+    url: "https://simpldapp.netlify.app/",
+    github: "https://simpldapp.netlify.app/",
+    techStack: ["MERN", "NFTPort", "ether.js", "TailwindCSS"],
     type: "Web3",
   },
   {

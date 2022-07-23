@@ -9,9 +9,10 @@ const workExp = [
     to: "Present",
     current: true,
     description: [
-      "Improving product ui using HTML,CSS, JavaScript and Jquery.",
-      "Developing new features and functionality using Node.js,HTML,CSS, JavaScript and Jquery.",
+      "Wrote and maintained a new functionality for the product that was successfully implemented in production.",
+      "Improved product UI using HTML,CSS, JavaScript and Jquery.",
       "Developed websocket api using AWS lambda and API gateway in Node.js",
+      "Improved the code structure, Built reusable functions.",
     ],
   },
   {
@@ -21,9 +22,9 @@ const workExp = [
     to: "2021-07-30",
     current: false,
     description: [
-      "Build stable and maintainable codebases using React.",
+      "Built various ui Reusable components in React used across applications and quickly built various prototypes with information gathered from the product team.",
       "Improved user experience and accomplish webpage objectives by creating site structure, navigation, page optimization and graphics integraton.",
-      "Developed user friendly and responsive websites.",
+      "Built stable and maintainable codebases using React.",
     ],
   },
 ];
