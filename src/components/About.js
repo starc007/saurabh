@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="flex flex-col grad-img ">
       <img
-        src="https://media-exp1.licdn.com/dms/image/C4D03AQFihZdaWgcUmQ/profile-displayphoto-shrink_100_100/0/1654160628083?e=1660176000&v=beta&t=6cLB9H98Y8JDlZZ_VXzApXKvZs3Jyvdq2k0pB-7pCbw"
+        src="https://avatars.githubusercontent.com/u/36479565?s=400&u=e578e0ba40b5aaff6bff342830d9092365ec3255&v=4"
         className="rounded-full h-16 w-16 border"
       />
       <div className="txt-col py-14">
@@ -31,7 +31,7 @@ const About = () => {
         <a
           href={resume}
           download
-          className="px-4 py-3 btn font-medium bg-gray-200 text-gray-800 hover:bg-gray-100 hover:text-gray-800 transition duration-500"
+          className="px-4 py-3 btn font-medium bg-gray-200 text-gray-800 hover:bg-gray-100 hover:text-gray-800 transition duration-500 rounded-lg"
         >
           Resume
         </a>

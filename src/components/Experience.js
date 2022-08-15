@@ -6,8 +6,8 @@ const workExp = [
     position: "Full Stack Developer",
     companyName: "Linkedphone",
     from: "2021-08-02",
-    to: "Present",
-    current: true,
+    to: "2022-08-6",
+    current: false,
     description: [
       "Wrote and maintained a new functionality for the product that was successfully implemented in production.",
       "Improved product UI using HTML,CSS, JavaScript and Jquery.",
@@ -35,7 +35,7 @@ const Experience = () => {
       <p className="text-4xl font-bold grad-txt w-64">Experience</p>
       <div className="flex flex-col my-8">
         {workExp.map((work, index) => (
-          <div className="p-4 border shadow mt-4" key={index}>
+          <div className="p-4 border shadow mt-4 rounded-lg" key={index}>
             <div className="flex sm:space-x-8 space-x-6 w-full justify-between">
               <div className="pt-1 text-2xl sm:text-4xl text-gray-700">
                 <FaRegBuilding />

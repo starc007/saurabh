@@ -3,6 +3,7 @@ import React from "react";
 const skillData = [
   "React",
   "Javascript",
+  "Typescript",
   "Node.js",
   "Express.js",
   "Solidity",
@@ -22,7 +23,7 @@ const Skills = () => {
         {skillData.map((skill) => (
           <label
             key={skill}
-            className="m-2 border px-5 bg-gray-100 py-3 font-medium text-gray-700"
+            className="m-2 border px-5 bg-gray-100 py-3 font-medium text-gray-700 rounded-lg"
           >
             {skill}
           </label>

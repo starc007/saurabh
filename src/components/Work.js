@@ -122,9 +122,9 @@ const Work = () => {
   };
 
   const activeClass =
-    "px-6 border p-2  bg-gray-200 text-gray-700 transition duration-500 mx-2 mt-2 font-medium";
+    "px-6 border p-2  bg-gray-200 text-gray-700 transition duration-500 mx-2 mt-2 font-medium rounded-lg";
   const inactiveClass =
-    "px-6 border p-2  text-gray-600 transition duration-500 ease-in-out hover:bg-gray-200 hover:text-gray-800 mx-2 mt-2 font-medium";
+    "px-6 border p-2  text-gray-600 transition duration-500 ease-in-out hover:bg-gray-200 hover:text-gray-800 mx-2 mt-2 font-medium rounded-lg";
 
   return (
     <div className=" py-16">
@@ -158,7 +158,7 @@ const Work = () => {
       <div className="grid gap-7 row-gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-8 mx-2">
         {projects.slice(0, count).map((project) => (
           <div key={project.title} className="transition duration-500 ">
-            <div className="shadow p-5 border group hover:shadow-xl duration-500 transition">
+            <div className="shadow p-5 border group hover:shadow-xl duration-500 transition rounded-lg">
               <div className="relative mb-6 w-full h-64 bg-gray-200 rounded-md overflow-hidden">
                 <img
                   src={project.image}
