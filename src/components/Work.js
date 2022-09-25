@@ -1,235 +1,94 @@
-import React, { useState } from "react";
-import linkme from "../assets/linkme.png";
-import senju from "../assets/senju.png";
-import buycoffee from "../assets/buycoffee.png";
-import simple from "../assets/simple.png";
-import { FaRegEye, FaGithub } from "react-icons/fa";
-import onec from "../assets/onec.png";
+import React from "react";
+import { AiFillSetting } from "react-icons/ai";
 
-const ProjectsData = [
+const Details = [
   {
-    title: "Senju",
-    image: senju,
-    url: "https://senju.in/",
-    github: "https://senju.in",
-    techStack: ["MERN", "TailwindCSS", "Onec Dev Tools"],
-    type: "Web3",
+    title: "Web3 Wallet Connect",
+    description:
+      "A small and simple library to connect your Dapps to wallets. Connect, Switch to any network, track network change and account change in just single line of code",
+    github: "https://github.com/starc007/web3-wallet-connect",
+    demo: "https://www.npmjs.com/package/web3-wallet-connect",
+    tech: ["Typescript"],
   },
   {
-    title: "Simple",
-    image: simple,
-    url: "https://simpldapp.netlify.app/",
-    github: "https://simpldapp.netlify.app/",
-    techStack: ["MERN", "NFTPort", "ether.js", "TailwindCSS"],
-    type: "Web3",
+    title: "Senju",
+    description:
+      "A decentralized blogging platform. Built on top of IPFS and Polygon. you can import your blogs from other platforms or write your own and mint them as NFT",
+    github: "https://senju.in",
+    demo: "https://senju.in/",
+    tech: ["React", "Nodejs", "Redux", "Onec Tools"],
   },
   {
     title: "Zeno",
-    image:
-      "https://cdn.sanity.io/images/p7wt73d0/production/e3d348e5ead3b0649964f67c2c225e96da1ca768-1432x692.png",
-    url: "https://zenoo.netlify.app/",
-    github: "https://zeno.netlify.app/",
-    techStack: ["MERN", "Solidity", "ether.js", "TailwindCSS"],
-    type: "Web3",
+    description:
+      "A Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens",
+    github: "https://github.com/starc007/zeno-prod",
+    demo: "https://zenoo.netlify.app/",
+    tech: ["React", "Nodejs", "Solidity"],
   },
   {
-    title: "Onec Landing Page",
-    image: onec,
-    url: "https://onec.in/",
-    github: "https://onec.in/",
-    techStack: ["React", "TailwindCSS"],
-    type: "Frontend",
-  },
-  {
-    title: "Buy Me Coffee",
-    image: buycoffee,
-    url: "https://buymecoffee.netlify.app/",
-    github: "https://github.com/starc007/buymecoffee",
-    techStack: ["React", "Solidity", "ether.js", "TailwindCSS"],
-    type: "Web3",
-  },
-  {
-    title: "linkME",
-    image: linkme,
-    url: "https://linkmehq.netlify.app/",
-    github: "https://github.com/starc007/linkme",
-    techStack: ["MERN", "TailwindCSS", "Google Auth"],
-    type: "Full Stack",
-  },
-  {
-    title: "Payifi",
-    image:
-      "https://cdn.sanity.io/images/p7wt73d0/production/aab6e7fc0bd32ce87975f77fd9e49da68d022628-1910x851.png",
-    url: "https://starc007-dev.netlify.app/",
-    github: "https://starc007-dev.netlify.app/",
-    techStack: ["React", "Bootstrap"],
-    type: "Frontend",
+    title: "Simple",
+    description:
+      "A decentralized doc sharing and collaborating web app. Built on top of IPFS and Polygon",
+    github: "https://github.com/starc007/simple",
+    demo: "https://simpldapp.netlify.app/",
+    tech: ["React", "Nodejs", "NFT Port"],
   },
 ];
 
-const Work = () => {
-  const [projects, setProjects] = useState(ProjectsData);
-  const [active, setActive] = useState(true);
-  const [activeWeb3, setActiveWeb3] = useState(false);
-  const [activeFullStack, setActiveFullStack] = useState(false);
-  const [activeFrontend, setActiveFrontend] = useState(false);
-  const [count, setCount] = useState(3);
-
-  const filterProjects = (type) => {
-    if (type === "All") {
-      setProjects(ProjectsData);
-      setActive(true);
-      setActiveWeb3(false);
-      setActiveFullStack(false);
-      setActiveFrontend(false);
-    } else if (type === "Web3") {
-      setProjects(ProjectsData.filter((project) => project.type === "Web3"));
-      setActive(false);
-      setActiveWeb3(true);
-      setActiveFullStack(false);
-      setActiveFrontend(false);
-    } else if (type === "Full Stack") {
-      setProjects(
-        ProjectsData.filter((project) => project.type === "Full Stack")
-      );
-      setActive(false);
-      setActiveWeb3(false);
-      setActiveFullStack(true);
-      setActiveFrontend(false);
-    } else if (type === "Frontend") {
-      setProjects(
-        ProjectsData.filter((project) => project.type === "Frontend")
-      );
-      setActive(false);
-      setActiveWeb3(false);
-      setActiveFullStack(false);
-      setActiveFrontend(true);
-    } else {
-      setProjects(ProjectsData);
-      setActive(false);
-      setActiveWeb3(false);
-      setActiveFullStack(false);
-      setActiveFrontend(false);
-    }
-  };
-
-  const showMore = () => {
-    setCount(count + 3);
-  };
-
-  const showLess = () => {
-    setCount(3);
-  };
-
-  const activeClass =
-    "px-6 border p-2  bg-gray-200 text-gray-700 transition duration-500 mx-2 mt-2 font-medium rounded-lg";
-  const inactiveClass =
-    "px-6 border p-2  text-gray-600 transition duration-500 ease-in-out hover:bg-gray-200 hover:text-gray-800 mx-2 mt-2 font-medium rounded-lg";
-
+const DetailsComponent = ({ data }) => {
   return (
-    <div className=" py-16">
-      <p className="text-4xl font-bold grad-txt w-64">My Work</p>
-      <div className="flex text-sm  mt-6 flex-wrap">
-        <button
-          className={active ? activeClass : inactiveClass}
-          onClick={() => filterProjects("All")}
-        >
-          All
-        </button>
-        <button
-          className={activeWeb3 ? activeClass : inactiveClass}
-          onClick={() => filterProjects("Web3")}
-        >
-          Web3
-        </button>
-        <button
-          className={activeFrontend ? activeClass : inactiveClass}
-          onClick={() => filterProjects("Frontend")}
-        >
-          Frontend
-        </button>
-        <button
-          className={activeFullStack ? activeClass : inactiveClass}
-          onClick={() => filterProjects("Full Stack")}
-        >
-          Full Stack Web2
-        </button>
+    <div className="flex border border-gray-600 py-6 px-3">
+      <AiFillSetting className="txt-green w-16 text-2xl" />
+      <div className="flex flex-col w-full -mt-1">
+        <p className="text-gray-100 text-xl font-bold">{data.title}</p>
+        <p className="text-gray-400 mt-2 text-sm">{data.description}</p>
+        <div className="flex items-center mt-3 space-x-4 flex-wrap">
+          {data.tech.map((tech) => (
+            <span className="text-gray-100 font-medium mr-1 text-sm">
+              {tech}{" "}
+            </span>
+          ))}
+        </div>
+        <div className="flex mt-3 space-x-4 items-center">
+          <a href={data.github} target="_blank" className="txt-green underline">
+            Github
+          </a>
+          <a href={data.demo} target="_blank" className="txt-green underline">
+            Demo
+          </a>
+        </div>
       </div>
-      <div className="grid gap-7 row-gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-8 mx-2">
-        {projects.slice(0, count).map((project) => (
-          <div key={project.title} className="transition duration-500 ">
-            <div className="shadow p-5 border group hover:shadow-xl duration-500 transition rounded-lg">
-              <div className="relative mb-6 w-full h-64 bg-gray-200 rounded-md overflow-hidden">
-                <img
-                  src={project.image}
-                  alt="coverImage"
-                  className="w-full h-full object-cover object-center brightness-75"
-                />
-                <div className="absolute opacity-0 transition duration-200 bg-gray-100 bg-opacity-80 w-full flex items-center justify-center h-full left-0 top-0 group-hover:opacity-100 group-hover:visible">
-                  <ul className="flex flex-wrap space-x-4">
-                    <li>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className=" flex items-center justify-center primary-border rounded-full hover:text-gray-100 p-2 hover:bg-gray-700 duration-500 transition text-gray-700"
-                      >
-                        <FaRegEye size={28} />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className=" flex items-center justify-center primary-border rounded-full hover:text-gray-100 p-2 hover:bg-gray-700 duration-500 transition text-gray-700"
-                      >
-                        <FaGithub size={28} />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <h3 className="text-xl font-extrabold text-gray-700 mb-2">
-                {project.title}
-              </h3>
+    </div>
+  );
+};
 
-              <p className="grad-txt font-semibold">Tech Stack</p>
-              <div className="flex  flex-wrap">
-                {project.techStack.map((tech) => (
-                  <label
-                    key={tech}
-                    className="text-sm mx-1 text-gray-500 font-semibold border px-2 py-1 mt-2"
-                  >
-                    {tech}
-                  </label>
-                ))}
-              </div>
-            </div>
-          </div>
+const Work = () => {
+  return (
+    <div className="py-16">
+      <p className="md:text-4xl text-3xl text-gray-200 flex font-semibold">
+        Some Things I've
+        <div className="relative ml-2">
+          <span className="absolute bottom-1 border-b-[8px] w-[70px] md:w-[81px]  border-[#03c4a1]" />
+          <h1 className="relative">Built</h1>
+        </div>
+      </p>
+      <div className="mt-10 grid md:grid-cols-2 gap-5">
+        {Details.map((detail) => (
+          <DetailsComponent data={detail} key={detail.title} />
         ))}
       </div>
-      {count < projects.length && (
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={showMore}
-            className="px-3 border flex items-center h-10 bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-500 font-medium text-sm"
-          >
-            Show more
-          </button>
-        </div>
-      )}
-
-      {count == projects.length && (
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={showLess}
-            className="px-3 border flex items-center h-10 bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-500 font-medium text-sm"
-          >
-            Show less
-          </button>
-        </div>
-      )}
+      <p className="text-gray-300 mt-5">
+        Not Enough ? Checkout my{" "}
+        <a
+          href="https://github.com/starc007?tab=repositories"
+          target="_blank"
+          className="txt-green underline font-medium px-1"
+        >
+          Github
+        </a>{" "}
+        account
+      </p>
     </div>
   );
 };
