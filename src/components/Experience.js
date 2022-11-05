@@ -9,7 +9,10 @@ const workExp = [
     from: "Aug 2022",
     to: "",
     current: true,
-    description: ["BUIDLing!!!"],
+    description: [
+      "Built Complete Frontend of Bitdroplet Dapp using Svelte and Typescript.",
+      "Contributed in 2 other projects using Svelte",
+    ],
     isVisible: true,
   },
   {
@@ -107,7 +110,6 @@ const Experience = () => {
                     {work.position}{" "}
                     <span className="txt-green">@{work.companyName}</span>
                   </p>
-                  {/* <p className="text-gray-400 text-sm font-medium"></p> */}
                 </div>
                 <div className="flex flex-col space-y-2 mt-3">
                   <p className="text-gray-200 text-sm font-medium">

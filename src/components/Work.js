@@ -1,11 +1,18 @@
 import React from "react";
-import { AiFillSetting } from "react-icons/ai";
 
 const Details = [
   {
+    title: "Readmi",
+    description:
+      "A Open Source Github readme builder. Use prebuilt templates, sections or create a new one.",
+    tech: ["React", "Typescript", "Tailwindcss"],
+    github: "https://github.com/starc007/readmi",
+    demo: "https://readmi.xyz/",
+  },
+  {
     title: "Web3 Wallet Connect",
     description:
-      "A small and simple library to connect your Dapps to wallets. Connect, Switch to any network, track network change and account change in just single line of code",
+      "A Open Source wallet connecttion library for your decentralized application",
     github: "https://github.com/starc007/web3-wallet-connect",
     demo: "https://www.npmjs.com/package/web3-wallet-connect",
     tech: ["Typescript"],
@@ -21,7 +28,7 @@ const Details = [
   {
     title: "Zeno",
     description:
-      "A Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens",
+      "A decentralized Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens. Built on top of Polygon",
     github: "https://github.com/starc007/zeno-prod",
     demo: "https://zenoo.netlify.app/",
     tech: ["React", "Nodejs", "Solidity"],
@@ -38,26 +45,21 @@ const Details = [
 
 const DetailsComponent = ({ data }) => {
   return (
-    <div className="flex border border-gray-600 py-6 px-3">
-      <AiFillSetting className="txt-green w-16 text-2xl" />
-      <div className="flex flex-col w-full -mt-1">
-        <p className="text-gray-100 text-xl font-bold">{data.title}</p>
-        <p className="text-gray-400 mt-2 text-sm">{data.description}</p>
-        <div className="flex items-center mt-3 space-x-4 flex-wrap">
-          {data.tech.map((tech) => (
-            <span className="text-gray-100 font-medium mr-1 text-sm">
-              {tech}{" "}
-            </span>
-          ))}
-        </div>
-        <div className="flex mt-3 space-x-4 items-center">
-          <a href={data.github} target="_blank" className="txt-green underline">
-            Github
-          </a>
-          <a href={data.demo} target="_blank" className="txt-green underline">
-            Demo
-          </a>
-        </div>
+    <div className="flex flex-col w-full border border-gray-600 py-6 px-6 rounded div__hover">
+      <h1 className="text-gray-100 text-2xl font-bold">{data.title}</h1>
+      <p className="text-gray-400 mt-2 text-lg">{data.description}</p>
+      <div className="flex items-center mt-3 space-x-4 flex-wrap">
+        {data.tech.map((tech) => (
+          <span className="text-gray-100 font-medium mr-1">{tech} </span>
+        ))}
+      </div>
+      <div className="flex mt-3 space-x-4 items-center">
+        <a href={data.github} target="_blank" className="txt-green underline">
+          Github
+        </a>
+        <a href={data.demo} target="_blank" className="txt-green underline">
+          Demo
+        </a>
       </div>
     </div>
   );
@@ -79,7 +81,7 @@ const Work = () => {
         ))}
       </div>
       <p className="text-gray-300 mt-5">
-        Not Enough ? Checkout my{" "}
+        Not Enough ? Well sometimes it's not enough:) Still you can Checkout my{" "}
         <a
           href="https://github.com/starc007?tab=repositories"
           target="_blank"

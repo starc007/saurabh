@@ -52,3 +52,18 @@
   clip-path: polygon(1% 0, 0% 100%, 100% 50%);
   background-color: #03c4a1;
 }
+
+.div__hover:hover {
+  transform: translateY(-5px);
+  transition: all 0.8s;
+  filter: drop-shadow(0 0 0.2rem #03c4a1);
+}
+
+.div__hover:hover > h1 {
+  color: #03c4a1;
+  transition: all 0.5s;
+}
+.div__hover:hover > p {
+  color: #fff;
+  transition: all 0.5s;
+}
