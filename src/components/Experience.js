@@ -1,5 +1,4 @@
 import React from "react";
-import { FaRegBuilding } from "react-icons/fa";
 
 const workExp = [
   {
@@ -48,10 +47,10 @@ const workExp = [
 
 const Experience = () => {
   const activeClass =
-    "-ml-[2px] md:border-l-2 border-t-2 md:border-t-0 border-[#03c4a1] px-3 h-12 w-36 txt-green text-left bg-dark-light transition-all duration-300";
+    "-ml-[2px] md:text-base text-sm md:border-l-2 border-t-2 md:border-t-0 border-zinc-800 dark:border-white px-3 h-12 md:w-36 w-28 dark:text-white text-zinc-800 md:text-left bg-gray-800/5 dark:bg-white/5 transition-all duration-300";
 
   const inactiveClass =
-    "-ml-[2px] md:border-l-2 border-t-2 md:border-t-0 hover:border-[#03c4a1] px-3 h-12 w-36 text-gray-400 text-left hover:bg-[#23262b] hover:text-[#03c4a1] transition-all duration-300";
+    "-ml-[2px] md:text-base text-sm md:border-l-2 border-t-2 md:border-t-0 dark:border-zinc-700 hover:border-zinc-800 px-3 h-12 md:w-36 w-28 text-zinc-400 md:text-left hover:bg-gray-800/5 dark:hover:bg-white/5 hover:text-zinc-800 dark:hover:text-zinc-300 transition-all duration-300";
 
   const [workData, setWorkData] = React.useState(workExp);
 
@@ -68,13 +67,9 @@ const Experience = () => {
   };
 
   return (
-    <div className="pb-16">
-      <p className="md:text-4xl text-3xl text-gray-200 flex font-semibold">
-        Where I've
-        <div className="relative ml-2">
-          <span className="absolute bottom-1 border-b-[8px] w-[120px] md:w-[145px]  border-[#03c4a1]" />
-          <h1 className="relative">Worked</h1>
-        </div>
+    <section className="py-28" id="experience">
+      <p className="md:text-4xl text-3xl dark:text-white text-zinc-800 flex font-semibold">
+        Work Experience
       </p>
 
       <div className="flex md:flex-row flex-col md:space-x-10 md:space-y-0 space-y-3 mt-12 ">
@@ -106,21 +101,25 @@ const Experience = () => {
                 className={`${work.isVisible ? "block" : "hidden"}`}
               >
                 <div className="flex flex-col space-y-2">
-                  <p className="text-gray-200 text-xl font-semibold">
+                  <p className="dark:text-zinc-400 text-zinc-500 text-xl ">
                     {work.position}{" "}
-                    <span className="txt-green">@{work.companyName}</span>
+                    <span className="dark:text-white text-zinc-800 font-semibold">
+                      @{work.companyName}
+                    </span>
                   </p>
                 </div>
                 <div className="flex flex-col space-y-2 mt-3">
-                  <p className="text-gray-200 text-sm font-medium">
+                  <p className="text-zinc-500 text-sm font-semibold">
                     {work.from} - {work.current === true ? "Present" : work.to}
                   </p>
                 </div>
                 <div className="flex flex-col space-y-4 mt-6">
                   {work.description.map((desc) => (
                     <div className="flex space-x-2" key={desc}>
-                      <div className="triangle w-2 h-2" />
-                      <p className="text-gray-300 -mt-2">{desc}</p>
+                      <div className="triangle w-2 h-2 dark:bg-white bg-zinc-600" />
+                      <p className="dark:text-zinc-300 text-zinc-600 -mt-2">
+                        {desc}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -129,7 +128,7 @@ const Experience = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

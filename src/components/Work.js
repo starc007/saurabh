@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Details = [
   {
@@ -12,7 +12,7 @@ const Details = [
   {
     title: "Web3 Wallet Connect",
     description:
-      "A Open Source wallet connecttion library for your decentralized application",
+      "A Open Source wallet connection library for your decentralized application",
     github: "https://github.com/starc007/web3-wallet-connect",
     demo: "https://www.npmjs.com/package/web3-wallet-connect",
     tech: ["Typescript"],
@@ -45,19 +45,33 @@ const Details = [
 
 const DetailsComponent = ({ data }) => {
   return (
-    <div className="flex flex-col w-full border border-gray-600 py-6 px-6 rounded div__hover">
-      <h1 className="text-gray-100 text-2xl font-bold">{data.title}</h1>
-      <p className="text-gray-400 mt-2 text-lg">{data.description}</p>
-      <div className="flex items-center mt-3 space-x-4 flex-wrap">
+    <div className="flex flex-col w-full border border-slate-200 dark:border-slate-700 py-4 px-6 hover:shadow-lg rounded-xl relative">
+      <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+      <span className="absolute w-px -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+      <h1 className="dark:text-white text-zinc-800 text-xl font-bold">
+        {data.title}
+      </h1>
+      <p className="text-zinc-500 sm:text-base text-sm">{data.description}</p>
+      <div className="flex items-center mt-2 space-x-4 flex-wrap">
         {data.tech.map((tech) => (
-          <span className="text-gray-100 font-medium mr-1">{tech} </span>
+          <span className="text-zinc-800 dark:text-white italic text-sm">
+            {tech}{" "}
+          </span>
         ))}
       </div>
-      <div className="flex mt-3 space-x-4 items-center">
-        <a href={data.github} target="_blank" className="txt-green underline">
+      <div className="flex mt-2 space-x-4 items-center">
+        <a
+          href={data.github}
+          target="_blank"
+          className="dark:text-zinc-400 underline"
+        >
           Github
         </a>
-        <a href={data.demo} target="_blank" className="txt-green underline">
+        <a
+          href={data.demo}
+          target="_blank"
+          className="dark:text-zinc-400 underline"
+        >
           Demo
         </a>
       </div>
@@ -66,32 +80,42 @@ const DetailsComponent = ({ data }) => {
 };
 
 const Work = () => {
+  const [count, setCount] = useState(2);
   return (
-    <div className="py-16">
-      <p className="md:text-4xl text-3xl text-gray-200 flex font-semibold">
-        Some Things I've
-        <div className="relative ml-2">
-          <span className="absolute bottom-1 border-b-[8px] w-[70px] md:w-[81px]  border-[#03c4a1]" />
-          <h1 className="relative">Built</h1>
-        </div>
+    <section id="projects" className="py-">
+      <p className="md:text-4xl text-3xl dark:text-white text-zinc-800 flex font-bold">
+        Projects
       </p>
-      <div className="mt-10 grid md:grid-cols-2 gap-5">
-        {Details.map((detail) => (
+      <div className="mt-7 flex flex-col gap-3">
+        {Details.slice(0, count).map((detail) => (
           <DetailsComponent data={detail} key={detail.title} />
         ))}
       </div>
-      <p className="text-gray-300 mt-5">
-        Not Enough ? Well sometimes it's not enough:) Still you can Checkout my{" "}
-        <a
-          href="https://github.com/starc007?tab=repositories"
-          target="_blank"
-          className="txt-green underline font-medium px-1"
-        >
-          Github
-        </a>{" "}
-        account
-      </p>
-    </div>
+      {count < Details?.length && (
+        <div className="flex justify-center mt-5">
+          <button
+            onClick={() => setCount(count + 2)}
+            className="flex items-center dark:text-white text-zinc-800 font-medium dark:hover:bg-white/5 hover:bg-zinc-100 px-3 h-10 rounded-lg transition-all duration-500"
+          >
+            Show more
+          </button>
+        </div>
+      )}
+      {count > Details.length && (
+        <p className="dark:text-zinc-400 text-zinc-500 mt-5">
+          Not Enough ? Well sometimes it's not enough:) Still you can Checkout
+          my{" "}
+          <a
+            href="https://github.com/starc007?tab=repositories"
+            target="_blank"
+            className="text-zinc-800 dark:text-white underline font-medium px-1"
+          >
+            Github
+          </a>{" "}
+          account
+        </p>
+      )}
+    </section>
   );
 };
 
