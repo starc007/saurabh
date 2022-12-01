@@ -36,15 +36,6 @@ export const LinkPreview = ({ children, url, className }) => {
 
   return (
     <>
-      {/**
-       * Microlink.io + next/image can take a few seconds to fetch and generate
-       * a screenshot. The delay makes <LinkPreview> pointless. As a hacky
-       * solution we create a second <Image> in a Portal after the component has
-       * mounted. This <Image> triggers microlink.io + next/image so that the
-       * image itself is ready by the time the user hovers on a <LinkPreview>.
-       * Not concerned about the performance impact because <Image>'s are cached
-       * after they are generated and the images themselves are tiny (< 10kb).
-       */}
       {isMounted ? (
         <Portal>
           <div className="hidden">

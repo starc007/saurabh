@@ -2,7 +2,8 @@ import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 
-const commonClass = "dark:hover:text-white transition duration-500";
+const commonClass =
+  "dark:hover:text-white transition duration-500 hover:text-zinc-700";
 
 const Footer = () => {
   return (
@@ -13,6 +14,7 @@ const Footer = () => {
           href="https://www.github.com/starc007"
           target="_blank"
           className={commonClass}
+          rel="noreferrer"
         >
           <AiFillGithub />
         </a>
@@ -20,6 +22,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/starc007"
           target="_blank"
           className={commonClass}
+          rel="noreferrer"
         >
           <AiFillLinkedin />
         </a>
@@ -27,6 +30,7 @@ const Footer = () => {
           href="https://www.twitter.com/saurra3h"
           target="_blank"
           className={commonClass}
+          rel="noreferrer"
         >
           <AiOutlineTwitter />
         </a>
@@ -34,6 +38,7 @@ const Footer = () => {
           href="mailto:saurabh10102@gmail.com"
           target="_blank"
           className={commonClass}
+          rel="noreferrer"
         >
           <MdEmail />
         </a>

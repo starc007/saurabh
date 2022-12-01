@@ -9,7 +9,7 @@ const workExp = [
     to: "",
     current: true,
     description: [
-      "Built Complete Frontend of Bitdroplet Dapp using Svelte and Typescript.",
+      "Built new UI of Bitdroplet Dapp and integrated smart contracts using Svelte and Typescript.",
       "Contributed in 2 other projects using Svelte",
     ],
     isVisible: true,

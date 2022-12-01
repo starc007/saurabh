@@ -1,15 +1,7 @@
 import React from "react";
 import resume from "../resume.pdf";
 import { LinkPreview } from "./LinkPreview";
-
-const Skill = ({ title }) => {
-  return (
-    <div className="flex space-x-2 items-center">
-      <div className="triangle w-2 h-2" />
-      <p className="text-gray-200 text-lg">{title}</p>
-    </div>
-  );
-};
+import me from "../assets/me.jpg";
 
 const About = () => {
   return (
@@ -65,7 +57,8 @@ const About = () => {
           >
             <img
               className="h-auto w-24 md:w-44"
-              src="https://pbs.twimg.com/profile_images/1584784054435840000/Fl91X_PV_400x400.jpg"
+              src={me}
+              alt="Saurabh Chauhan"
             />
           </a>
           <div className="z-0 ">
