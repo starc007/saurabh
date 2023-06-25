@@ -38,7 +38,7 @@ function App() {
       <div className="lg:px-10">
         <About />
         <Work />
-        <Experience />
+        {/* <Experience /> */}
         <Footer />
       </div>
     </div>

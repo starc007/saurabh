@@ -10,10 +10,10 @@ const navLinks = [
     title: "Projects",
     link: "#projects",
   },
-  {
-    title: "Experience",
-    link: "#experience",
-  },
+  // {
+  //   title: "Experience",
+  //   link: "#experience",
+  // },
 ];
 
 const Navbar = ({ toggleTheme, theme }) => {

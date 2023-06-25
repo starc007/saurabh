@@ -2,6 +2,13 @@ import React, { useState } from "react";
 
 const Details = [
   {
+    title: "Sanchar",
+    description: "A network and skill monetization platform.",
+    tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
+    github: "https://sanchar.xyz/",
+    demo: "https://sanchar.xyz/",
+  },
+  {
     title: "Readmi",
     description:
       "A Open Source Github readme builder. Use prebuilt templates, sections or create a new one.",
@@ -18,14 +25,6 @@ const Details = [
     tech: ["Typescript"],
   },
   {
-    title: "Senju",
-    description:
-      "A decentralized blogging platform. Built on top of IPFS and Polygon. you can import your blogs from other platforms or write your own and mint them as NFT",
-    github: "https://senju.in",
-    demo: "https://senju.in/",
-    tech: ["React", "Nodejs", "Redux", "Onec Tools"],
-  },
-  {
     title: "Zeno",
     description:
       "A decentralized Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens. Built on top of Polygon",
@@ -40,6 +39,14 @@ const Details = [
     github: "https://github.com/starc007/simple",
     demo: "https://simpldapp.netlify.app/",
     tech: ["React", "Nodejs", "NFT Port"],
+  },
+  {
+    title: "Senju",
+    description:
+      "A decentralized blogging platform. Built on top of IPFS and Polygon. you can import your blogs from other platforms or write your own and mint them as NFT",
+    github: "https://senju.in",
+    demo: "https://senju.in/",
+    tech: ["React", "Nodejs", "Redux", "Onec Tools"],
   },
 ];
 
@@ -80,7 +87,7 @@ const DetailsComponent = ({ data }) => {
 };
 
 const Work = () => {
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(3);
   return (
     <section id="projects" className="py-">
       <p className="md:text-4xl text-3xl dark:text-white text-zinc-800 flex font-bold">

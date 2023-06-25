@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../resume.pdf";
+import resume from "../saurabh.pdf";
 import { LinkPreview } from "./LinkPreview";
 import me from "../assets/me.jpg";
 
@@ -13,6 +13,15 @@ const About = () => {
           </p>
           <p className="md:text-lg text-sm text-zinc-700 dark:text-zinc-400 py-4 animate2">
             Building{" "}
+            <LinkPreview
+              className={
+                "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
+              }
+              url="https://sanchar.xyz"
+            >
+              Sanchar
+            </LinkPreview>
+            {","}
             <LinkPreview
               className={
                 "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
@@ -32,14 +41,24 @@ const About = () => {
             </LinkPreview>
           </p>
           <p className="text-zinc-500 mb-6 md:text-lg text-sm">
-            Full Stack Developer. Trying to Simplify Web3. Open for
-            collaboration or new opportunities.
+            Full Stack Developer with more than 2+ years of exp. Trying to
+            Simplify Web3. Open for collaboration or new opportunities.
+            Currently employed at{" "}
+            <LinkPreview
+              className={
+                "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
+              }
+              url="https://bitbns.com"
+            >
+              Bitbns
+            </LinkPreview>
           </p>
           <p className="dark:text-white text-zinc-800 font-semibold">
             <span className="dark:text-zinc-400 text-zinc-500 font-medium">
               Tech Stack:
             </span>{" "}
-            React, Svelte, Typescript, JavaScript, Nodejs, Solidity, Tailwindcss
+            React, Nextjs, Svelte, Typescript, JavaScript, Nodejs, Solidity,
+            Tailwindcss
           </p>
           <a
             href={resume}
