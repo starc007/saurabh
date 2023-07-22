@@ -24,3 +24,22 @@
 .triangle {
   clip-path: polygon(1% 0, 0% 100%, 100% 50%);
 }
+
+.gallery-container {
+  column-count: 2;
+  column-gap: 20px;
+}
+.gallery-container > #twork {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+
+/* // for mobile */
+@media (max-width: 600px) {
+  .gallery-container {
+    column-count: 1;
+  }
+}

@@ -8,7 +8,9 @@ const commonClass =
 const Footer = () => {
   return (
     <div className="py-10 flex justify-between flex-wrap gap-4 dark:text-zinc-400 text-zinc-500 font-medium text-lg">
-      <p>Developed with ❤️ in India 🇮🇳</p>
+      <p>
+        Have Something for me? <span className="text-white">Let's talk</span>
+      </p>
       <div className="flex space-x-5 items-center text-2xl">
         <a
           href="https://www.github.com/starc007"

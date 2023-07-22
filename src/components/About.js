@@ -58,7 +58,13 @@ const About = () => {
               Tech Stack:
             </span>{" "}
             React, Nextjs, Svelte, Typescript, JavaScript, Nodejs, Solidity,
-            Tailwindcss
+            Tailwindcss, React Native, Ether.js
+          </p>
+          <p className="dark:text-white text-zinc-800 font-semibold mt-4">
+            <span className="dark:text-zinc-400 text-zinc-500 font-medium">
+              Little exposure to:
+            </span>{" "}
+            Rust
           </p>
           <a
             href={resume}
