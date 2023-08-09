@@ -3,7 +3,7 @@ import React from "react";
 const Details = [
   {
     title: "Sanchar",
-    description: "A network and skill monetization platform.",
+    description: "Social network for Freelancers (1200+ users)",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
     github: "https://sanchar.xyz/",
     demo: "https://sanchar.xyz/",
