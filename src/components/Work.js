@@ -62,8 +62,8 @@ const Details = [
     title: "Senju",
     description:
       "A decentralized blogging platform. Built on top of IPFS and Polygon. you can import your blogs from other platforms or write your own and mint them as NFT",
-    github: "https://senju.in",
-    demo: "https://senju.in/",
+    github: "https://senju-test.netlify.app",
+    demo: "https://senju-test.netlify.app",
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
   },
 ];
