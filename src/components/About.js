@@ -17,9 +17,9 @@ const About = () => {
               className={
                 "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
               }
-              url="https://sanchar.xyz"
+              url="https://piqr.in"
             >
-              Sanchar
+              Piqr
             </LinkPreview>
             {","}
             <LinkPreview
@@ -62,7 +62,7 @@ const About = () => {
           </p>
           <p className="dark:text-white text-zinc-800 font-semibold mt-4">
             <span className="dark:text-zinc-400 text-zinc-500 font-medium">
-              Little exposure to:
+              Exposure to:
             </span>{" "}
             Rust
           </p>

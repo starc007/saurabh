@@ -2,11 +2,11 @@ import React from "react";
 
 const Details = [
   {
-    title: "Sanchar",
+    title: "Piqr",
     description: "Social network for Freelancers (1200+ users)",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
-    github: "https://sanchar.xyz/",
-    demo: "https://sanchar.xyz/",
+    github: "https://piqr.in",
+    demo: "https://piqr.in",
   },
   {
     title: "Web3 Wallet Connect",
