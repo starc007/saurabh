@@ -3,7 +3,7 @@ import React from "react";
 const Details = [
   {
     title: "Piqr",
-    description: "Social network for Freelancers (1200+ users)",
+    description: "New Age Professional Networking Platform (2800+ users)",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
     github: "https://piqr.in",
     demo: "https://piqr.in",
