@@ -1,6 +1,3 @@
-import React from "react";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-
 const navLinks = [
   {
     title: "Home",
@@ -16,15 +13,14 @@ const navLinks = [
   // },
 ];
 
-const Navbar = ({ toggleTheme, theme }) => {
+const Navbar = () => {
   return (
     <div className="flex justify-between w-full items-center py-6">
-      <button
-        onClick={toggleTheme}
-        className="flex items-center dark:text-white text-zinc-800 border dark:border-zinc-700 border-zinc-400 px-3 h-8 sm:text-lg rounded-full transition duration-500"
-      >
-        {theme === "light" ? <BsFillMoonFill /> : <BsFillSunFill />}
-      </button>
+      <img
+        src="https://images69.s3.ap-south-1.amazonaws.com/3EVAHV5QXU17GWV71HOH.png"
+        alt="logo"
+        className="w-10 h-10 rounded-full object-cover object-center"
+      />
       <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full">
         {navLinks.map((link) => (
           <a

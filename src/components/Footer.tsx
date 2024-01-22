@@ -1,4 +1,3 @@
-import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 
@@ -7,7 +6,7 @@ const commonClass =
 
 const Footer = () => {
   return (
-    <div className="py-10 flex justify-between flex-wrap gap-4 dark:text-zinc-400 text-zinc-500 font-medium text-lg">
+    <div className="py-4 px-4 my-10 flex justify-between flex-wrap gap-4 text-zinc-400 font-medium text-lg border border-white/5 rounded-2xl bg-white/5">
       <p>
         Have Something for me? <span className="text-white">Let's talk</span>
       </p>

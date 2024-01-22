@@ -1,12 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-body {
+:root {
   font-family: "Satoshi", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  background-color: #18181b;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.animate1 {
+  animation: slide-down 1s forwards;
+}
+.animate2 {
+  animation: slide-down 1.8s forwards;
+}
+.animate3 {
+  animation: slide-down 2.5s forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.triangle {
+  clip-path: polygon(1% 0, 0% 100%, 100% 50%);
+}
+
+.gallery-container {
+  column-count: 2;
+  column-gap: 20px;
+}
+.gallery-container > #twork {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+
+/* // for mobile */
+@media (max-width: 600px) {
+  .gallery-container {
+    column-count: 1;
+  }
 }

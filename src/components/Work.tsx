@@ -1,9 +1,10 @@
-import React from "react";
+import { MdArrowOutward } from "react-icons/md";
 
 const Details = [
   {
     title: "Piqr",
-    description: "New Age Professional Networking Platform (2800+ users)",
+    description:
+      "A Professional Networking Platform. Used by 3000+ users. Built this product from scratch. (Frontend + Backend)",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
     github: "https://piqr.in",
     demo: "https://piqr.in",
@@ -68,43 +69,58 @@ const Details = [
   },
 ];
 
-const DetailsComponent = ({ data }) => {
+const DetailsComponent = ({
+  data,
+}: {
+  data: {
+    title: string;
+    description: string;
+    tech: string[];
+    github: string;
+    demo: string;
+  };
+}) => {
   return (
-    <div
-      className="flex flex-col w-full border border-slate-200 dark:border-slate-700 py-4 px-6 hover:shadow-lg rounded-xl relative"
-      id="twork"
-    >
-      {/* <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
-      <span className="absolute w-px -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span> */}
-      <h1 className="dark:text-white text-zinc-800 text-xl font-bold">
-        🛠️ {data.title}
-      </h1>
-      <p className="text-zinc-500 sm:text-base text-sm mt-1">
-        {data.description}
-      </p>
-      <div className="flex items-center mt-2 space-x-4 flex-wrap">
-        {data.tech.map((tech) => (
-          <span className="text-zinc-800 dark:text-white italic text-sm">
-            {tech}{" "}
-          </span>
-        ))}
-      </div>
-      <div className="flex mt-2 space-x-4 items-center">
-        <a
-          href={data.github}
-          target="_blank"
-          className="dark:text-zinc-400 underline"
-        >
-          Github
-        </a>
-        <a
-          href={data.demo}
-          target="_blank"
-          className="dark:text-zinc-400 underline"
-        >
-          Demo
-        </a>
-      </div>
+    <div className="md:px-0 px-4">
+      <ul className="list-disc text-white">
+        <li>
+          <div className="flex flex-col">
+            <a
+              href={data.github}
+              target="_blank"
+              className="text-white text-lg font-medium hover:text-gray-300 transition-colors duration-300 flex items-center"
+            >
+              {data.title} <MdArrowOutward className="ml-1" />
+            </a>
+            <span className="text-gray-400 text-sm inline-flex">
+              {data.description}
+            </span>
+            <div className="flex items-center mt-2 space-x-4 flex-wrap hover:text-white text-gray-300 ">
+              {data.tech.map((tech) => (
+                <span key={tech} className="italic text-sm">
+                  {tech}{" "}
+                </span>
+              ))}
+            </div>
+            <div className="flex mt-2 space-x-4 items-center">
+              <a
+                href={data.github}
+                target="_blank"
+                className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+              >
+                Github
+              </a>
+              <a
+                href={data.demo}
+                target="_blank"
+                className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+              >
+                Demo
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };
@@ -112,10 +128,10 @@ const DetailsComponent = ({ data }) => {
 const Work = () => {
   return (
     <section id="projects" className="py-">
-      <p className="md:text-4xl text-3xl dark:text-white text-zinc-800 flex font-bold">
+      <p className="text-2xl dark:text-gray-300 text-zinc-800 flex font-medium">
         Some cool stuff :)
       </p>
-      <div className="mt-7  gap-3 gallery-container">
+      <div className="mt-7 flex flex-col space-y-6">
         {Details.map((detail) => (
           <DetailsComponent data={detail} key={detail.title} />
         ))}

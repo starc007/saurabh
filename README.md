@@ -1,37 +1,30 @@
-# Portfolio website v2
+# React + TypeScript + Vite
 
-Built this simple and awesome portfolio website !!
-Click here for [Demo](https://jutsu.tech).
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# Tech Stack
+Currently, two official plugins are available:
 
-    React
-    TailwindCSS
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-# How to run locally?
+## Expanding the ESLint configuration
 
-### clone the repository
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-    git clone https://github.com/starc007/saurabh.git
+- Configure the top-level `parserOptions` property like this:
 
-### go to the project directory
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-    cd saurabh
-
-### Install dependencies
-
-    npm i
-    # or
-    yarn
-
-### Start Project
-
-    npm start
-
-# Feedback
-
-If you have any feedback, please reach out to me on [Linkedin](https://www.linkedin.com/in/starc007) or [Twitter](https://www.twitter.com/saurra3h)
-
-## Want to use this template?
-
-If you want to use this template just mention my name in website that's it:)
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
