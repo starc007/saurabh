@@ -16,6 +16,7 @@ const Details = [
     github: "https://github.com/starc007/web3-wallet-connect",
     demo: "https://www.npmjs.com/package/web3-wallet-connect",
     tech: ["Typescript"],
+    isOSS: true,
   },
   {
     title: "Vakya AI Extension",
@@ -41,6 +42,7 @@ const Details = [
     tech: ["React", "Typescript", "Tailwindcss"],
     github: "https://github.com/starc007/readmi",
     demo: "https://readmi.xyz/",
+    isOSS: true,
   },
 
   {
@@ -50,6 +52,7 @@ const Details = [
     github: "https://github.com/starc007/zeno-prod",
     demo: "https://zenoo.netlify.app/",
     tech: ["React", "Nodejs", "Solidity"],
+    isDapp: true,
   },
   {
     title: "Simple",
@@ -58,6 +61,7 @@ const Details = [
     github: "https://github.com/starc007/simple",
     demo: "https://simpldapp.netlify.app/",
     tech: ["React", "Nodejs", "NFT Port"],
+    isDapp: true,
   },
   {
     title: "Senju",
@@ -66,6 +70,7 @@ const Details = [
     github: "https://senju-test.netlify.app",
     demo: "https://senju-test.netlify.app",
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
+    isDapp: true,
   },
 ];
 
@@ -126,13 +131,33 @@ const DetailsComponent = ({
 };
 
 const Work = () => {
+  const workWithOSS = Details.filter((detail) => detail?.isOSS);
+  const workWithoutOSS = Details.filter(
+    (detail) => !detail?.isOSS && !detail?.isDapp
+  );
+  const workWithDapp = Details.filter(
+    (detail) => detail?.isDapp && !detail?.isOSS
+  );
+
   return (
     <section id="projects" className="py-">
-      <p className="text-2xl dark:text-gray-300 text-zinc-800 flex font-medium">
-        Some cool stuff :)
-      </p>
+      <p className="text-2xl text-white font-semibold">Some side chicks :)</p>
       <div className="mt-7 flex flex-col space-y-6">
-        {Details.map((detail) => (
+        {workWithoutOSS.map((detail) => (
+          <DetailsComponent data={detail} key={detail.title} />
+        ))}
+        <hr className="border-gray-200 dark:border-gray-700" />
+
+        <p className="text-2xl text-gray-500 font-semibold">
+          Open Source Projects
+        </p>
+        {workWithOSS.map((detail) => (
+          <DetailsComponent data={detail} key={detail.title} />
+        ))}
+
+        <hr className="border-gray-200 dark:border-gray-700" />
+        <p className="text-2xl text-gray-500 font-semibold">Web3 Projects</p>
+        {workWithDapp.map((detail) => (
           <DetailsComponent data={detail} key={detail.title} />
         ))}
       </div>
