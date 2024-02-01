@@ -19,6 +19,15 @@ const Details = [
     isOSS: true,
   },
   {
+    title: "UI Components",
+    description:
+      "Fully customizable UI components for your next project. Built with Tailwindcss + Typescript",
+    github: "https://github.com/starc007/ui-components",
+    demo: "https://ui-comp69.vercel.app/",
+    tech: ["React", "Typescript", "Tailwindcss"],
+    isOSS: true,
+  },
+  {
     title: "Vakya AI Extension",
     description:
       "An AI extension that helps you to write coverletterin upwork and freelancer. Also you can write tweets and linkedin post using this.",
@@ -160,6 +169,21 @@ const Work = () => {
         {workWithDapp.map((detail) => (
           <DetailsComponent data={detail} key={detail.title} />
         ))}
+        <hr className="border-gray-200 dark:border-gray-700" />
+        <p className="text-2xl text-gray-500 font-semibold">Freelance Work</p>
+        <ul className="text-white list-disc">
+          <li>Worked with Polygon for 2 small projects as a Freelance dev</li>
+          <li>
+            Wrote Smart Contract for a Social Defi Platform
+            <a
+              href="https://basescan.org/address/0x3158535153Ad4259f2e21763D0Eb566Ee9DaEA78#code"
+              target="_blank"
+              className="text-blue-600 underline font-medium px-1"
+            >
+              (Contract)
+            </a>
+          </li>
+        </ul>
       </div>
       {/* {count < Details?.length && (
         <div className="flex justify-center mt-5">
