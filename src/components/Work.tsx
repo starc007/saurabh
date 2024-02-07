@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 const Details = [
@@ -81,6 +82,20 @@ const Details = [
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
     isDapp: true,
   },
+  {
+    title: "Polygon Freelance Work",
+    description:
+      "Worked with Polygon for 2 small projects as a Freelance dev - Frontend",
+    tech: ["React"],
+    isFreelance: true,
+  },
+  {
+    title: "Social Defi",
+    description: "Wrote Smart Contract for a Social Defi Platform",
+    tech: ["Solidity", "hardhat"],
+    demo: "https://basescan.org/address/0x3158535153Ad4259f2e21763D0Eb566Ee9DaEA78#code",
+    isFreelance: true,
+  },
 ];
 
 const DetailsComponent = ({
@@ -90,8 +105,8 @@ const DetailsComponent = ({
     title: string;
     description: string;
     tech: string[];
-    github: string;
-    demo: string;
+    github?: string;
+    demo?: string;
   };
 }) => {
   return (
@@ -117,20 +132,24 @@ const DetailsComponent = ({
               ))}
             </div>
             <div className="flex mt-2 space-x-4 items-center">
-              <a
-                href={data.github}
-                target="_blank"
-                className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
-              >
-                Github
-              </a>
-              <a
-                href={data.demo}
-                target="_blank"
-                className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
-              >
-                Demo
-              </a>
+              {data.github && (
+                <a
+                  href={data.github}
+                  target="_blank"
+                  className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+                >
+                  Github
+                </a>
+              )}
+              {data.demo && (
+                <a
+                  href={data.demo}
+                  target="_blank"
+                  className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+                >
+                  Demo
+                </a>
+              )}
             </div>
           </div>
         </li>
@@ -139,62 +158,78 @@ const DetailsComponent = ({
   );
 };
 
+const menu = [
+  {
+    id: 1,
+    title: "Normal",
+  },
+  {
+    id: 2,
+    title: "Open Source",
+  },
+  {
+    id: 3,
+    title: "Web3",
+  },
+  {
+    id: 4,
+    title: "Freelance",
+  },
+];
+
 const Work = () => {
-  const workWithOSS = Details.filter((detail) => detail?.isOSS);
-  const workWithoutOSS = Details.filter(
-    (detail) => !detail?.isOSS && !detail?.isDapp
+  const [selected, setSelected] = useState("Normal");
+
+  const [data, setData] = useState(
+    Details.filter(
+      (detail) => !detail?.isOSS && !detail?.isDapp && !detail?.isFreelance
+    )
   );
-  const workWithDapp = Details.filter(
-    (detail) => detail?.isDapp && !detail?.isOSS
-  );
+
+  const handleClicked = (title: string) => {
+    setSelected(title);
+    if (title === "Normal") {
+      setData(
+        Details.filter(
+          (detail) => !detail?.isOSS && !detail?.isDapp && !detail?.isFreelance
+        )
+      );
+    } else if (title === "Open Source") {
+      setData(Details.filter((detail) => detail?.isOSS));
+    } else if (title === "Web3") {
+      setData(Details.filter((detail) => detail?.isDapp));
+    } else if (title === "Freelance") {
+      setData(Details.filter((detail) => detail?.isFreelance));
+    }
+  };
 
   return (
     <section id="projects" className="py-">
-      <p className="text-2xl text-white font-semibold">Some side chicks :)</p>
-      <div className="mt-7 flex flex-col space-y-6">
-        {workWithoutOSS.map((detail) => (
-          <DetailsComponent data={detail} key={detail.title} />
-        ))}
-        <hr className="border-gray-200 dark:border-gray-700" />
+      <div className="flex justify-between items-center flex-wrap gap-4">
+        <p className="text-2xl text-white font-semibold">Projects</p>
 
-        <p className="text-2xl text-gray-500 font-semibold">
-          Open Source Projects
-        </p>
-        {workWithOSS.map((detail) => (
-          <DetailsComponent data={detail} key={detail.title} />
-        ))}
-
-        <hr className="border-gray-200 dark:border-gray-700" />
-        <p className="text-2xl text-gray-500 font-semibold">Web3 Projects</p>
-        {workWithDapp.map((detail) => (
-          <DetailsComponent data={detail} key={detail.title} />
-        ))}
-        <hr className="border-gray-200 dark:border-gray-700" />
-        <p className="text-2xl text-gray-500 font-semibold">Freelance Work</p>
-        <ul className="text-white list-disc">
-          <li>Worked with Polygon for 2 small projects as a Freelance dev</li>
-          <li>
-            Wrote Smart Contract for a Social Defi Platform
-            <a
-              href="https://basescan.org/address/0x3158535153Ad4259f2e21763D0Eb566Ee9DaEA78#code"
-              target="_blank"
-              className="text-blue-600 underline font-medium px-1"
+        <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full w-max">
+          {menu.map((link) => (
+            <button
+              onClick={() => handleClicked(link.title)}
+              key={link.title}
+              className={`dark:text-white text-zinc-800 dark:hover:bg-white/5 hover:bg-zinc-100 rounded-full py-2 px-4 transition duration-500 ${
+                selected === link.title
+                  ? "bg-zinc-100 dark:bg-white/5"
+                  : "bg-transparent"
+              }`}
             >
-              (Contract)
-            </a>
-          </li>
-        </ul>
-      </div>
-      {/* {count < Details?.length && (
-        <div className="flex justify-center mt-5">
-          <button
-            onClick={() => setCount(count + 2)}
-            className="flex items-center dark:text-white text-zinc-800 font-medium dark:hover:bg-white/5 hover:bg-zinc-100 px-3 h-10 rounded-lg transition-all duration-500"
-          >
-            Show more
-          </button>
+              {link.title}
+            </button>
+          ))}
         </div>
-      )} */}
+      </div>
+
+      <div className="mt-7 flex flex-col space-y-6">
+        {data.map((detail) => (
+          <DetailsComponent data={detail} key={detail.title} />
+        ))}
+      </div>
       <p className="dark:text-zinc-400 text-zinc-500 mt-5">
         Not Enough ? Well sometimes it's not enough:) Still you can Checkout my{" "}
         <a

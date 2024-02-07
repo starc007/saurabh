@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="md:py-28 py-12 flex items-center">
       <div className="flex flex-col md:flex-row  justify-between w-full">
-        <div className="md:w-full md:px-2">
+        <div className="md:w-full">
           <p className="text-3xl sm:text-5xl font-bold animate1 dark:text-white text-zinc-800">
             Saurabh Chauhan
           </p>

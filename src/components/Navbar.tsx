@@ -21,7 +21,7 @@ const Navbar = () => {
         alt="logo"
         className="w-10 h-10 rounded-full object-cover object-center"
       />
-      <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full">
+      {/* <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full">
         {navLinks.map((link) => (
           <a
             key={link.title}
@@ -31,7 +31,7 @@ const Navbar = () => {
             {link.title}
           </a>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
