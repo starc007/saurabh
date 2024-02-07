@@ -1,17 +1,17 @@
-const navLinks = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "Projects",
-    link: "#projects",
-  },
-  // {
-  //   title: "Experience",
-  //   link: "#experience",
-  // },
-];
+// const navLinks = [
+//   {
+//     title: "Home",
+//     link: "/",
+//   },
+//   {
+//     title: "Projects",
+//     link: "#projects",
+//   },
+//   // {
+//   //   title: "Experience",
+//   //   link: "#experience",
+//   // },
+// ];
 
 const Navbar = () => {
   return (
