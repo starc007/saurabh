@@ -1,18 +1,3 @@
-// const navLinks = [
-//   {
-//     title: "Home",
-//     link: "/",
-//   },
-//   {
-//     title: "Projects",
-//     link: "#projects",
-//   },
-//   // {
-//   //   title: "Experience",
-//   //   link: "#experience",
-//   // },
-// ];
-
 const Navbar = () => {
   return (
     <div className="flex justify-between w-full items-center py-6 md:px-6">

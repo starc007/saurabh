@@ -3,6 +3,22 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Details = [
   {
+    title: "MultiSig Wallet Smart Contract",
+    description:
+      "MultiSig contract + Factory contract for creating MultiSig Wallet",
+    tech: ["Solidity", "hardhat"],
+    demo: "https://github.com/starc007/multisig-wallet",
+    isDapp: true,
+  },
+  {
+    title: "PetRace Smart Contract",
+    description:
+      "Smart Contract for a Pet Racing Game. You can create your pet, upgrade them and participate in a game and win rewards.",
+    tech: ["Solidity", "hardhat"],
+    demo: "https://github.com/starc007/petrace-smart-contract",
+    isDapp: true,
+  },
+  {
     title: "Piqr",
     description:
       "A Professional Networking Platform. Used by 3000+ users. Built this product from scratch. (Frontend + Backend)",
