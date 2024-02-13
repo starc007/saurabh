@@ -7,7 +7,7 @@ const Details = [
     description:
       "MultiSig contract + Factory contract for creating MultiSig Wallet",
     tech: ["Solidity", "hardhat"],
-    demo: "https://github.com/starc007/multisig-wallet",
+    github: "https://github.com/starc007/multisig-wallet",
     isDapp: true,
   },
   {
@@ -15,7 +15,14 @@ const Details = [
     description:
       "Smart Contract for a Pet Racing Game. You can create your pet, upgrade them and participate in a game and win rewards.",
     tech: ["Solidity", "hardhat"],
-    demo: "https://github.com/starc007/petrace-smart-contract",
+    github: "https://github.com/starc007/petrace-smart-contract",
+    isDapp: true,
+  },
+  {
+    title: "Bitdroplet dapp",
+    description: "Decentralised SIP platform for crypto",
+    tech: ["Svelte", "TailwindCSS", "Ether.js"],
+    demo: "https://bitdroplet.com/dapp/",
     isDapp: true,
   },
   {
@@ -54,9 +61,8 @@ const Details = [
     tech: ["Javascript", "React", "Tailwindcss", "Webpack"],
   },
   {
-    title: "Playota Landing Page",
-    description:
-      "Landing page for Playota. A decentralized fantasy game platform.",
+    title: "Playota",
+    description: "A decentralized fantasy game platform.",
     github: "https://playota.app",
     demo: "https://playota.app",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Framer Motion"],
@@ -194,12 +200,13 @@ const menu = [
 ];
 
 const Work = () => {
-  const [selected, setSelected] = useState("Normal");
+  const [selected, setSelected] = useState("Web3");
 
   const [data, setData] = useState(
-    Details.filter(
-      (detail) => !detail?.isOSS && !detail?.isDapp && !detail?.isFreelance
-    )
+    // Details.filter(
+    //   (detail) => !detail?.isOSS && !detail?.isDapp && !detail?.isFreelance
+    // )
+    Details.filter((detail) => detail?.isDapp)
   );
 
   const handleClicked = (title: string) => {

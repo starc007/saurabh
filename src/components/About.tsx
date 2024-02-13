@@ -38,8 +38,9 @@ const About = () => {
             </LinkPreview>
           </p> */}
           <p className="text-zinc-500 mb-6 md:text-lg text-sm mt-4">
-            full Stack Developer with more than 3+ years of exp. Trying to
-            Simplify Web3. Open for collaboration or new opportunities.
+            full Stack Developer with more than 3 years of exp. Trying to
+            Simplify Web3. Love to talk about tech, startups & anime. Open for
+            collaboration or new opportunities.
           </p>
           <p className="dark:text-white text-zinc-800 font-semibold">
             <span className="dark:text-zinc-400 text-zinc-500 font-medium">
