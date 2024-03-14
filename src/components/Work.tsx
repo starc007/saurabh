@@ -158,7 +158,7 @@ const DetailsComponent = ({
                 <a
                   href={data.github}
                   target="_blank"
-                  className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+                  className="text-zinc-400 hover:underline hover:text-zinc-100"
                 >
                   Github
                 </a>
@@ -167,7 +167,7 @@ const DetailsComponent = ({
                 <a
                   href={data.demo}
                   target="_blank"
-                  className="dark:text-zinc-400 hover:underline hover:text-zinc-100"
+                  className="text-zinc-400 hover:underline hover:text-zinc-100"
                 >
                   Demo
                 </a>
@@ -231,15 +231,13 @@ const Work = () => {
       <div className="flex justify-between items-center flex-wrap gap-4">
         <p className="text-2xl text-white font-semibold">Projects</p>
 
-        <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full w-max">
+        <div className="flex items-center text-xs sm:text-sm border border-zinc-700 rounded-full w-max">
           {menu.map((link) => (
             <button
               onClick={() => handleClicked(link.title)}
               key={link.title}
-              className={`dark:text-white text-zinc-800 dark:hover:bg-white/5 hover:bg-zinc-100 rounded-full py-2 px-4 transition duration-500 ${
-                selected === link.title
-                  ? "bg-zinc-100 dark:bg-white/5"
-                  : "bg-transparent"
+              className={`text-white hover:bg-white/5 rounded-full py-2 px-4 transition duration-500 ${
+                selected === link.title ? "bg-white/5" : "bg-transparent"
               }`}
             >
               {link.title}
@@ -253,12 +251,12 @@ const Work = () => {
           <DetailsComponent data={detail} key={detail.title} />
         ))}
       </div>
-      <p className="dark:text-zinc-400 text-zinc-500 mt-5">
+      <p className="text-zinc-400 mt-5">
         Not Enough ? Well sometimes it's not enough:) Still you can Checkout my{" "}
         <a
           href="https://github.com/starc007?tab=repositories"
           target="_blank"
-          className="text-zinc-800 dark:text-white underline font-medium px-1"
+          className="text-white underline font-medium px-1"
         >
           Github
         </a>{" "}

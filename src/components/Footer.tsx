@@ -1,8 +1,7 @@
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 
-const commonClass =
-  "dark:hover:text-white transition duration-500 hover:text-zinc-700";
+const commonClass = "hover:text-white transition duration-500";
 
 const Footer = () => {
   return (

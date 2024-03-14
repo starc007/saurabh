@@ -6,17 +6,6 @@ const Navbar = () => {
         alt="logo"
         className="w-10 h-10 rounded-full object-cover object-center"
       />
-      {/* <div className="flex items-center text-xs sm:text-sm border dark:border-zinc-700 border-zinc-400 rounded-full">
-        {navLinks.map((link) => (
-          <a
-            key={link.title}
-            href={link.link}
-            className="dark:text-white text-zinc-800 dark:hover:bg-white/5 hover:bg-zinc-100 rounded-full py-2 px-4 transition duration-500"
-          >
-            {link.title}
-          </a>
-        ))}
-      </div> */}
     </div>
   );
 };
