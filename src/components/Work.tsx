@@ -108,7 +108,7 @@ const Details = [
   {
     title: "Powerloom",
     description:
-      "Worked with Powerloom for 3 months as a part-time Frontend dev",
+      "Worked with Powerloom for 3 months as a part-time Frontend dev (March 2024 - May 2024)",
     tech: ["Svelte", "TailwindCSS", "Typescript", "Nodejs"],
     isFreelance: true,
   },
