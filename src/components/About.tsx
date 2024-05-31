@@ -15,13 +15,12 @@ const About = () => {
             collaboration or new opportunities.
           </p>
           <p className="text-white font-semibold">
-            <span className="text-zinc-400font-medium">Tech Stack:</span> React,
-            Nextjs, Svelte, Typescript, JavaScript, Nodejs, Solidity,
-            Tailwindcss, React Native, Ether.js
+            <span className="text-zinc-400 font-medium">Tech Stack:</span>{" "}
+            React, Nextjs, Svelte, Typescript, JavaScript, Nodejs, Solidity,
+            Tailwindcss, React Native
           </p>
           <p className="text-white font-semibold mt-4">
-            <span className="text-zinc-400 font-medium">Exposure to:</span>{" "}
-            Rust, Go
+            <span className="text-zinc-400 font-medium">Exposure to:</span> Rust
           </p>
           <a
             href={resume}

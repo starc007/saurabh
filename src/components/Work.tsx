@@ -3,6 +3,22 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Details = [
   {
+    title: "Bitdroplet dapp",
+    description: "Decentralised SIP platform for crypto",
+    tech: ["Svelte", "TailwindCSS", "Ether.js"],
+    demo: "https://bitdroplet.com/dapp/",
+    isDapp: true,
+  },
+  {
+    title: "Zeno",
+    description:
+      "A decentralized Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens. Built on top of Polygon",
+    github: "https://github.com/starc007/zeno-prod",
+    demo: "https://zenoo.netlify.app/",
+    tech: ["React", "Nodejs", "Solidity"],
+    isDapp: true,
+  },
+  {
     title: "MultiSig Wallet Smart Contract",
     description:
       "MultiSig contract + Factory contract for creating MultiSig Wallet",
@@ -18,13 +34,7 @@ const Details = [
     github: "https://github.com/starc007/petrace-smart-contract",
     isDapp: true,
   },
-  {
-    title: "Bitdroplet dapp",
-    description: "Decentralised SIP platform for crypto",
-    tech: ["Svelte", "TailwindCSS", "Ether.js"],
-    demo: "https://bitdroplet.com/dapp/",
-    isDapp: true,
-  },
+
   {
     title: "Piqr",
     description:
@@ -78,15 +88,6 @@ const Details = [
   },
 
   {
-    title: "Zeno",
-    description:
-      "A decentralized Payment protocol where you can send/ buy crypto using INR. You can also Lend or swap your tokens. Built on top of Polygon",
-    github: "https://github.com/starc007/zeno-prod",
-    demo: "https://zenoo.netlify.app/",
-    tech: ["React", "Nodejs", "Solidity"],
-    isDapp: true,
-  },
-  {
     title: "Simple",
     description:
       "A decentralized doc sharing and collaborating web app. Built on top of IPFS and Polygon",
@@ -103,6 +104,13 @@ const Details = [
     demo: "https://senju-test.netlify.app",
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
     isDapp: true,
+  },
+  {
+    title: "Powerloom",
+    description:
+      "Worked with Powerloom for 3 months as a part-time Frontend dev",
+    tech: ["Svelte", "TailwindCSS", "Typescript", "Nodejs"],
+    isFreelance: true,
   },
   {
     title: "Polygon Freelance Work",
