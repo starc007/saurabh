@@ -44,6 +44,24 @@ const Details = [
     demo: "https://piqr.in",
   },
   {
+    title: "beUi",
+    description:
+      "Build better, build faster. A collection of free UI components & templates for your next project.",
+    github: "https://github.com/starc007/ui-components",
+    demo: "https://ui-comp69.vercel.app/",
+    tech: ["React", "Typescript", "Tailwindcss", "Framer Motion"],
+    isOSS: true,
+  },
+  {
+    title: "Readmi",
+    description:
+      "A Open Source Github readme builder. Use prebuilt templates, sections or create a new one.",
+    tech: ["React", "Typescript", "Tailwindcss"],
+    github: "https://github.com/starc007/readmi",
+    demo: "https://readmi.xyz/",
+    isOSS: true,
+  },
+  {
     title: "Web3 Wallet Connect",
     description:
       "A Open Source wallet connection library for your decentralized application",
@@ -52,15 +70,7 @@ const Details = [
     tech: ["Typescript"],
     isOSS: true,
   },
-  {
-    title: "UI Components",
-    description:
-      "Fully customizable UI components for your next project. Built with Tailwindcss + Typescript",
-    github: "https://github.com/starc007/ui-components",
-    demo: "https://ui-comp69.vercel.app/",
-    tech: ["React", "Typescript", "Tailwindcss"],
-    isOSS: true,
-  },
+
   {
     title: "Vakya AI Extension",
     description:
@@ -76,15 +86,6 @@ const Details = [
     github: "https://playota.app",
     demo: "https://playota.app",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Framer Motion"],
-  },
-  {
-    title: "Readmi",
-    description:
-      "A Open Source Github readme builder. Use prebuilt templates, sections or create a new one.",
-    tech: ["React", "Typescript", "Tailwindcss"],
-    github: "https://github.com/starc007/readmi",
-    demo: "https://readmi.xyz/",
-    isOSS: true,
   },
 
   {
@@ -208,13 +209,13 @@ const menu = [
 ];
 
 const Work = () => {
-  const [selected, setSelected] = useState("Web3");
+  const [selected, setSelected] = useState("Open Source");
 
   const [data, setData] = useState(
     // Details.filter(
     //   (detail) => !detail?.isOSS && !detail?.isDapp && !detail?.isFreelance
     // )
-    Details.filter((detail) => detail?.isDapp)
+    Details.filter((detail) => detail?.isOSS)
   );
 
   const handleClicked = (title: string) => {
@@ -239,12 +240,12 @@ const Work = () => {
       <div className="flex justify-between items-center flex-wrap gap-4">
         <p className="text-2xl text-white font-semibold">Projects</p>
 
-        <div className="flex items-center text-xs sm:text-sm border border-zinc-700 rounded-full w-max">
+        <div className="flex items-center text-xs sm:text-sm border border-zinc-700 rounded-xl w-max">
           {menu.map((link) => (
             <button
               onClick={() => handleClicked(link.title)}
               key={link.title}
-              className={`text-white hover:bg-white/5 rounded-full py-2 px-4 transition duration-500 ${
+              className={`text-white hover:bg-white/5 rounded-lg py-2 px-4 transition duration-500 ${
                 selected === link.title ? "bg-white/5" : "bg-transparent"
               }`}
             >
