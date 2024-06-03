@@ -48,7 +48,7 @@ const Details = [
     description:
       "Build better, build faster. A collection of free UI components & templates for your next project.",
     github: "https://github.com/starc007/ui-components",
-    demo: "https://ui-comp69.vercel.app/",
+    demo: "https://beui.xyz",
     tech: ["React", "Typescript", "Tailwindcss", "Framer Motion"],
     isOSS: true,
   },

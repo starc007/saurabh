@@ -12,7 +12,7 @@ const About = () => {
           <p className="text-zinc-500 mb-6 md:text-lg text-sm mt-4">
             Full Stack Developer with more than 3 years of exp. Building{" "}
             <a
-              href="https://ui-comp69.vercel.app"
+              href="https://beui.xyz"
               target="_blank"
               rel="noreferrer noopener"
               className="text-white inline-flex font-semibold hover:text-gray-300 transition-colors duration-300"
