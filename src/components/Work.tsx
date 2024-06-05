@@ -44,6 +44,14 @@ const Details = [
     demo: "https://piqr.in",
   },
   {
+    title: "Playota App (Decentralized Fantasy Game Platform.)",
+    description:
+      "Worked on the core feature of the app. Login, Referal, Wallet, Trumpcard game, Profile page, Socket connection",
+    tech: ["React Native", "Typescript", "Reanimated", "Socket IO Client"],
+    github: "https://apps.apple.com/in/app/playota/id6449972914",
+    demo: "https://apps.apple.com/in/app/playota/id6449972914",
+  },
+  {
     title: "beUi",
     description:
       "Build better, build faster. A collection of free UI components & templates for your next project.",
