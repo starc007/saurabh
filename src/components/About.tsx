@@ -30,13 +30,23 @@ const About = () => {
           <p className="text-white font-semibold mt-4">
             <span className="text-zinc-400 font-medium">Exposure to:</span> Rust
           </p>
-          <a
-            href={resume}
-            download
-            className="sm:w-24 w-20 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center md:text-base text-sm border border-zinc-700 text-white hover:bg-white/5 transition duration-500"
-          >
-            Resume
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={resume}
+              download
+              className="sm:w-24 w-20 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center md:text-base text-sm border border-zinc-700 text-white hover:bg-white/5 transition duration-500"
+            >
+              Resume
+            </a>
+            <a
+              href="https://calendly.com/saurra3h/intro"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-white/5 px-4 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center md:text-base text-sm text-white hover:bg-white/5 transition duration-500"
+            >
+              Schedule Call
+            </a>
+          </div>
         </div>
       </div>
     </div>
