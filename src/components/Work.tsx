@@ -3,6 +3,15 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Details = [
   {
+    title: "walletwit",
+    description:
+      "Smart crypto analytics with a humorous twist. Track transactions, balances,and more in a fun and simplified way.",
+    tech: ["Next.js", "TailwindCSS", "Solana"],
+    demo: "https://walletwit.vercel.app/",
+    github: "https://github.com/starc007/walletwit",
+    isDapp: true,
+  },
+  {
     title: "Bitdroplet dapp",
     description: "Decentralised SIP platform for crypto",
     tech: ["Svelte", "TailwindCSS", "Ether.js"],
@@ -114,13 +123,13 @@ const Details = [
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
     isDapp: true,
   },
-  // {
-  //   title: "Powerloom",
-  //   description:
-  //     "Worked with Powerloom for 3 months as a part-time Frontend dev (March 2024 - May 2024)",
-  //   tech: ["Svelte", "TailwindCSS", "Typescript", "Nodejs"],
-  //   isFreelance: true,
-  // },
+  {
+    title: "Powerloom",
+    description:
+      "Worked with Powerloom for 3 months as a part-time Frontend dev (March 2024 - May 2024)",
+    tech: ["Svelte", "TailwindCSS", "Typescript", "Nodejs"],
+    isFreelance: true,
+  },
   {
     title: "Polygon Freelance Work",
     description:
