@@ -9,15 +9,15 @@ const About = () => {
             Saurabh Chauhan
           </p>
 
-          <p className="text-zinc-500 mb-6 md:text-lg text-sm mt-4">
-            Full Stack Developer with more than 3 years of exp. Building{" "}
+          <p className="text-zinc-400 mb-6 md:text-lg text-sm mt-4 font-medium">
+            Full stack dev. Loves building Products. Building{" "}
             <a
-              href="https://beui.xyz"
+              href="https://stylr.xyz"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-white inline-flex font-semibold hover:text-gray-300 transition-colors duration-300"
+              className="text-white inline-flex font-semibold hover:text-gray-300 transition-colors duration-300 underline"
             >
-              beUi.
+              stylr.
             </a>{" "}
             Love to talk about tech, startups & anime. Open for collaboration or
             new opportunities.
