@@ -159,20 +159,20 @@ const DetailsComponent = ({
 }) => {
   return (
     <div className="md:px-0 px-4">
-      <ul className="list-disc text-white">
+      <ul className="list-disc text-black">
         <li>
           <div className="flex flex-col">
             <a
               href={data.github}
               target="_blank"
-              className="text-white text-lg font-medium hover:text-gray-300 transition-colors duration-300 flex items-center"
+              className="text-black text-lg font-medium hover:text-black/70 transition-colors duration-300 flex items-center"
             >
               {data.title} <MdArrowOutward className="ml-1" />
             </a>
             <span className="text-gray-400 text-sm inline-flex">
               {data.description}
             </span>
-            <div className="flex items-center mt-2 space-x-4 flex-wrap hover:text-white text-gray-300 ">
+            <div className="flex items-center mt-2 space-x-4 flex-wrap hover:text-black/70 text-black/50 ">
               {data.tech.map((tech) => (
                 <span key={tech} className="italic text-sm">
                   {tech}{" "}
@@ -184,7 +184,7 @@ const DetailsComponent = ({
                 <a
                   href={data.github}
                   target="_blank"
-                  className="text-zinc-400 hover:underline hover:text-zinc-100"
+                  className="text-black/50 hover:underline hover:text-black/70"
                 >
                   Github
                 </a>
@@ -193,7 +193,7 @@ const DetailsComponent = ({
                 <a
                   href={data.demo}
                   target="_blank"
-                  className="text-zinc-400 hover:underline hover:text-zinc-100"
+                  className="text-black/50 hover:underline hover:text-black/70"
                 >
                   Demo
                 </a>
@@ -255,15 +255,15 @@ const Work = () => {
   return (
     <section id="projects" className="py-">
       <div className="flex justify-between items-center flex-wrap gap-4">
-        <p className="text-2xl text-white font-semibold">Projects</p>
+        <p className="text-2xl text-black font-semibold">Projects</p>
 
-        <div className="flex items-center text-xs sm:text-sm border border-zinc-700 rounded-xl w-max">
+        <div className="flex items-center text-xs sm:text-sm border border-black/5 rounded-xl w-max">
           {menu.map((link) => (
             <button
               onClick={() => handleClicked(link.title)}
               key={link.title}
-              className={`text-white hover:bg-white/5 rounded-lg py-2 px-4 transition duration-500 ${
-                selected === link.title ? "bg-white/5" : "bg-transparent"
+              className={`text-black hover:bg-black/5 rounded-lg py-2 px-4 transition duration-500 ${
+                selected === link.title ? "bg-black/5" : "bg-transparent"
               }`}
             >
               {link.title}
@@ -277,12 +277,12 @@ const Work = () => {
           <DetailsComponent data={detail} key={detail.title} />
         ))}
       </div>
-      <p className="text-zinc-400 mt-5">
+      <p className="text-black/50 mt-5">
         Not Enough ? Well sometimes it's not enough:) Still you can Checkout my{" "}
         <a
           href="https://github.com/starc007?tab=repositories"
           target="_blank"
-          className="text-white underline font-medium px-1"
+          className="text-black underline font-medium px-1"
         >
           Github
         </a>{" "}

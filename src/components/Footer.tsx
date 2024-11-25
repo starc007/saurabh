@@ -5,9 +5,9 @@ const commonClass = "hover:text-white transition duration-500";
 
 const Footer = () => {
   return (
-    <div className="py-4 px-4 my-10 flex justify-between flex-wrap gap-4 text-zinc-400 font-medium text-lg border border-white/5 rounded-2xl bg-white/5">
+    <div className="py-4 px-4 my-10 flex justify-between flex-wrap gap-4 text-black/50 font-medium text-lg border border-black/5 rounded-2xl bg-black/5">
       <p>
-        Have Something for me? <span className="text-white">Let's talk</span>
+        Have Something for me? <span className="text-black">Let's talk</span>
       </p>
       <div className="flex space-x-5 items-center text-2xl">
         <a
