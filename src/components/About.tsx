@@ -10,17 +10,9 @@ const About = () => {
           </p>
 
           <p className="text-black/50 mb-6 md:text-lg text-sm mt-4 font-medium">
-            Full stack dev. Loves building Products. Building{" "}
-            <a
-              href="https://stylr.xyz"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-black inline-flex font-semibold hover:text-black/70 transition-colors duration-300 underline"
-            >
-              stylr.
-            </a>{" "}
-            Love to talk about tech, startups & anime. Open for collaboration or
-            new opportunities.
+            full stack developer who loves building products. I enjoy talking
+            about tech, startups & anime. Open to collaborations and new
+            opportunities.
           </p>
           <p className="text-black font-semibold">
             <span className="text-black/50 font-medium">Tech Stack:</span>{" "}

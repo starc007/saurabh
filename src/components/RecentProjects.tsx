@@ -3,6 +3,16 @@ import { BiWorld } from "react-icons/bi";
 
 const data = [
   {
+    id: -1,
+    title: "SayHi",
+    description:
+      "A chrome extension that helps generate personalized conversation starters for Twitter/X profiles using AI.",
+    techStack: ["Typescript", "Reactjs", "Tailwindcss"],
+    demo: "https://sayhi.xyz",
+    github: "https://github.com/starc007/sayhi",
+    image: "/sayhi.png",
+  },
+  {
     id: 0,
     title: "Love Language",
     description:
@@ -56,7 +66,7 @@ const RecentProjects = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-xl md:w-56 w-full md:h-32 h-40 object-cover"
+              className="rounded-xl md:w-56 w-full md:h-32 h-40 object-cover shrink-0"
             />
             <div>
               <p className="text-black font-semibold text-xl">
