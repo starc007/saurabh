@@ -1,35 +1,17 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* font-family: "Poppins", sans-serif; */
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-synthesis: none;
   background-color: #fff;
+  color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.animate1 {
-  animation: slide-down 1s forwards;
-}
-.animate2 {
-  animation: slide-down 1.8s forwards;
-}
-.animate3 {
-  animation: slide-down 2.5s forwards;
-}
-
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 .triangle {
@@ -53,4 +35,32 @@
   .gallery-container {
     column-count: 1;
   }
+}
+
+.geist-font-400 {
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.geist-font-500 {
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.geist-font-600 {
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.geist-font-700 {
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }

@@ -7,15 +7,15 @@ import Work from "./components/Work";
 
 function App() {
   return (
-    <div className="px-4 mx-auto sm:max-w-3xl">
+    <div className="px-4 mx-auto max-w-3xl py-12">
+      {/* <div className="lg:px-10"> */}
       <Navbar />
-      <div className="lg:px-10">
-        <About />
-        <RecentProjects />
-        <Work />
-        {/* <Experience /> */}
-        <Footer />
-      </div>
+      <About />
+      <RecentProjects />
+      <Work />
+      {/* <Experience /> */}
+      <Footer />
+      {/* </div> */}
     </div>
   );
 }

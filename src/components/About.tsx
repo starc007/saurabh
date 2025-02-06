@@ -1,45 +1,71 @@
 import resume from "../saurabh.pdf";
 
+const myskills = [
+  "React",
+  "Nextjs",
+  "Svelte",
+  "Typescript",
+  "JavaScript",
+  "Nodejs",
+  "Solidity",
+  "Tailwindcss",
+  "React Native",
+  "Rust",
+];
+
 const About = () => {
   return (
-    <div className="md:py-10 py-12 flex items-center">
-      <div className="flex flex-col md:flex-row  justify-between w-full">
-        <div className="md:w-full">
-          <p className="text-3xl sm:text-5xl font-bold animate1 text-black">
-            Saurabh Chauhan
-          </p>
+    <div className="mt-8">
+      <p className="text-xl font-semibold">About</p>
+      <p className="text-black/50  mt-2">
+        full stack developer who loves building products.
+      </p>
+      <p className="text-black/50 mb-6  mt-1">
+        I enjoy talking about tech, startups & anime. Open to collaborations and
+        new opportunities.
+      </p>
 
-          <p className="text-black/50 mb-6 md:text-lg text-sm mt-4 font-medium">
-            full stack developer who loves building products. I enjoy talking
-            about tech, startups & anime. Open to collaborations and new
-            opportunities.
+      <p className="font-semibold">Tech Stack:</p>
+      <div className="flex flex-wrap gap-3 mt-2">
+        {myskills.map((skill) => (
+          <p
+            key={skill}
+            className="bg-black/5 px-2.5 py-1 rounded-full text-sm"
+          >
+            {skill}
           </p>
-          <p className="text-black font-semibold">
-            <span className="text-black/50 font-medium">Tech Stack:</span>{" "}
-            React, Nextjs, Svelte, Typescript, JavaScript, Nodejs, Solidity,
-            Tailwindcss, React Native
-          </p>
-          <p className="text-black font-semibold mt-4">
-            <span className="text-black/50 font-medium">Exposure to:</span> Rust
-          </p>
-          <div className="flex items-center gap-2">
-            <a
-              href={resume}
-              download
-              className="sm:w-24 w-20 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center md:text-base text-sm border border-black/5 text-black hover:bg-black/5 transition duration-500"
-            >
-              Resume
-            </a>
-            <a
-              href="https://calendly.com/saurra3h/intro"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="bg-black/5 px-4 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center md:text-base text-sm text-black hover:bg-black/5 transition duration-500"
-            >
-              Schedule Call
-            </a>
-          </div>
-        </div>
+        ))}
+      </div>
+
+      {/* <p className="text-black/50 mt-4">
+        If you'd like to connect with me over a quick call, you can schedule a
+        call with me.{" "}
+        <a
+          href="https://cal.com/saurra3h/30min"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="text-black hover:text-black/50 transition duration-500 underline"
+        >
+          Schedule Call
+        </a>
+      </p> */}
+
+      <div className="flex items-center gap-2">
+        <a
+          href={resume}
+          download
+          className="sm:w-24 w-20 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center text-sm border border-black/5 text-black font-medium"
+        >
+          Resume
+        </a>
+        <a
+          href="https://cal.com/saurra3h/30min"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="bg-black px-4 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center text-sm text-white font-medium"
+        >
+          Schedule Call
+        </a>
       </div>
     </div>
   );
