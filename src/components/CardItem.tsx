@@ -1,5 +1,4 @@
 import { AiVideoIcon, Github01Icon, Link01Icon } from "hugeicons-react";
-import React from "react";
 
 type CardItemProps = {
   demo: string;

@@ -1,5 +1,4 @@
 import { Github01Icon } from "hugeicons-react";
-import React from "react";
 
 const data = [
   {
