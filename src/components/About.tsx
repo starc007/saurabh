@@ -1,3 +1,4 @@
+import { Calendar03Icon, Download04Icon } from "hugeicons-react";
 import resume from "../saurabh.pdf";
 
 const myskills = [
@@ -54,17 +55,17 @@ const About = () => {
         <a
           href={resume}
           download
-          className="sm:w-24 w-20 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center text-sm border border-black/5 text-black font-medium"
+          className="h-10 mt-8 px-4 rounded-xl flex items-center justify-center gap-2 text-sm border border-black/5 text-black font-medium"
         >
-          Resume
+          Resume <Download04Icon size={18} />
         </a>
         <a
           href="https://cal.com/saurra3h/30min"
           target="_blank"
           rel="noreferrer noopener"
-          className="bg-black px-4 sm:h-11 h-10 mt-8 rounded-xl flex items-center justify-center text-sm text-white font-medium"
+          className="bg-black px-4 h-10 mt-8 rounded-xl flex items-center justify-center gap-2 text-sm text-white font-medium"
         >
-          Schedule Call
+          Schedule Call <Calendar03Icon size={18} />
         </a>
       </div>
     </div>

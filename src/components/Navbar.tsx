@@ -8,7 +8,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl sm:text-6xl font-bold text-black"
+          className="text-3xl sm:text-5xl font-bold text-black"
         >
           Hi, Saurabh here
         </motion.h1>

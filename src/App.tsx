@@ -7,7 +7,7 @@ import Work from "./components/Work";
 
 function App() {
   return (
-    <div className="px-4 mx-auto max-w-3xl py-12">
+    <div className="px-4 mx-auto max-w-2xl py-12">
       {/* <div className="lg:px-10"> */}
       <Navbar />
       <About />
