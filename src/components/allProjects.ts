@@ -1,5 +1,25 @@
 export const allProjects = [
   {
+    title: "BenGrid ",
+    description: "Open-source tool to create and export bento grid layouts",
+    tech: ["Next.js", "TailwindCSS"],
+    demo: "https://tailwind-bento.vercel.app/",
+    github: "https://github.com/starc007/tailwind-bento",
+    isOSS: true,
+    isWeb2: true,
+    videoLink: "",
+  },
+  {
+    title: "Stylr ",
+    description:
+      "Make your beautiful forms in one click. Launched in Aug, 2024, got 500+ users in 1 month.",
+    tech: ["Next.js", "TailwindCSS", "Nodejs", "Express", "Framer Motion"],
+    demo: "https://www.stylr.xyz/",
+    github: "https://www.stylr.xyz/",
+    isWeb2: true,
+    videoLink: "https://x.com/saurra3h/status/1823375367081738640",
+  },
+  {
     title: "walletwit",
     description:
       "Smart crypto analytics with a humorous twist. Track transactions, balances,and more in a fun and simplified way.",
@@ -47,12 +67,12 @@ export const allProjects = [
   },
 
   {
-    title: "Piqr",
+    title: "Sanchar",
     description:
       "A Professional Networking Platform. Used by 3000+ users. Built this product from scratch. (Frontend + Backend)",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Nodejs"],
-    github: "https://piqr.in",
-    demo: "https://piqr.in",
+    github: "https://github.com/starc007/piqr-frontend",
+    demo: "https://sanchar.xyz",
     videoLink: "",
     isWeb2: true,
   },

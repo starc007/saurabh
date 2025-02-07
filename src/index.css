@@ -64,13 +64,3 @@
   font-weight: 700;
   font-style: normal;
 }
-
-.group:hover .group-hover\:translate-y-0:nth-child(n) {
-  transform: translateY(calc(var(--index, 0) * 170px)) !important;
-}
-
-@media (max-width: 768px) {
-  .group:hover .group-hover\:translate-y-0:nth-child(n) {
-    transform: translateY(calc(var(--index, 0) * 270px)) !important;
-  }
-}

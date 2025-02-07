@@ -19,7 +19,8 @@ const About = () => {
     <div className="mt-8">
       <p className="text-xl font-semibold">About</p>
       <p className="text-black/50  mt-2">
-        full stack developer who loves building products.
+        full stack developer who loves building products and contributing to
+        open source.
       </p>
       <p className="text-black/50 mb-6  mt-1">
         I enjoy talking about tech, startups & anime. Open to collaborations and

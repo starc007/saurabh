@@ -13,7 +13,7 @@ const TabItem = ({ title, isActive, setActiveTab, id }: TabItemProps) => {
   return (
     <button
       className={`px-5 py-2 text-sm font-medium transition-all relative ${
-        isActive ? "text-black" : "text-black/50 hover:text-black"
+        isActive ? "text-white" : "text-white/60 hover:text-white"
       }`}
       style={{
         WebkitTapHighlightColor: "transparent",
@@ -23,11 +23,15 @@ const TabItem = ({ title, isActive, setActiveTab, id }: TabItemProps) => {
       {isActive && (
         <motion.span
           layoutId={`bubble-tab-${id || ""}`}
-          className="absolute inset-0 z-0 bg-black rounded-full overflow-hidden border border-black/10"
+          className="absolute inset-0 z-0 bg-white rounded-full overflow-hidden border border-white/10"
           transition={{ type: "spring", bounce: 0.2, duration: 0.8 }}
         />
       )}
-      <span className={`relative z-10 ${isActive ? "text-white" : ""}`}>
+      <span
+        className={`relative z-10 whitespace-nowrap ${
+          isActive ? "text-black" : ""
+        }`}
+      >
         {title}
       </span>
     </button>

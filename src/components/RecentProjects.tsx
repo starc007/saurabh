@@ -78,39 +78,20 @@ const data = [
 ];
 
 const RecentProjects = () => {
-  const cardHeight = 150; // Increased base height for desktop
-  const mobileCardHeight = 280; // Increased height for mobile
-  const cardGap = 40; // Increased gap between cards
-  const totalHeight = data.length * (cardHeight + cardGap);
-  const mobileTotalHeight = data.length * (mobileCardHeight + cardGap);
-
   return (
     <div className="flex flex-col mt-20">
       <p className="text-black text-2xl font-semibold flex items-center gap-2">
         My recent builds
         <SparklesIcon size={24} />
       </p>
-      <div
-        className="relative mt-6 h-[200px] group hover:h-[var(--expanded-height)] md:hover:h-[var(--mobile-expanded-height)] transition-all duration-300"
-        style={{
-          ["--expanded-height" as any]: `${totalHeight}px`,
-          ["--mobile-expanded-height" as any]: `${mobileTotalHeight}px`,
-        }}
-      >
+      <div className="mt-6 flex flex-col gap-4">
         {data.map((project, index) => (
           <motion.div
             key={project.id}
-            className="absolute w-full md:h-40 h-64 bg-white border border-black/5 p-4 rounded-xl duration-300 hover:border-black/10 cursor-pointer group-hover:translate-y-0"
+            className="w-full bg-white border border-black/5 p-4 rounded-xl hover:border-black/10 cursor-pointer"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            style={{
-              top: 0,
-              translateY: `${index * 8}px`,
-              transition: "transform 0.3s ease",
-              transform: `translateY(${index * 8}px)`,
-              ["--index" as any]: index,
-            }}
             whileHover={{
               scale: 1.02,
               transition: { duration: 0.2 },
