@@ -8,6 +8,18 @@ import { motion } from "framer-motion";
 
 const data = [
   {
+    id: -2,
+    title: "DateMate",
+    description:
+      "A Telegram bot that helps users find and match with potential partners. Launched in Feb, 2025, got 200+ users in 3 days.",
+    techStack: ["Reactjs", "Fuel", "Simplewebauthn", "Nodejs"],
+    demo: "https://t.me/DateMateHQ_bot",
+    github: "http://github.com/starc007/dateMate",
+    image: "/sayhi.png",
+    videoLink: "",
+    date: "Feb, 2025",
+  },
+  {
     id: -1,
     title: "GhostKey",
     description:
@@ -17,15 +29,15 @@ const data = [
     github: "https://github.com/starc007/fuel-ghost-wallet/",
     image: "/sayhi.png",
     videoLink: "https://x.com/saurra3h/status/1885227733451759708",
-    date: "Jan 31, 2025",
+    date: "Jan, 2025",
   },
   {
     id: 0,
     title: "SayHi",
     description:
-      "A chrome extension that helps generate personalized conversation starters for Twitter/X profiles using AI.",
+      "A chrome extension that helps generate personalized conversation starters for Twitter/X profiles using AI. Launched in Jan, 2025, got 10+ users in 1 day.",
     techStack: ["Typescript", "Reactjs", "Tailwindcss"],
-    demo: "https://sayhi.xyz",
+    demo: "https://chromewebstore.google.com/detail/sayhi-twitter-conversatio/aclgcccecbcbmgnhgpiagboppajfpfmi?authuser=0&hl=en-GB",
     github: "https://github.com/starc007/sayhi",
     image: "/sayhi.png",
     videoLink: "https://x.com/saurra3h/status/1873391948280852914",
