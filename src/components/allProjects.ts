@@ -22,7 +22,7 @@ export const allProjects = [
   {
     title: "walletwit",
     description:
-      "Smart crypto analytics with a humorous twist. Track transactions, balances,and more in a fun and simplified way.",
+      "Smart crypto analytics with a humorous twist. Track transactions, balances,and more in a fun and simplified way. Built this in Talent Olympics 2024 and was second runner up in Tooling Data Explorer/Dashboard",
     tech: ["Next.js", "TailwindCSS", "Solana"],
     demo: "https://walletwit.vercel.app/",
     github: "https://github.com/starc007/walletwit",

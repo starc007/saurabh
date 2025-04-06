@@ -80,7 +80,7 @@ const data = [
     id: 4,
     title: "EchoId",
     description:
-      "EchoId is a Solana-based decentralized identity system enabling user-owned, cross-chain identities with compressed metadata and integrated reputation. This project is built using the Anchor framework.",
+      "EchoId is a Solana-based decentralized identity system enabling user-owned, cross-chain identities with compressed metadata and integrated reputation. This project is built using the Anchor framework. Built this in Solana Radar Hackathon 2024.",
     techStack: ["Rust", "React", "Solana", "Nodejs"],
     demo: "https://www.echoid.xyz/",
     github: "https://github.com/starc007/echo-id-contract",
