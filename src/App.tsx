@@ -12,7 +12,7 @@ function App() {
       {/* <div className="lg:px-10"> */}
       <Navbar />
       <About />
-      <MyOpenSourceContributon />
+      {/* <MyOpenSourceContributon /> */}
       <RecentProjects />
       <Work />
       {/* <Experience /> */}
