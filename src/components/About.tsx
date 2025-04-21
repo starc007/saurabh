@@ -20,7 +20,25 @@ const About = () => {
       <p className="text-xl font-semibold">About</p>
       <p className="text-black/50  mt-2">
         full stack developer who loves building products and contributing to
-        open source.
+        open source. Contributed to{" "}
+        <a
+          href="https://fuel.network/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="text-black hover:text-black/50 transition duration-500 underline"
+        >
+          Fuel
+        </a>{" "}
+        &{" "}
+        <a
+          href="https://wagmi.sh/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="text-black hover:text-black/50 transition duration-500 underline"
+        >
+          Wagmi
+        </a>
+        .
       </p>
       <p className="text-black/50 mb-6  mt-1">
         I enjoy talking about tech, startups & anime. Open to collaborations and
