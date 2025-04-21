@@ -119,7 +119,7 @@ const RecentProjects = () => {
             <div className="w-full h-full flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span>{project.title}</span>
+                  <span className="font-semibold">{project.title}</span>
                   <div className="flex gap-1">
                     {project.tag.map((tag) => (
                       <span
