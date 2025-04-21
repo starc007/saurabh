@@ -18,6 +18,7 @@ const data = [
     image: "/sayhi.png",
     videoLink: "",
     date: "Feb, 2025",
+    tag: ["Personal"],
   },
   {
     id: -1,
@@ -30,6 +31,7 @@ const data = [
     image: "/sayhi.png",
     videoLink: "https://x.com/saurra3h/status/1885227733451759708",
     date: "Jan, 2025",
+    tag: ["Personal"],
   },
   {
     id: 0,
@@ -41,6 +43,7 @@ const data = [
     github: "https://github.com/starc007/sayhi",
     image: "/sayhi.png",
     videoLink: "https://x.com/saurra3h/status/1873391948280852914",
+    tag: ["Personal"],
   },
   {
     id: 1,
@@ -52,6 +55,7 @@ const data = [
     github: "https://github.com/starc007/love-language/",
     image: "/love-language.png",
     videoLink: "https://x.com/saurra3h/status/1854868774161137762",
+    tag: ["Personal"],
   },
 
   {
@@ -64,6 +68,7 @@ const data = [
     github: "",
     image: "/myIntro.png",
     videoLink: "https://x.com/saurra3h/status/1835008256466460834",
+    tag: ["Personal"],
   },
   {
     id: 3,
@@ -75,6 +80,7 @@ const data = [
     github: "https://github.com/starc007/Image-compression",
     image: "/img-compression.png",
     videoLink: "https://x.com/saurra3h/status/1832036469147332662",
+    tag: ["Personal"],
   },
   {
     id: 4,
@@ -86,6 +92,7 @@ const data = [
     github: "https://github.com/starc007/echo-id-contract",
     image: "/img-compression.png",
     videoLink: "https://x.com/saurra3h/status/1832036469147332662",
+    tag: ["Personal", "Hackathon"],
   },
 ];
 
@@ -110,12 +117,24 @@ const RecentProjects = () => {
             }}
           >
             <div className="w-full h-full flex flex-col justify-between">
-              <p className="text-black font-semibold">
-                <span>{project.title}</span> -{" "}
-                <span className="text-black/50 text-sm font-medium">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span>{project.title}</span>
+                  <div className="flex gap-1">
+                    {project.tag.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-blue-500/10 text-blue-600 px-2 py-0.5 rounded-full text-[10px] font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-black/50 text-sm font-medium">
                   {project.description}
-                </span>
-              </p>
+                </p>
+              </div>
 
               <div className="flex items-center justify-between flex-wrap gap-3 w-full mt-5">
                 <div className="flex flex-wrap gap-2">

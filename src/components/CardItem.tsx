@@ -7,6 +7,7 @@ type CardItemProps = {
   title: string;
   description: string;
   techStack: string[];
+  tag: string[];
 };
 
 const CardItem = ({
@@ -16,13 +17,26 @@ const CardItem = ({
   title,
   description,
   techStack,
+  tag,
 }: CardItemProps) => {
   return (
     <div className="w-full border border-black/5 p-4 rounded-xl">
-      <p className="text-black font-semibold">
-        <span>{title}</span> -{" "}
-        <span className="text-black/50 text-sm font-medium">{description}</span>
-      </p>
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="font-semibold">{title}</span>
+          <div className="flex gap-1">
+            {tag.map((t) => (
+              <span
+                key={t}
+                className="bg-blue-500/10 text-blue-600 px-2 py-0.5 rounded-full text-[10px] font-medium"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+        <p className="text-black/50 text-sm font-medium">{description}</p>
+      </div>
 
       <div className="flex items-center justify-between flex-wrap gap-3 w-full mt-5">
         <div className="flex flex-wrap gap-2">

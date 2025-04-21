@@ -72,6 +72,7 @@ const Work = () => {
             title={detail?.title}
             description={detail?.description}
             techStack={detail?.tech}
+            tag={detail?.tag}
           />
         ))}
       </div>

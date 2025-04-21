@@ -1,5 +1,27 @@
 export const allProjects = [
   {
+    title: "NodeOps Network",
+    description:
+      "Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
+    tech: ["Next.js", "TailwindCSS", "Framer Motion", "Ethers.js", "Zustand"],
+    demo: "https://console.nodeops.network/",
+    github: "https://console.nodeops.network/",
+    isDapp: true,
+    videoLink: "",
+    tag: ["Curr. Organization"],
+  },
+  {
+    title: "NodeOps Cloud",
+    description:
+      "Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
+    tech: ["Next.js", "TailwindCSS", "Framer Motion", "Ethers.js", "Zustand"],
+    demo: "https://testnet.nodeops.network/",
+    github: "https://testnet.nodeops.network/",
+    isDapp: true,
+    videoLink: "",
+    tag: ["Curr. Organization"],
+  },
+  {
     title: "BenGrid ",
     description: "Open-source tool to create and export bento grid layouts",
     tech: ["Next.js", "TailwindCSS"],
@@ -8,6 +30,7 @@ export const allProjects = [
     isOSS: true,
     isWeb2: true,
     videoLink: "",
+    tag: ["Personal"],
   },
   {
     title: "Stylr ",
@@ -18,6 +41,7 @@ export const allProjects = [
     github: "https://www.stylr.xyz/",
     isWeb2: true,
     videoLink: "https://x.com/saurra3h/status/1823375367081738640",
+    tag: ["Personal", "SaaS"],
   },
   {
     title: "walletwit",
@@ -28,6 +52,7 @@ export const allProjects = [
     github: "https://github.com/starc007/walletwit",
     isDapp: true,
     videoLink: "",
+    tag: ["Personal", "Hackathon"],
   },
   {
     title: "Bitdroplet dapp",
@@ -36,6 +61,7 @@ export const allProjects = [
     demo: "https://bitdroplet.com/dapp/",
     isDapp: true,
     videoLink: "",
+    tag: ["Prev. Organization"],
   },
   {
     title: "Zeno",
@@ -46,6 +72,7 @@ export const allProjects = [
     tech: ["React", "Nodejs", "Solidity"],
     isDapp: true,
     videoLink: "",
+    tag: ["Personal", "Hackathon"],
   },
   {
     title: "MultiSig Wallet Smart Contract",
@@ -55,6 +82,7 @@ export const allProjects = [
     github: "https://github.com/starc007/multisig-wallet",
     isDapp: true,
     videoLink: "",
+    tag: ["Personal"],
   },
   {
     title: "PetRace Smart Contract",
@@ -64,6 +92,7 @@ export const allProjects = [
     github: "https://github.com/starc007/petrace-smart-contract",
     isDapp: true,
     videoLink: "",
+    tag: ["Personal"],
   },
 
   {
@@ -75,6 +104,7 @@ export const allProjects = [
     demo: "https://sanchar.xyz",
     videoLink: "",
     isWeb2: true,
+    tag: ["Personal", "Startup"],
   },
   {
     title: "Playota App (Decentralized Fantasy Game Platform.)",
@@ -84,6 +114,7 @@ export const allProjects = [
     github: "https://apps.apple.com/in/app/playota/id6449972914",
     demo: "https://apps.apple.com/in/app/playota/id6449972914",
     videoLink: "",
+    tag: ["Prev. Organization"],
   },
   {
     title: "beUi",
@@ -94,6 +125,7 @@ export const allProjects = [
     tech: ["React", "Typescript", "Tailwindcss", "Framer Motion"],
     isOSS: true,
     videoLink: "",
+    tag: ["Personal", "Open Source"],
   },
   {
     title: "Readmi",
@@ -104,6 +136,7 @@ export const allProjects = [
     demo: "https://readmi.xyz/",
     isOSS: true,
     videoLink: "",
+    tag: ["Personal", "Open Source"],
   },
   {
     title: "Web3 Wallet Connect",
@@ -114,6 +147,7 @@ export const allProjects = [
     tech: ["Typescript"],
     isOSS: true,
     videoLink: "",
+    tag: ["Personal", "Open Source"],
   },
 
   {
@@ -126,6 +160,7 @@ export const allProjects = [
     tech: ["Javascript", "React", "Tailwindcss", "Webpack"],
     videoLink: "",
     isWeb2: true,
+    tag: ["Personal", "Freelance"],
   },
   {
     title: "Playota",
@@ -134,6 +169,7 @@ export const allProjects = [
     demo: "https://playota.app",
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Framer Motion"],
     videoLink: "",
+    tag: ["Prev. Organization"],
   },
 
   {
@@ -145,6 +181,7 @@ export const allProjects = [
     tech: ["React", "Nodejs", "NFT Port"],
     isDapp: true,
     videoLink: "",
+    tag: ["Personal", "Hackathon"],
   },
   {
     title: "Senju",
@@ -155,6 +192,7 @@ export const allProjects = [
     tech: ["React", "Nodejs", "Redux", "Onec Tools"],
     isDapp: true,
     videoLink: "",
+    tag: ["Personal", "Startup"],
   },
   {
     title: "Powerloom",
@@ -163,6 +201,7 @@ export const allProjects = [
     tech: ["Svelte", "TailwindCSS", "Typescript", "Nodejs"],
     isFreelance: true,
     videoLink: "",
+    tag: ["Personal", "Freelance"],
   },
   {
     title: "Polygon Freelance Work",
@@ -171,6 +210,7 @@ export const allProjects = [
     tech: ["React"],
     isFreelance: true,
     videoLink: "",
+    tag: ["Personal", "Freelance"],
   },
   {
     title: "Social Defi",
@@ -179,5 +219,6 @@ export const allProjects = [
     demo: "https://basescan.org/address/0x3158535153Ad4259f2e21763D0Eb566Ee9DaEA78#code",
     isFreelance: true,
     videoLink: "",
+    tag: ["Personal", "Freelance"],
   },
 ];
