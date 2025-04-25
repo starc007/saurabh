@@ -12,6 +12,9 @@ const myskills = [
   "Tailwindcss",
   "React Native",
   "Rust",
+  "Framer Motion",
+  "Zustand",
+  "Cloudflare",
 ];
 
 const About = () => {

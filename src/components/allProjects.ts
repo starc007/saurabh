@@ -1,5 +1,16 @@
 export const allProjects = [
   {
+    title: "NodeOps Staking",
+    description:
+      "Integrated Solana Staking and Unstaking. Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
+    tech: ["Next.js", "TailwindCSS", "Framer Motion", "@solana/web3.js"],
+    demo: "https://staking.nodeops.network/",
+    github: "https://staking.nodeops.network/",
+    isDapp: true,
+    videoLink: "",
+    tag: ["Curr. Organization"],
+  },
+  {
     title: "NodeOps Network",
     description:
       "Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
