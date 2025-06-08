@@ -8,6 +8,32 @@ import { motion } from "framer-motion";
 
 const data = [
   {
+    id: -3,
+    title: "Wave Games",
+    description:
+      "Multiplayer play 2 earn games on Solana. Play with friends and win SOL",
+    techStack: ["Nextjs", "Solana", "Tailwindcss", "Nodejs"],
+    demo: "https://games.usewave.app",
+    github: "",
+    image: "/sayhi.png",
+    videoLink: "https://x.com/saurra3h/status/1928822868193730740",
+    date: "May, 2025",
+    tag: ["Personal"],
+  },
+  {
+    id: -3,
+    title: "Wave App",
+    description:
+      "Social Wallet App on Solana. The best way to hang out on your phone. Send messages and crypto payments seamlessly.",
+    techStack: ["React Native", "Solana", "Zustand", "Nodejs"],
+    demo: "https://usewave.app",
+    github: "https://github.com/usewave",
+    image: "/sayhi.png",
+    videoLink: "",
+    date: "May, 2025",
+    tag: ["Personal"],
+  },
+  {
     id: -2,
     title: "DateMate",
     description:
@@ -44,6 +70,20 @@ const data = [
     image: "/sayhi.png",
     videoLink: "https://x.com/saurra3h/status/1873391948280852914",
     tag: ["Personal"],
+    date: "Dec, 2024",
+  },
+  {
+    id: 2,
+    title: "myIntro",
+    description:
+      "Unlock Your Network's Hidden Potential - Find warm introductions on Twitter in seconds",
+    techStack: ["React", "Typescript", "Tailwindcss", "Nodejs", "MongoDB"],
+    demo: "https://myIntro.xyz",
+    github: "",
+    image: "/myIntro.png",
+    videoLink: "https://x.com/saurra3h/status/1835008256466460834",
+    tag: ["Personal"],
+    date: "Dec, 2024",
   },
   {
     id: 1,
@@ -56,20 +96,22 @@ const data = [
     image: "/love-language.png",
     videoLink: "https://x.com/saurra3h/status/1854868774161137762",
     tag: ["Personal"],
+    date: "Nov, 2024",
+  },
+  {
+    id: 4,
+    title: "EchoId",
+    description:
+      "EchoId is a Solana-based decentralized identity system enabling user-owned, cross-chain identities with compressed metadata and integrated reputation. This project is built using the Anchor framework. Built this in Solana Radar Hackathon 2024.",
+    techStack: ["Rust", "React", "Solana", "Nodejs"],
+    demo: "https://www.echoid.xyz/",
+    github: "https://github.com/starc007/echo-id-contract",
+    image: "/img-compression.png",
+    videoLink: "",
+    tag: ["Personal", "Hackathon"],
+    date: "Oct, 2024",
   },
 
-  {
-    id: 2,
-    title: "myIntro",
-    description:
-      "Unlock Your Network's Hidden Potential - Find warm introductions on Twitter in seconds",
-    techStack: ["React", "Typescript", "Tailwindcss", "Nodejs", "MongoDB"],
-    demo: "https://myIntro.xyz",
-    github: "",
-    image: "/myIntro.png",
-    videoLink: "https://x.com/saurra3h/status/1835008256466460834",
-    tag: ["Personal"],
-  },
   {
     id: 3,
     title: "Image Compressor - Rust",
@@ -81,18 +123,7 @@ const data = [
     image: "/img-compression.png",
     videoLink: "https://x.com/saurra3h/status/1832036469147332662",
     tag: ["Personal"],
-  },
-  {
-    id: 4,
-    title: "EchoId",
-    description:
-      "EchoId is a Solana-based decentralized identity system enabling user-owned, cross-chain identities with compressed metadata and integrated reputation. This project is built using the Anchor framework. Built this in Solana Radar Hackathon 2024.",
-    techStack: ["Rust", "React", "Solana", "Nodejs"],
-    demo: "https://www.echoid.xyz/",
-    github: "https://github.com/starc007/echo-id-contract",
-    image: "/img-compression.png",
-    videoLink: "https://x.com/saurra3h/status/1832036469147332662",
-    tag: ["Personal", "Hackathon"],
+    date: "Sept, 2024",
   },
 ];
 
@@ -118,18 +149,23 @@ const RecentProjects = () => {
           >
             <div className="w-full h-full flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-semibold">{project.title}</span>
-                  <div className="flex gap-1">
-                    {project.tag.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-blue-500/10 text-blue-600 px-2 py-0.5 rounded-full text-[10px] font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold">{project.title}</span>
+                    <div className="flex gap-1">
+                      {project.tag.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-blue-500/10 text-blue-600 px-2 py-0.5 rounded-full text-[10px] font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+                  <span className="text-black/50 text-xs font-medium italic">
+                    {project.date}
+                  </span>
                 </div>
                 <p className="text-black/50 text-sm font-medium">
                   {project.description}
