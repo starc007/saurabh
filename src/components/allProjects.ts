@@ -149,7 +149,7 @@ export const allProjects = [
     description:
       "Build better, build faster. A collection of free UI components & templates for your next project.",
     github: "https://github.com/starc007/ui-components",
-    demo: "https://beui.xyz",
+    demo: "https://beui.saura3h.xyz",
     tech: ["React", "Typescript", "Tailwindcss", "Framer Motion"],
     isOSS: true,
     videoLink: "",
