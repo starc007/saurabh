@@ -143,6 +143,7 @@ export const allProjects = [
     demo: "https://apps.apple.com/in/app/playota/id6449972914",
     videoLink: "",
     tag: ["Prev. Organization"],
+    isDapp: true,
   },
   {
     title: "beUi",
@@ -198,6 +199,7 @@ export const allProjects = [
     tech: ["Nextjs", "Typescript", "Tailwindcss", "Framer Motion"],
     videoLink: "",
     tag: ["Prev. Organization"],
+    isDapp: true,
   },
 
   {
