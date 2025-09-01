@@ -30,7 +30,7 @@ export const allProjects = [
     tag: ["Curr. Organization"],
   },
   {
-    title: "NodeOps Network",
+    title: "NodeOps Console",
     description:
       "Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Ethers.js", "Zustand"],
@@ -45,8 +45,8 @@ export const allProjects = [
     description:
       "Built the UI for the entire product from scratch. Created Resuable UI components, integrated web3 wallets, added animations using Framer Motion",
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Ethers.js", "Zustand"],
-    demo: "https://testnet.nodeops.network/",
-    github: "https://testnet.nodeops.network/",
+    demo: "https://cloud.nodeops.network/",
+    github: "https://cloud.nodeops.network/",
     isDapp: true,
     videoLink: "",
     tag: ["Curr. Organization"],
