@@ -8,6 +8,19 @@ import { motion } from "framer-motion";
 
 const data = [
   {
+    id: 26,
+    title: "Solana Trading Bot",
+    description:
+      "A Solana-based trading bot that automatically monitors and trade trending tokens of Dexscreener using Jupiter's API.",
+    techStack: ["Typescript", "Puppeteer", "Nodejs", "@solana/web3.js"],
+    demo: "https://github.com/starc007/solana-trading-bot",
+    github: "https://github.com/starc007/solana-trading-bot",
+    image: "/sol-trading.png",
+    videoLink: "",
+    date: "Aug, 2025",
+    tag: ["Personal"],
+  },
+  {
     id: -3,
     title: "Wave Games",
     description:
