@@ -9,6 +9,19 @@ import { motion } from "framer-motion";
 const data = [
   {
     id: 26,
+    title: "Draft",
+    description:
+      "A fast, privacy-focused local-first notes app for developers and content creators",
+    techStack: ["React", "Tailwindcss", "Zustand", "Rust", "Sqlite", "Tauri"],
+    demo: "https://usedraft.app",
+    github: "https://usedraft.app",
+    image: "/draft.png",
+    videoLink: "",
+    date: "Jan, 2026",
+    tag: ["Personal"],
+  },
+  {
+    id: 26,
     title: "Solana Trading Bot",
     description:
       "A Solana-based trading bot that automatically monitors and trade trending tokens of Dexscreener using Jupiter's API.",

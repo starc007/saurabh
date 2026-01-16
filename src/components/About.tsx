@@ -46,23 +46,13 @@ const About = () => {
       <p className="text-black/50 mt-2">
         Currently Building{" "}
         <a
-          href="https://usewave.app"
+          href="https://usedraft.app"
           target="_blank"
           rel="noreferrer noopener"
           className="text-black hover:text-black/50 transition duration-500 underline"
         >
-          Wave (Social wallet on Solana)
+          Draft
         </a>{" "}
-        &{" "}
-        <a
-          href="https://games.usewave.app"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="text-black hover:text-black/50 transition duration-500 underline"
-        >
-          Wave Games
-        </a>{" "}
-        (Play 2 Earn Games on Solana)
       </p>
       <p className="text-black/50 mb-6  mt-1">
         I enjoy talking about tech, startups & anime. Open to collaborations and
