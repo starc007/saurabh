@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Home, Code, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Home, Code, Github, Twitter, Linkedin, Mail, LucideIcon } from 'lucide-react';
 
 const DOCK_ITEMS = [
   { icon: Home, label: 'Home', href: '#home' },
@@ -12,7 +12,7 @@ const DOCK_ITEMS = [
   { icon: Mail, label: 'Mail', href: 'mailto:saurabh10102@gmail.com' },
 ];
 
-const DockIcon = ({ mouseX, item }: { mouseX: any; item: any }) => {
+const DockIcon = ({ mouseX, item }: { mouseX: MotionValue<number>; item: { icon: LucideIcon; label: string; href: string } }) => {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const distance = useTransform(mouseX, (val: number) => {
@@ -28,7 +28,7 @@ const DockIcon = ({ mouseX, item }: { mouseX: any; item: any }) => {
       ref={ref}
       href={item.href}
       style={{ width }}
-      className="aspect-square rounded-2xl bg-background/50 flex items-center justify-center text-foreground/50 hover:text-accent hover:bg-background/60 border border-background/30 transition-colors relative group"
+      className="aspect-square rounded-2xl flex items-center justify-center text-foreground/50 hover:text-accent hover:bg-foreground/5 backdrop-blur-md border border-foreground/5 transition-colors relative group"
     >
       <item.icon className="w-5 h-5" />
       <span className="absolute -top-12 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-background/90 backdrop-blur-md text-accent text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg border border-accent/20 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none whitespace-nowrap font-serif italic shadow-xl">
@@ -49,7 +49,7 @@ const Dock: React.FC = () => {
         transition={{ delay: 0.7, type: 'spring', stiffness: 200, damping: 25 }}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="flex items-end h-[72px] gap-3 px-5 pb-3.5 mx-auto pointer-events-auto bg-background/40 backdrop-blur-2xl border border-background/50 rounded-[28px] shadow-2xl shadow-black/50"
+        className="flex items-end h-[72px] gap-3 px-5 pb-3.5 mx-auto pointer-events-auto bg-background/40 backdrop-blur-2xl border border-foreground/5 rounded-[28px] shadow-2xl shadow-black/50"
       >
         {DOCK_ITEMS.map((item, i) => (
           <React.Fragment key={i}>
