@@ -16,8 +16,8 @@ const Home = () => {
         <TopStatusBar />
         <Header />
         <Identity />
-        <TechStack />
         <ProjectSection />
+        <TechStack />
         <Footer />
       </div>
       <Dock />

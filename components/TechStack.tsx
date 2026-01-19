@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomSection from './CustomSection'
-import { TECH_STACK } from '@/constant'
+import { TECH_STACK } from '@/utils/constant'
 
 const TechStack = () => {
     return (
