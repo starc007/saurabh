@@ -1,11 +1,12 @@
+"use client"
 
 import React, { useRef } from 'react';
 import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Home, Code, Github, Twitter, Linkedin, Mail, LucideIcon } from 'lucide-react';
 
 const DOCK_ITEMS = [
-  { icon: Home, label: 'Home', href: '#home' },
-  { icon: Code, label: 'Works', href: '#projects' },
+  { icon: Home, label: 'Home', href: '/' },
+  { icon: Code, label: 'Projects', href: '/projects' },
   { icon: Github, label: 'Github', href: 'https://github.com/starc007' },
   { icon: Twitter, label: 'Twitter', href: 'https://x.com/saurra3h' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/starc007' },
