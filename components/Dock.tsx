@@ -28,10 +28,10 @@ const DockIcon = ({ mouseX, item }: { mouseX: MotionValue<number>; item: { icon:
       ref={ref}
       href={item.href}
       style={{ width }}
-      className="aspect-square rounded-2xl flex items-center justify-center text-foreground/50 hover:text-accent hover:bg-foreground/5 backdrop-blur-md border border-foreground/5 transition-colors relative group"
+      className="aspect-square rounded-2xl bg-zinc-900/40 flex items-center justify-center text-zinc-500 hover:text-accent hover:bg-zinc-800/60 border border-zinc-800/30 transition-colors relative group"
     >
       <item.icon className="w-5 h-5" />
-      <span className="absolute -top-12 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-background/90 backdrop-blur-md text-accent text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg border border-accent/20 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none whitespace-nowrap font-serif italic shadow-xl">
+      <span className="absolute -top-12 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-zinc-950/90 backdrop-blur-md text-accent text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg border border-[#a3e635]/20 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none whitespace-nowrap font-serif italic shadow-xl">
         {item.label}
       </span>
     </motion.a>
@@ -49,12 +49,12 @@ const Dock: React.FC = () => {
         transition={{ delay: 0.7, type: 'spring', stiffness: 200, damping: 25 }}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="flex items-end h-[72px] gap-3 px-5 pb-3.5 mx-auto pointer-events-auto bg-background/40 backdrop-blur-2xl border border-foreground/5 rounded-[28px] shadow-2xl shadow-black/50"
+        className="flex items-end h-[72px] gap-3 px-5 pb-3.5 mx-auto pointer-events-auto bg-zinc-950/40 backdrop-blur-2xl border border-zinc-900/50 rounded-[28px] shadow-2xl shadow-black/50"
       >
         {DOCK_ITEMS.map((item, i) => (
           <React.Fragment key={i}>
             <DockIcon mouseX={mouseX} item={item} />
-            {i === 1 && <div className="w-px h-10 bg-background/50 mb-1.5 mx-1" />}
+            {i === 1 && <div className="w-px h-10 bg-zinc-800/50 mb-1.5 mx-1" />}
           </React.Fragment>
         ))}
       </motion.div>
