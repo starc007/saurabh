@@ -12,12 +12,12 @@ const Header = () => {
                 <div>
                     <h1 className="text-2xl font-bold text-foreground tracking-tighter mb-1">Saurabh.</h1>
                     <p className="text-[13px] text-foreground/50 font-medium tracking-tight font-serif italic">
-                        Design Engineer <span className="text-foreground mx-2">—</span> Product Builder
+                        Frontend Engineer <span className="text-foreground mx-1">{"//"}</span> Product Builder
                     </p>
                 </div>
 
                 <div className="text-[18px] text-foreground/50 leading-[1.5] max-w-[540px] text-balance">
-                    Crafting premium digital experiences through the lens of <span className="font-serif italic text-foreground text-2xl underline decoration-background underline-offset-8 decoration-1">high-fidelity engineering</span> and deliberate design.
+                    Building things that feel <span className="font-serif italic text-foreground text-2xl underline decoration-background underline-offset-8 decoration-1">calm, fast, and easy</span> to use.
                 </div>
             </motion.div>
         </header>

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
+import Cursor from "@/components/Cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen text-foreground/50 pt-32 pb-48 selection:bg-accent selection:text-black`}
       >
-
+        <Cursor />
         <div className="max-w-[720px] mx-auto px-8 lg:px-0">
           {children}
           <Footer />
