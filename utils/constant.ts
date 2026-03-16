@@ -44,6 +44,42 @@ const mapProject = (p: Project): Project => ({
 
 export const RECENT_PROJECTS: Project[] = [
   {
+    id: 132,
+    title: "Crev",
+    description:
+      "AI code review from the command line. Runs locally via Ollama or with any cloud LLM.",
+    techStack: ["Rust", "Ollama", "Sqllite"],
+    github:"https://github.com/starc007/crev",
+    image: "/draft.png",
+    videoLink: "",
+    date: "Mar, 2026",
+    tag: ["Personal"],
+  },
+  {
+    id: 1332,
+    title: "deadcheck",
+    description:
+      "Fast dead code detector for JavaScript and TypeScript projects .",
+    techStack: ["Rust"],
+    github:"https://github.com/starc007/deadcheck",
+    image: "/draft.png",
+    videoLink: "",
+    date: "Mar, 2026",
+    tag: ["Personal"],
+  },
+  {
+    id: 1332,
+    title: "browser-sandbox",
+    description:
+      "Preview AI-generated code in the browser. No server, no Node, no local build. Built for quickly rendering and iterating on generated Vite-style projects.",
+    techStack: ["Typescript"],
+    github:"https://github.com/starc007/browser-sandbox",
+    image: "/draft.png",
+    videoLink: "",
+    date: "Feb, 2026",
+    tag: ["Personal"],
+  },
+  {
     id: 1,
     title: "Draft",
     description:

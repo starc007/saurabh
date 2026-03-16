@@ -32,11 +32,11 @@ const Header = () => {
         </div>
 
         <div className="text-[18px] text-foreground/50 leading-[1.5] max-w-[540px] text-balance">
-          Building things that feel{" "}
+          Building small tools that are {" "}
           <span className="font-serif italic text-foreground text-2xl underline decoration-background underline-offset-8 decoration-1">
-            calm, fast, and easy
+            simple, fast, and just work.
           </span>{" "}
-          to use.
+
         </div>
       </motion.div>
     </header>
