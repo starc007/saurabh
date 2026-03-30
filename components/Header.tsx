@@ -1,42 +1,58 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight, FileText } from "lucide-react";
 
 const Header = () => {
   return (
     <header className="mb-24" id="home">
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col gap-6"
+        className="flex flex-col gap-8"
       >
+        {/* Profile Image */}
         <motion.div
           whileHover={{ scale: 1.05, rotate: -2 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          className="w-16 h-16 rounded-2xl overflow-hidden border border-zinc-900 group relative cursor-none"
+          className="w-16 h-16 rounded-2xl overflow-hidden border border-border"
         >
           <img
             src="/profile.png"
-            alt="Profile"
-            className="w-full h-full object-cover grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0"
+            alt="Saurabh"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
         </motion.div>
+
+        {/* Headline */}
         <div>
-          <h1 className="text-2xl font-bold text-foreground tracking-tighter mb-1">
-            Saurabh.
+          <h1 className="text-[36px] md:text-[42px] font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
+            Design Engineer &<br />
+            Product Builder.
           </h1>
-          <p className="text-[13px] text-foreground/50 font-medium tracking-tight font-serif italic">
-            Frontend Engineer{" "}
-            <span className="text-foreground mx-1">{"//"}</span> Product Builder
+          <p className="text-[15px] text-secondary leading-relaxed max-w-[480px]">
+            I build tools and products that are fast, clean, and easy to use.
+            Working with React, Next.js, and Rust.
           </p>
         </div>
 
-        <div className="text-[18px] text-foreground/50 leading-[1.5] max-w-[540px] text-balance">
-          Building small tools that are {" "}
-          <span className="font-serif italic text-foreground text-2xl underline decoration-background underline-offset-8 decoration-1">
-            simple, fast, and just work.
-          </span>{" "}
-
+        {/* CTAs */}
+        <div className="flex gap-3 flex-wrap">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            className="flex items-center gap-2 px-6 py-3 bg-foreground text-white rounded-full text-[14px] font-semibold shadow-[0_2px_8px_rgba(44,30,16,0.15)] hover:bg-foreground/90 transition-colors"
+          >
+            <FileText size={15} />
+            Download Resume
+          </a>
+          <a
+            href="https://cal.com/saurra3h/30min"
+            target="_blank"
+            className="flex items-center gap-2 px-6 py-3 border-[1.5px] border-border text-foreground rounded-full text-[14px] font-semibold hover:bg-surface transition-colors"
+          >
+            Book a Call
+            <ArrowUpRight size={15} />
+          </a>
         </div>
       </motion.div>
     </header>
