@@ -22,7 +22,7 @@ const ProjectPage = () => {
       >
         <button
           onClick={() => router.push("/")}
-          className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600 hover:text-white transition-colors mb-16 group"
+          className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-bold text-secondary hover:text-foreground transition-colors mb-16 group"
         >
           <ArrowLeft
             size={14}

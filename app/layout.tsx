@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
-import Cursor from "@/components/Cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,11 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen text-zinc-400 pt-20 md:pt-32 pb-48 md:pb-64 selection:bg-accent selection:text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen text-foreground pt-20 md:pt-32 pb-48 md:pb-64 selection:bg-accent/20 selection:text-foreground`}
       >
-        <Cursor />
         <div className="max-w-[720px] mx-auto px-8 lg:px-0">
           {children}
           <Footer />

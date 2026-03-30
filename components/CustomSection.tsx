@@ -17,10 +17,10 @@ const CustomSection: React.FC<{
       id={id}
     >
       <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-[10px] uppercase tracking-[0.3em] font-bold text-foreground/50 whitespace-nowrap">
+        <h2 className="text-[11px] uppercase tracking-[0.2em] font-bold text-secondary whitespace-nowrap">
           {title}
         </h2>
-        <div className="h-px w-full bg-foreground/5" />
+        <div className="h-px w-full bg-border" />
       </div>
       {children}
     </motion.section>

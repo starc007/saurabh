@@ -28,7 +28,6 @@ export const TECH_STACK = [
   "Tailwind CSS",
   "React Native",
   "Node.js",
-  "Solidity",
   "Rust",
   "Cloudflare",
 ];
@@ -79,7 +78,7 @@ export const RECENT_PROJECTS: Project[] = [
     techStack: ["Typescript", "Nodejs", "Solana", "MPP"],
     github: "https://github.com/starc007/mppx-proxy",
     image: "/draft.png",
-    date: "Feb, 2026",
+    date: "Mar, 2026",
     tag: ["Personal", "Open Source"],
   },
   {
