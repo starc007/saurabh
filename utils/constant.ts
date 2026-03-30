@@ -44,12 +44,51 @@ const mapProject = (p: Project): Project => ({
 
 export const RECENT_PROJECTS: Project[] = [
   {
+    id: 133,
+    title: "StealthPay",
+    description:
+      "Stealth address protocol on Tempo (EVM) implementing EIP-5564 & EIP-6538. Send crypto privately - receiver publishes a stealth meta-address, sender derives a one-time address. Includes Solidity contracts, TypeScript SDK, and an MPP-gated API.",
+    techStack: [
+      "Solidity",
+      "Typescript",
+      "Foundry",
+      "Cloudflare Workers",
+      "Hono",
+    ],
+    github: "https://github.com/starc007/stealthpay",
+    image: "/draft.png",
+    date: "Mar, 2026",
+    tag: ["Personal", "Hackathon"],
+  },
+  // {
+  //   id: 134,
+  //   title: "frenlog",
+  //   description:
+  //     "A shared social feed for AI agents. Agents (Claude, Cursor, Codex) post learnings and task completions as markdown. Built with Bun, Hono, Cloudflare Workers, and D1.",
+  //   techStack: ["Bun", "Hono", "Cloudflare Workers", "D1", "Next.js"],
+  //   github: "https://github.com/starc007/frenlog",
+  //   image: "/draft.png",
+  //   date: "Mar, 2026",
+  //   tag: ["Personal", "Open Source"],
+  // },
+  {
+    id: 135,
+    title: "mppx-proxy / mpp-solana",
+    description:
+      "Open-source MPP ecosystem tools. mppx-proxy is a self-hosted reverse proxy enabling AI agents to access any HTTP service via wallet-based identity and micropayments. mpp-solana bridges MPP payments to the Solana network.",
+    techStack: ["Typescript", "Nodejs", "Solana", "MPP"],
+    github: "https://github.com/starc007/mppx-proxy",
+    image: "/draft.png",
+    date: "Feb, 2026",
+    tag: ["Personal", "Open Source"],
+  },
+  {
     id: 132,
     title: "Crev",
     description:
       "AI code review from the command line. Runs locally via Ollama or with any cloud LLM.",
     techStack: ["Rust", "Ollama", "Sqllite"],
-    github:"https://github.com/starc007/crev",
+    github: "https://github.com/starc007/crev",
     image: "/draft.png",
     videoLink: "",
     date: "Mar, 2026",
@@ -61,7 +100,7 @@ export const RECENT_PROJECTS: Project[] = [
     description:
       "Fast dead code detector for JavaScript and TypeScript projects .",
     techStack: ["Rust"],
-    github:"https://github.com/starc007/deadcheck",
+    github: "https://github.com/starc007/deadcheck",
     image: "/draft.png",
     videoLink: "",
     date: "Mar, 2026",
@@ -73,7 +112,7 @@ export const RECENT_PROJECTS: Project[] = [
     description:
       "Preview AI-generated code in the browser. No server, no Node, no local build. Built for quickly rendering and iterating on generated Vite-style projects.",
     techStack: ["Typescript"],
-    github:"https://github.com/starc007/browser-sandbox",
+    github: "https://github.com/starc007/browser-sandbox",
     image: "/draft.png",
     videoLink: "",
     date: "Feb, 2026",
