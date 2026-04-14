@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Header from '@/components/Header'
-import TechStack from '@/components/TechStack'
-import ProjectSection from '@/components/ProjectSection'
+import Header from "@/components/Header";
+import TechStack from "@/components/TechStack";
+import ProjectSection from "@/components/ProjectSection";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <ProjectSection />
       <TechStack />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

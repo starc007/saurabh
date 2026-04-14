@@ -43,6 +43,24 @@ const mapProject = (p: Project): Project => ({
 
 export const RECENT_PROJECTS: Project[] = [
   {
+    id: 123,
+    title: "MPP Playground",
+    description:
+      "A devtools-style playground for the Tempo and MPP. Inspect any MPP endpoint, pay with a passkey-based Tempo Wallet, and generate hosted payment links — all in one place.",
+    techStack: [
+      "Solidity",
+      "Typescript",
+      "Foundry",
+      "Cloudflare Workers",
+      "Hono",
+    ],
+    github: "https://github.com/starc007/stealthpay",
+    demo: "https://github.com/starc007/mpp-playground",
+    image: "/draft.png",
+    date: "April, 2026",
+    tag: ["Personal"],
+  },
+  {
     id: 133,
     title: "StealthPay",
     description:
@@ -57,7 +75,7 @@ export const RECENT_PROJECTS: Project[] = [
     github: "https://github.com/starc007/stealthpay",
     image: "/draft.png",
     date: "Mar, 2026",
-    tag: ["Personal", "Hackathon"],
+    tag: ["Personal"],
   },
   // {
   //   id: 134,
@@ -79,7 +97,7 @@ export const RECENT_PROJECTS: Project[] = [
     github: "https://github.com/starc007/mppx-proxy",
     image: "/draft.png",
     date: "Mar, 2026",
-    tag: ["Personal", "Open Source"],
+    tag: ["Personal", "Hackathon"],
   },
   {
     id: 132,

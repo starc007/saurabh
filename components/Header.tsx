@@ -40,7 +40,7 @@ const Header = () => {
           <a
             href="/resume.pdf"
             target="_blank"
-            className="flex items-center gap-2 px-6 py-3 bg-foreground text-white rounded-full text-[14px] font-semibold shadow-[0_2px_8px_rgba(44,30,16,0.15)] hover:bg-foreground/90 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-foreground text-white rounded-full text-sm font-semibold shadow-[0_2px_8px_rgba(44,30,16,0.15)] hover:bg-foreground/90 transition-colors"
           >
             <FileText size={15} />
             Download Resume
@@ -48,7 +48,7 @@ const Header = () => {
           <a
             href="https://cal.com/saurra3h/30min"
             target="_blank"
-            className="flex items-center gap-2 px-6 py-3 border-[1.5px] border-border text-foreground rounded-full text-[14px] font-semibold hover:bg-surface transition-colors"
+            className="flex items-center gap-2 px-4 py-2 border-[1.5px] border-border text-foreground rounded-full text-sm font-semibold hover:bg-surface transition-colors"
           >
             Book a Call
             <ArrowUpRight size={15} />
