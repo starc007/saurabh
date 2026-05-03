@@ -43,6 +43,29 @@ const mapProject = (p: Project): Project => ({
 
 export const RECENT_PROJECTS: Project[] = [
   {
+    id: 1223,
+    title: "Hydra Agent",
+    description:
+      "Autonomous Uniswap v4 LP management - a multi-agent system on Cloudflare.",
+    techStack: ["Typescript", "Uniswap v4", "Cloudflare Workers"],
+    github: "https://github.com/starc007/hydra-agent",
+    demo: "https:/hydra-dashboard-81h.pages.dev",
+    image: "/draft.png",
+    date: "May, 2026",
+    tag: ["Hackathon"],
+  },
+  {
+    id: 1224,
+    title: "Relay CLI",
+    description:
+      "CLI for the Relay cross-chain bridge/swap protocol. Bridge and swap assets across 85+ chains from your terminal.",
+    techStack: ["Rust", "Relay APIs", "Shell"],
+    github: "https://github.com/starc007/relay-cli",
+    image: "/draft.png",
+    date: "May, 2026",
+    tag: ["Personal"],
+  },
+  {
     id: 123,
     title: "MPP Playground",
     description:
