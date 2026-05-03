@@ -45,7 +45,7 @@ const DockIcon = ({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthSync = useTransform(distance, [-150, 0, 150], [42, 68, 42]);
+  const widthSync = useTransform(distance, [-150, 0, 150], [42, 58, 42]);
   const width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 180,
@@ -57,9 +57,9 @@ const DockIcon = ({
       ref={ref}
       href={item.href}
       style={{ width }}
-      className="aspect-square rounded-2xl bg-surface/80 flex items-center justify-center text-secondary hover:text-accent border border-border/50 transition-colors relative group"
+      className="aspect-square rounded-full flex items-center justify-center text-secondary hover:text-accent border border-border/50 transition-colors relative group"
     >
-      <item.icon className="w-5 h-5" />
+      <item.icon className="w-4 h-4" />
       <span className="absolute -top-12 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-foreground text-white text-[10px] font-bold uppercase tracking-[0.15em] rounded-lg opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none whitespace-nowrap shadow-lg">
         {item.label}
       </span>
@@ -78,14 +78,12 @@ const Dock: React.FC = () => {
         transition={{ delay: 0.7, type: "spring", stiffness: 200, damping: 25 }}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="flex items-end h-[72px] gap-3 px-5 pb-3.5 mx-auto pointer-events-auto bg-white/80 backdrop-blur-2xl border border-border rounded-[28px] shadow-[0_8px_32px_rgba(44,30,16,0.08)]"
+        className="flex items-center h-[60px] gap-3 px-5 mx-auto pointer-events-auto bg-white/80 backdrop-blur-2xl border border-border/40 rounded-[20px] shadow-[0_8px_32px_rgba(44,30,16,0.08)]"
       >
         {DOCK_ITEMS.map((item, i) => (
           <React.Fragment key={i}>
             <DockIcon mouseX={mouseX} item={item} />
-            {i === 1 && (
-              <div className="w-px h-10 bg-border mb-1.5 mx-1" />
-            )}
+            {i === 1 && <div className="w-px h-7 bg-border mb-1.5 mx-1" />}
           </React.Fragment>
         ))}
       </motion.div>
