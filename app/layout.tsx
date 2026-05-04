@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,42 +15,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Saurabh | Full Stack Developer & Product Builder",
+  title: "Saurabh — Design Engineer & Product Builder",
   description:
-    "Saurabh is a Full Stack Developer and Product Builder. He is currently working on Draft, a product that helps you build your product faster and easier.",
+    "Design Engineer building fast, precise tools for developers and crypto-native experiences. React, Next.js, Rust.",
   keywords: [
     "Saurabh",
-    "Full Stack Developer",
+    "Design Engineer",
     "Product Builder",
-    "Draft",
-    "Product Development",
-    "Product Management",
-    "Product Design",
-    "Product Strategy",
-    "Product Marketing",
-    "Product Sales",
-    "Product Support",
-    "Product Engineering",
-    "Product Development",
-    "Product Management",
-    "Product Design",
-    "Product Strategy",
-    "Product Marketing",
-    "Product Sales",
-    "Product Support",
-    "Product Engineering",
+    "React",
+    "Next.js",
+    "Rust",
+    "Solana",
+    "Frontend Engineer",
   ],
   authors: [{ name: "Saurabh", url: "https://saura3h.xyz" }],
   creator: "Saurabh",
-  publisher: "Saurabh",
-  icons: {
-    icon: "/profile.png",
-  },
+  icons: { icon: "/profile.png" },
   openGraph: {
-    title: "Saurabh | Full Stack Developer & Product Builder",
+    title: "Saurabh — Design Engineer & Product Builder",
     description:
-      "Saurabh is a Full Stack Developer and Product Builder. He is currently working on Draft, a product that helps you build your product faster and easier.",
+      "Design Engineer building fast, precise tools for developers and crypto-native experiences.",
     url: "https://saura3h.xyz",
     siteName: "Saurabh",
     images: [{ url: "/profile.png" }],
@@ -62,15 +54,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Prevent theme flash on load */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&d)){document.documentElement.classList.add('dark')}})()`,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen text-foreground pt-20 md:pt-32 pb-48 md:pb-64 selection:bg-accent/20 selection:text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
-        <div className="max-w-[720px] mx-auto px-8 lg:px-0">
-          {children}
-          <Footer />
-        </div>
-        <Dock />
+        <ThemeProvider>
+          <main className="max-w-[680px] mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">
+            {children}
+            <Footer />
+          </main>
+          <Dock />
+        </ThemeProvider>
       </body>
     </html>
   );
