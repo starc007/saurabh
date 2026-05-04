@@ -2,30 +2,85 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─── Light mode ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #2c1e10;
-  --accent: #e8820c;
-  --secondary: #8a7a6a;
-  --border: #e8e0d8;
-  --surface: #f8f5f0;
+  --canvas: #f7f6f3;
+  --canvas-raised: #efede8;
+  --canvas-sunken: #e8e5df;
+  --edge: #d9d6cf;
+  --edge-subtle: #e8e5df;
+  --ink: #141210;
+  --ink-2: #6b6762;
+  --ink-3: #a09c96;
+  --lime: #5c8a20;
+  --lime-bg: rgba(92, 138, 32, 0.08);
+  --lime-glow: rgba(92, 138, 32, 0.15);
+}
+
+/* ─── Dark mode ─── */
+.dark {
+  --canvas: #0c0c0c;
+  --canvas-raised: #141414;
+  --canvas-sunken: #080808;
+  --edge: #1e1e1e;
+  --edge-subtle: #181818;
+  --ink: #ececec;
+  --ink-2: #888888;
+  --ink-3: #444444;
+  --lime: #a3e635;
+  --lime-bg: rgba(163, 230, 53, 0.06);
+  --lime-glow: rgba(163, 230, 53, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-secondary: var(--secondary);
-  --color-border: var(--border);
-  --color-surface: var(--surface);
+  --color-canvas: var(--canvas);
+  --color-canvas-raised: var(--canvas-raised);
+  --color-canvas-sunken: var(--canvas-sunken);
+  --color-edge: var(--edge);
+  --color-edge-subtle: var(--edge-subtle);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-lime: var(--lime);
+  --color-lime-bg: var(--lime-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color-scheme: light;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain texture — breaks digital flatness */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+::selection {
+  background: var(--lime);
+  color: #000;
+}
+
+/* Smooth color transition on theme switch */
+html.transitioning * {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
 }
