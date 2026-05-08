@@ -7,25 +7,26 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
-const ProjectItem: React.FC<{
+const FeaturedProjectItem: React.FC<{
   project: Project;
   index: number;
   isLast: boolean;
 }> = ({ project, index, isLast }) => {
   const [hovered, setHovered] = useState(false);
   const stack = project.techStack || project.tech || [];
+  const num = String(index + 1).padStart(2, "0");
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.04, duration: 0.5, ease }}
+      transition={{ delay: index * 0.05, duration: 0.5, ease }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative group py-4 cursor-default ${!isLast ? "border-b border-edge-subtle" : ""}`}
+      className={`relative group py-6 cursor-default ${!isLast ? "border-b border-edge-subtle" : ""}`}
     >
-      {/* Hover fill — slides in from left */}
+      {/* Hover fill */}
       <AnimatePresence>
         {hovered && (
           <motion.div
@@ -39,11 +40,20 @@ const ProjectItem: React.FC<{
         )}
       </AnimatePresence>
 
-      <div className="relative flex justify-between items-start gap-4">
+      <motion.div
+        animate={{ x: hovered ? 4 : 0 }}
+        transition={{ duration: 0.2, ease }}
+        className="relative flex justify-between items-start gap-5"
+      >
+        {/* Number prefix */}
+        <span className="text-[11px] font-mono text-lime pt-1.5 tabular-nums select-none">
+          {num}
+        </span>
+
         <div className="flex-1 min-w-0">
           {/* Title + tags */}
-          <div className="flex items-center gap-2 flex-wrap mb-1.5">
-            <h3 className="text-[14px] font-semibold text-ink tracking-[-0.01em] group-hover:text-lime transition-colors duration-200">
+          <div className="flex items-baseline gap-2.5 flex-wrap mb-1.5">
+            <h3 className="text-[18px] font-bold text-ink tracking-[-0.02em] group-hover:text-lime transition-colors duration-200">
               {project.title}
             </h3>
             {project.tag?.map((t, idx) => (
@@ -66,7 +76,10 @@ const ProjectItem: React.FC<{
           </div>
 
           {/* Description */}
-          <p className="text-[13px] text-ink-2 leading-[1.6] mb-2.5 max-w-125" style={{ textWrap: "pretty" } as React.CSSProperties}>
+          <p
+            className="text-[13.5px] text-ink-2 leading-[1.6] mb-3 max-w-125"
+            style={{ textWrap: "pretty" } as React.CSSProperties}
+          >
             {project.description}
           </p>
 
@@ -80,9 +93,9 @@ const ProjectItem: React.FC<{
             ))}
           </div>
 
-          {/* Note — for highlighting archived/notable products */}
+          {/* Note */}
           {project.note && (
-            <p className="mt-2.5 flex items-start gap-2 text-[12px] text-ink-2 italic leading-[1.5] max-w-125">
+            <p className="mt-3 flex items-start gap-2 text-[12px] text-ink-2 italic leading-[1.5] max-w-125">
               <span className="text-lime not-italic select-none mt-[2px]">↳</span>
               <span>{project.note}</span>
             </p>
@@ -90,7 +103,7 @@ const ProjectItem: React.FC<{
         </div>
 
         {/* Date + links */}
-        <div className="flex flex-col items-end gap-2.5 shrink-0 pt-0.5">
+        <div className="flex flex-col items-end gap-2.5 shrink-0 pt-1.5">
           <span className="text-[11px] text-ink-3 whitespace-nowrap font-mono">
             {project.date || project.year}
           </span>
@@ -103,7 +116,7 @@ const ProjectItem: React.FC<{
                 className="text-ink-3 hover:text-ink transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Github size={13} />
+                <Github size={14} />
               </a>
             )}
             {project.demoLink && (
@@ -114,14 +127,14 @@ const ProjectItem: React.FC<{
                 className="text-ink-3 hover:text-lime transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ArrowUpRight size={15} />
+                <ArrowUpRight size={16} />
               </a>
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
 
-export default ProjectItem;
+export default FeaturedProjectItem;
