@@ -67,12 +67,20 @@ export const RECENT_PROJECTS: Project[] = (
       title: "Programmable Virtual Addresses",
       description:
         "TIP-1022 split-routing forwarder on Tempo. Virtual addresses auto-split incoming TIP-20 deposits across multiple recipients via declarative basis-point rules. Solidity contracts + Cloudflare keeper, live on Moderato testnet.",
-      techStack: ["Solidity", "Foundry", "Typescript", "Cloudflare Workers", "Tempo"],
+      techStack: [
+        "Solidity",
+        "Foundry",
+        "Typescript",
+        "Cloudflare Workers",
+        "Tempo",
+      ],
       github: "https://github.com/starc007/programmable-vas",
+      demo: "https://x.com/saurra3h/status/2050635146794340622?s=20",
       image: "/draft.png",
       date: "May, 2026",
       tag: ["Personal"],
       categories: ["experiment", "web3"],
+      featured: true,
     },
     {
       id: 1226,
@@ -81,10 +89,12 @@ export const RECENT_PROJECTS: Project[] = (
         "Reputation-gated policies for OWS agent wallets. FICO-style scoring from on-chain history, enforced cryptographically by the OWS policy engine. Built for OWS Hackathon Track 02.",
       techStack: ["Typescript", "Cloudflare Workers", "Hono", "OWS", "Allium"],
       github: "https://github.com/starc007/sentinel",
+      demo: "https://x.com/saurra3h/status/2040056351452541020?s=20",
       image: "/draft.png",
       date: "April, 2026",
       tag: ["Hackathon"],
       categories: ["web3", "hackathon"],
+      featured: true,
     },
     {
       id: 1232,
@@ -93,6 +103,7 @@ export const RECENT_PROJECTS: Project[] = (
         "Drop-in TypeScript SDK for governed AI agent payments. Wraps MPP for chain payments, OWS for authorization + spend policies, and pluggable Telegram/Slack notifications for human oversight — one config file, no server needed.",
       techStack: ["Typescript", "MPP", "OWS", "Telegram", "Solana", "Base"],
       github: "https://github.com/starc007/agent-operator",
+      demo: "https://x.com/saurra3h/status/2041203638727761984?s=20",
       image: "/draft.png",
       date: "April, 2026",
       tag: ["Personal"],
@@ -117,6 +128,7 @@ export const RECENT_PROJECTS: Project[] = (
         "Native macOS app for managing Claude Code sessions, ports, costs, and MCP servers. Reads ~/.claude/projects directly. Liquid-glass UI, spring animations.",
       techStack: ["Swift", "SwiftUI", "AppKit"],
       github: "https://github.com/starc007/claude-command-center",
+      demo: "https://x.com/saurra3h/status/2046946888180727974?s=20",
       image: "/draft.png",
       date: "April, 2026",
       tag: ["Personal"],
@@ -145,6 +157,7 @@ export const RECENT_PROJECTS: Project[] = (
       date: "April, 2026",
       tag: ["SaaS"],
       categories: ["product"],
+      featured: true,
     },
     {
       id: 1224,
@@ -153,10 +166,12 @@ export const RECENT_PROJECTS: Project[] = (
         "CLI for the Relay cross-chain bridge/swap protocol. Bridge and swap assets across 85+ chains from your terminal.",
       techStack: ["Rust", "Relay APIs", "Shell"],
       github: "https://github.com/starc007/relay-cli",
+      demo: "https://x.com/saurra3h/status/2049879109061558698?s=20",
       image: "/draft.png",
       date: "May, 2026",
       tag: ["Personal"],
       categories: ["experiment", "web3"],
+      featured: true,
     },
     {
       id: 123,
@@ -176,7 +191,6 @@ export const RECENT_PROJECTS: Project[] = (
       date: "April, 2026",
       tag: ["Personal"],
       categories: ["experiment", "web3"],
-      featured: true,
     },
     {
       id: 133,
@@ -463,6 +477,7 @@ export const ALL_PROJECTS: Project[] = (
       users: 5000,
       date: "June, 2023",
       categories: ["product"],
+      featured: true,
       note: "Built the tech alone with a non-tech cofounder. Scaled to 5,000+ users. Sunset in 2024.",
     },
     {
@@ -509,11 +524,11 @@ export const ALL_PROJECTS: Project[] = (
   ] as Project[]
 ).map(mapProject);
 
-export const FEATURED_PROJECTS: Project[] = RECENT_PROJECTS.filter(
+export const EVERY_PROJECT: Project[] = [...RECENT_PROJECTS, ...ALL_PROJECTS];
+
+export const FEATURED_PROJECTS: Project[] = EVERY_PROJECT.filter(
   (p) => p.featured,
 );
-
-export const EVERY_PROJECT: Project[] = [...RECENT_PROJECTS, ...ALL_PROJECTS];
 
 export const PROJECTS = RECENT_PROJECTS; // Default fallback
 
