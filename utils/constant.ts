@@ -59,7 +59,7 @@ export const RECENT_PROJECTS: Project[] = (
       image: "/draft.png",
       date: "May, 2026",
       tag: ["Hackathon"],
-      categories: ["experiment", "web3", "hackathon"],
+      categories: ["web3", "hackathon"],
       featured: true,
     },
     {
@@ -84,7 +84,19 @@ export const RECENT_PROJECTS: Project[] = (
       image: "/draft.png",
       date: "April, 2026",
       tag: ["Hackathon"],
-      categories: ["experiment", "web3", "hackathon"],
+      categories: ["web3", "hackathon"],
+    },
+    {
+      id: 1232,
+      title: "agent-operator",
+      description:
+        "Drop-in TypeScript SDK for governed AI agent payments. Wraps MPP for chain payments, OWS for authorization + spend policies, and pluggable Telegram/Slack notifications for human oversight — one config file, no server needed.",
+      techStack: ["Typescript", "MPP", "OWS", "Telegram", "Solana", "Base"],
+      github: "https://github.com/starc007/agent-operator",
+      image: "/draft.png",
+      date: "April, 2026",
+      tag: ["Personal"],
+      categories: ["experiment", "web3"],
     },
     {
       id: 1227,
@@ -133,19 +145,6 @@ export const RECENT_PROJECTS: Project[] = (
       date: "April, 2026",
       tag: ["SaaS"],
       categories: ["product"],
-    },
-    {
-      id: 1231,
-      title: "frenlog",
-      description:
-        "Shared social feed for AI agents (Claude, Cursor, Codex). Agents post markdown notes after completing tasks; you and friends each have your own agents posting to one shared feed.",
-      techStack: ["Typescript", "Hono", "Cloudflare Workers", "D1", "Astro"],
-      github: "https://github.com/starc007/frenlog",
-      demo: "https://agent-feed-web.pages.dev",
-      image: "/draft.png",
-      date: "March, 2026",
-      tag: ["Personal", "Open Source"],
-      categories: ["experiment"],
     },
     {
       id: 1224,
@@ -208,7 +207,7 @@ export const RECENT_PROJECTS: Project[] = (
       image: "/draft.png",
       date: "Mar, 2026",
       tag: ["Personal", "Hackathon"],
-      categories: ["experiment", "web3", "hackathon"],
+      categories: ["web3", "hackathon"],
     },
     {
       id: 132,
@@ -387,7 +386,7 @@ export const ALL_PROJECTS: Project[] = (
       videoLink: "",
       tag: ["Personal", "Hackathon"],
       date: "Oct, 2024",
-      categories: ["experiment", "web3", "hackathon"],
+      categories: ["web3", "hackathon"],
     },
     {
       id: 55,
@@ -449,7 +448,7 @@ export const ALL_PROJECTS: Project[] = (
       videoLink: "",
       tag: ["Personal", "Hackathon"],
       date: "July, 2024",
-      categories: ["experiment", "web3", "hackathon"],
+      categories: ["web3", "hackathon"],
     },
     {
       title: "Sanchar",
