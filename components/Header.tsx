@@ -29,11 +29,14 @@ const Header = () => {
         className="flex flex-col gap-7"
       >
         {/* Top row: profile + theme toggle */}
-        <motion.div variants={item} className="flex items-center justify-between">
+        <motion.div
+          variants={item}
+          className="flex items-center justify-between"
+        >
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl overflow-hidden border border-edge flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+              <img
                 src="/profile.png"
                 alt="Saurabh"
                 className="w-full h-full object-cover"
@@ -63,7 +66,7 @@ const Header = () => {
           className="text-[15px] text-ink-2 leading-[1.65] max-w-[460px]"
           style={{ textWrap: "pretty" } as React.CSSProperties}
         >
-          I build tools for developers and crypto-native products — fast,
+          I build tools for developers and crypto-native products - fast,
           precise, and crafted with care. Currently React, Next.js, and Rust.
         </motion.p>
 

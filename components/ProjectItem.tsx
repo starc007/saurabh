@@ -60,7 +60,7 @@ const ProjectItem: React.FC<{
             ))}
             {project.users && (
               <span className="text-[10px] font-medium text-lime bg-lime-bg px-2 py-0.5 rounded-sm">
-                {project.users.toLocaleString()} users
+                {project.users.toLocaleString()}+ users
               </span>
             )}
           </div>
