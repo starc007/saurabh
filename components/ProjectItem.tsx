@@ -79,6 +79,14 @@ const ProjectItem: React.FC<{
               </React.Fragment>
             ))}
           </div>
+
+          {/* Note — for highlighting archived/notable products */}
+          {project.note && (
+            <p className="mt-2.5 flex items-start gap-2 text-[12px] text-ink-2 italic leading-[1.5] max-w-125">
+              <span className="text-lime not-italic select-none mt-[2px]">↳</span>
+              <span>{project.note}</span>
+            </p>
+          )}
         </div>
 
         {/* Date + links */}

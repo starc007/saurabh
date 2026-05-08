@@ -13,6 +13,7 @@ export interface Project {
   category?: string;
   categories?: ProjectCategory[];
   featured?: boolean;
+  note?: string;
   techStack?: string[];
   tech?: string[]; // variant used in some entries
   image?: string;
@@ -191,6 +192,7 @@ export const RECENT_PROJECTS: Project[] = ([
     users: 300,
     categories: ["product", "web3"],
     featured: true,
+    note: "300 users on social wallet. App archived; site still live.",
   },
   {
     id: 4,
@@ -222,6 +224,7 @@ export const RECENT_PROJECTS: Project[] = ([
     users: 1100,
     categories: ["product"],
     featured: true,
+    note: "1,100 users in 3 days. Sunset in 2025.",
   },
   {
     id: 6,
@@ -267,6 +270,7 @@ export const ALL_PROJECTS: Project[] = ([
     tag: ["Personal"],
     date: "Dec, 2024",
     categories: ["product"],
+    note: "Found warm intros via Twitter graph. No longer maintained.",
   },
   {
     id: 33,
@@ -337,6 +341,7 @@ export const ALL_PROJECTS: Project[] = ([
     users: 450,
     date: "Aug, 2024",
     categories: ["product"],
+    note: "500+ users in first month. Sunset shortly after.",
   },
   {
     title: "walletwit",
@@ -364,6 +369,7 @@ export const ALL_PROJECTS: Project[] = ([
     users: 5000,
     date: "June, 2023",
     categories: ["product"],
+    note: "Built solo, scaled to 5,000+ users. No longer maintained.",
   },
   {
     title: "beUi",
