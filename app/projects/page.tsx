@@ -1,15 +1,34 @@
 "use client";
 
-import { ALL_PROJECTS } from "@/utils/constant";
-import { motion } from "framer-motion";
+import { EVERY_PROJECT } from "@/utils/constant";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import CustomSection from "@/components/CustomSection";
 import ProjectItem from "@/components/ProjectItem";
+import FilterChips, { FilterValue } from "@/components/FilterChips";
 
 const ProjectPage = () => {
   const router = useRouter();
+  const [filter, setFilter] = useState<FilterValue>("all");
+
+  const counts = useMemo(
+    () => ({
+      all: EVERY_PROJECT.length,
+      product: EVERY_PROJECT.filter((p) => p.categories?.includes("product")).length,
+      experiment: EVERY_PROJECT.filter((p) => p.categories?.includes("experiment")).length,
+      web3: EVERY_PROJECT.filter((p) => p.categories?.includes("web3")).length,
+      hackathon: EVERY_PROJECT.filter((p) => p.categories?.includes("hackathon")).length,
+    }),
+    []
+  );
+
+  const filtered = useMemo(() => {
+    if (filter === "all") return EVERY_PROJECT;
+    return EVERY_PROJECT.filter((p) => p.categories?.includes(filter));
+  }, [filter]);
+
   return (
     <motion.div
       key="projects-all"
@@ -31,16 +50,33 @@ const ProjectPage = () => {
       </button>
 
       <CustomSection title="All Projects">
-        <div className="flex flex-col">
-          {[...ALL_PROJECTS].map((project, i, arr) => (
-            <ProjectItem
-              key={`all-${i}`}
-              project={project}
-              index={i}
-              isLast={i === arr.length - 1}
-            />
-          ))}
-        </div>
+        <FilterChips active={filter} onChange={setFilter} counts={counts} />
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="flex flex-col"
+          >
+            {filtered.length === 0 ? (
+              <p className="text-[13px] text-ink-3 py-8 text-center">
+                No projects in this category yet.
+              </p>
+            ) : (
+              filtered.map((project, i, arr) => (
+                <ProjectItem
+                  key={`${filter}-${project.title}-${i}`}
+                  project={project}
+                  index={i}
+                  isLast={i === arr.length - 1}
+                />
+              ))
+            )}
+          </motion.div>
+        </AnimatePresence>
       </CustomSection>
     </motion.div>
   );

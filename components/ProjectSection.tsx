@@ -2,7 +2,7 @@
 
 import React from "react";
 import CustomSection from "./CustomSection";
-import { RECENT_PROJECTS } from "@/utils/constant";
+import { FEATURED_PROJECTS } from "@/utils/constant";
 import { motion } from "framer-motion";
 import ProjectItem from "./ProjectItem";
 import { useRouter } from "next/navigation";
@@ -10,14 +10,14 @@ import { useRouter } from "next/navigation";
 const ProjectSection = () => {
   const router = useRouter();
   return (
-    <CustomSection title="Recent Projects" id="projects">
+    <CustomSection title="Featured" id="projects">
       <div className="flex flex-col">
-        {RECENT_PROJECTS.map((project, i) => (
+        {FEATURED_PROJECTS.map((project, i) => (
           <ProjectItem
             key={`recent-${i}`}
             project={project}
             index={i}
-            isLast={i === RECENT_PROJECTS.length - 1}
+            isLast={i === FEATURED_PROJECTS.length - 1}
           />
         ))}
       </div>

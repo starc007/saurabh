@@ -1,3 +1,5 @@
+export type ProjectCategory = "product" | "experiment" | "web3" | "hackathon";
+
 export interface Project {
   id?: string | number;
   title: string;
@@ -9,6 +11,8 @@ export interface Project {
   github?: string;
   githubLink?: string; // mapping for compatibility
   category?: string;
+  categories?: ProjectCategory[];
+  featured?: boolean;
   techStack?: string[];
   tech?: string[]; // variant used in some entries
   image?: string;
@@ -41,7 +45,7 @@ const mapProject = (p: Project): Project => ({
   category: p.tag ? p.tag.join(" / ") : p.category || "Engineering",
 });
 
-export const RECENT_PROJECTS: Project[] = [
+export const RECENT_PROJECTS: Project[] = ([
   {
     id: 1223,
     title: "Hydra Agent",
@@ -53,6 +57,8 @@ export const RECENT_PROJECTS: Project[] = [
     image: "/draft.png",
     date: "May, 2026",
     tag: ["Hackathon"],
+    categories: ["experiment", "web3", "hackathon"],
+    featured: true,
   },
   {
     id: 1224,
@@ -64,6 +70,7 @@ export const RECENT_PROJECTS: Project[] = [
     image: "/draft.png",
     date: "May, 2026",
     tag: ["Personal"],
+    categories: ["experiment", "web3"],
   },
   {
     id: 123,
@@ -82,6 +89,8 @@ export const RECENT_PROJECTS: Project[] = [
     image: "/draft.png",
     date: "April, 2026",
     tag: ["Personal"],
+    categories: ["experiment", "web3"],
+    featured: true,
   },
   {
     id: 133,
@@ -99,18 +108,9 @@ export const RECENT_PROJECTS: Project[] = [
     image: "/draft.png",
     date: "Mar, 2026",
     tag: ["Personal"],
+    categories: ["experiment", "web3"],
+    featured: true,
   },
-  // {
-  //   id: 134,
-  //   title: "frenlog",
-  //   description:
-  //     "A shared social feed for AI agents. Agents (Claude, Cursor, Codex) post learnings and task completions as markdown. Built with Bun, Hono, Cloudflare Workers, and D1.",
-  //   techStack: ["Bun", "Hono", "Cloudflare Workers", "D1", "Next.js"],
-  //   github: "https://github.com/starc007/frenlog",
-  //   image: "/draft.png",
-  //   date: "Mar, 2026",
-  //   tag: ["Personal", "Open Source"],
-  // },
   {
     id: 135,
     title: "mppx-proxy / mpp-solana",
@@ -121,6 +121,7 @@ export const RECENT_PROJECTS: Project[] = [
     image: "/draft.png",
     date: "Mar, 2026",
     tag: ["Personal", "Hackathon"],
+    categories: ["experiment", "web3", "hackathon"],
   },
   {
     id: 132,
@@ -133,6 +134,7 @@ export const RECENT_PROJECTS: Project[] = [
     videoLink: "",
     date: "Mar, 2026",
     tag: ["Personal"],
+    categories: ["experiment"],
   },
   {
     id: 1332,
@@ -145,9 +147,10 @@ export const RECENT_PROJECTS: Project[] = [
     videoLink: "",
     date: "Mar, 2026",
     tag: ["Personal"],
+    categories: ["experiment"],
   },
   {
-    id: 1332,
+    id: 1333,
     title: "browser-sandbox",
     description:
       "Preview AI-generated code in the browser. No server, no Node, no local build. Built for quickly rendering and iterating on generated Vite-style projects.",
@@ -157,18 +160,7 @@ export const RECENT_PROJECTS: Project[] = [
     videoLink: "",
     date: "Feb, 2026",
     tag: ["Personal"],
-  },
-  {
-    id: 1,
-    title: "Draft",
-    description:
-      "A fast, privacy-focused local-first notes app for developers and content creators",
-    techStack: ["React", "Tailwindcss", "Zustand", "Rust", "Sqlite", "Tauri"],
-    demo: "https://usedraft.app",
-    image: "/draft.png",
-    videoLink: "",
-    date: "Jan, 2026",
-    tag: ["Personal"],
+    categories: ["experiment"],
   },
   {
     id: 2,
@@ -182,6 +174,7 @@ export const RECENT_PROJECTS: Project[] = [
     videoLink: "",
     date: "Aug, 2025",
     tag: ["Personal"],
+    categories: ["experiment", "web3"],
   },
   {
     id: 3,
@@ -196,6 +189,8 @@ export const RECENT_PROJECTS: Project[] = [
     date: "May, 2025",
     tag: ["Personal"],
     users: 300,
+    categories: ["product", "web3"],
+    featured: true,
   },
   {
     id: 4,
@@ -210,6 +205,7 @@ export const RECENT_PROJECTS: Project[] = [
     date: "May, 2025",
     tag: ["Personal"],
     users: 200,
+    categories: ["product", "web3"],
   },
   {
     id: 5,
@@ -224,6 +220,8 @@ export const RECENT_PROJECTS: Project[] = [
     date: "Feb, 2025",
     tag: ["Personal"],
     users: 1100,
+    categories: ["product"],
+    featured: true,
   },
   {
     id: 6,
@@ -237,10 +235,11 @@ export const RECENT_PROJECTS: Project[] = [
     videoLink: "https://x.com/saurra3h/status/1885227733451759708",
     date: "Jan, 2025",
     tag: ["Personal"],
+    categories: ["experiment", "web3"],
   },
-].map(mapProject);
+] as Project[]).map(mapProject);
 
-export const ALL_PROJECTS: Project[] = [
+export const ALL_PROJECTS: Project[] = ([
   {
     id: 0,
     title: "SayHi",
@@ -253,9 +252,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "https://x.com/saurra3h/status/1873391948280852914",
     tag: ["Personal"],
     date: "Dec, 2024",
+    categories: ["product"],
   },
   {
-    id: 2,
+    id: 22,
     title: "myIntro",
     description:
       "Unlock Your Network's Hidden Potential - Find warm introductions on Twitter in seconds",
@@ -266,9 +266,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "https://x.com/saurra3h/status/1835008256466460834",
     tag: ["Personal"],
     date: "Dec, 2024",
+    categories: ["product"],
   },
   {
-    id: 3,
+    id: 33,
     title: "Love Language",
     description:
       "Love Language is a fun, love-themed programming language that brings romance to coding! Express your algorithms with affection using love-themed keywords and operators.",
@@ -279,9 +280,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "https://x.com/saurra3h/status/1854868774161137762",
     tag: ["Personal"],
     date: "Nov, 2024",
+    categories: ["experiment"],
   },
   {
-    id: 4,
+    id: 44,
     title: "EchoId",
     description:
       "EchoId is a Solana-based decentralized identity system enabling user-owned, cross-chain identities with compressed metadata and integrated reputation. This project is built using the Anchor framework. Built this in Solana Radar Hackathon 2024.",
@@ -292,9 +294,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "",
     tag: ["Personal", "Hackathon"],
     date: "Oct, 2024",
+    categories: ["experiment", "web3", "hackathon"],
   },
   {
-    id: 5,
+    id: 55,
     title: "Image Compressor - Rust",
     description:
       "A command-line tool for compressing and resizing images in bulk. This tool can process entire directories, including nested folders, and maintains the original folder structure in the output.",
@@ -305,10 +308,11 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "https://x.com/saurra3h/status/1832036469147332662",
     tag: ["Personal"],
     date: "Sept, 2024",
+    categories: ["experiment"],
   },
   {
-    id: 6,
-    title: "BenGrid ",
+    id: 66,
+    title: "BenGrid",
     description: "Open-source tool to create and export bento grid layouts",
     techStack: ["Next.js", "TailwindCSS"],
     demo: "https://tailwind-bento.vercel.app/",
@@ -318,9 +322,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "",
     tag: ["Personal"],
     date: "Dec, 2024",
+    categories: ["experiment"],
   },
   {
-    title: "Stylr ",
+    title: "Stylr",
     description:
       "Make your beautiful forms in one click. Launched in Aug, 2024, got 500+ users in 1 month.",
     techStack: ["Next.js", "TailwindCSS", "Nodejs", "Express", "Framer Motion"],
@@ -331,6 +336,7 @@ export const ALL_PROJECTS: Project[] = [
     tag: ["Personal", "SaaS"],
     users: 450,
     date: "Aug, 2024",
+    categories: ["product"],
   },
   {
     title: "walletwit",
@@ -343,6 +349,7 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "",
     tag: ["Personal", "Hackathon"],
     date: "July, 2024",
+    categories: ["experiment", "web3", "hackathon"],
   },
   {
     title: "Sanchar",
@@ -356,6 +363,7 @@ export const ALL_PROJECTS: Project[] = [
     tag: ["Personal", "Startup"],
     users: 5000,
     date: "June, 2023",
+    categories: ["product"],
   },
   {
     title: "beUi",
@@ -368,9 +376,10 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "",
     tag: ["Personal", "Open Source"],
     date: "June, 2024",
+    categories: ["experiment"],
   },
   {
-    id: 7,
+    id: 77,
     title: "Readmi",
     description:
       "A Open Source Github readme builder. Use prebuilt templates, sections or create a new one.",
@@ -381,6 +390,7 @@ export const ALL_PROJECTS: Project[] = [
     videoLink: "",
     tag: ["Personal", "Open Source"],
     date: "Nov, 2022",
+    categories: ["experiment"],
   },
   {
     title: "Vakya AI Extension",
@@ -394,13 +404,20 @@ export const ALL_PROJECTS: Project[] = [
     isWeb2: true,
     tag: ["Personal", "Freelance"],
     date: "May, 2023",
+    categories: ["experiment"],
   },
-].map(mapProject);
+] as Project[]).map(mapProject);
+
+export const FEATURED_PROJECTS: Project[] = RECENT_PROJECTS.filter(
+  (p) => p.featured
+);
+
+export const EVERY_PROJECT: Project[] = [...RECENT_PROJECTS, ...ALL_PROJECTS];
 
 export const PROJECTS = RECENT_PROJECTS; // Default fallback
 
 export const BIO_DATA = `
-Saurabh is a Design Engineer focused on the intersection of visual precision and software performance. 
+Saurabh is a Design Engineer focused on the intersection of visual precision and software performance.
 He builds high-performance tools for developers and crypto-native experiences.
 Currently based in India, GMT+5:30.
 Professional history includes tenure at NodeOps (Current), Playota, and various freelance engagements with Polygon and Powerloom.
