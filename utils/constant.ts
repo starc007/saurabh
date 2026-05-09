@@ -66,7 +66,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1225,
       title: "Programmable Virtual Addresses",
       description:
-        "TIP-1022 split-routing forwarder on Tempo. Virtual addresses auto-split incoming TIP-20 deposits across multiple recipients via declarative basis-point rules. Solidity contracts + Cloudflare keeper, live on Moderato testnet.",
+        "A smart contract on Tempo that splits any incoming token payment between multiple wallets, based on rules you set. Live on testnet.",
       techStack: [
         "Solidity",
         "Foundry",
@@ -86,7 +86,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1226,
       title: "Sentinel",
       description:
-        "Reputation-gated policies for OWS agent wallets. FICO-style scoring from on-chain history, enforced cryptographically by the OWS policy engine. Built for OWS Hackathon Track 02.",
+        "A reputation system for AI agent wallets. New wallets get small spending limits. Clean transaction history grows the limits. Built for the OWS Hackathon.",
       techStack: ["Typescript", "Cloudflare Workers", "Hono", "OWS", "Allium"],
       github: "https://github.com/starc007/sentinel",
       demo: "https://x.com/saurra3h/status/2040056351452541020?s=20",
@@ -100,7 +100,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1232,
       title: "agent-operator",
       description:
-        "Drop-in TypeScript SDK for governed AI agent payments. Wraps MPP for chain payments, OWS for authorization + spend policies, and pluggable Telegram/Slack notifications for human oversight — one config file, no server needed.",
+        "A TypeScript SDK that gives AI agents a wallet with safety rules. Set spending limits, get Telegram alerts, and approve big payments from your phone. No server needed.",
       techStack: ["Typescript", "MPP", "OWS", "Telegram", "Solana", "Base"],
       github: "https://github.com/starc007/agent-operator",
       demo: "https://x.com/saurra3h/status/2041203638727761984?s=20",
@@ -113,7 +113,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1227,
       title: "Edge OG",
       description:
-        "Pretext-powered OG image engine on Cloudflare Workers. No headless browser, no Satori — pure math + canvas → SVG → PNG. Smaller bundle, faster cold starts than @vercel/og.",
+        "A faster OG image generator on Cloudflare Workers. Skips the CSS engine and uses pure math, so cold starts are much smaller than vercel/og.",
       techStack: ["Typescript", "Cloudflare Workers", "Pretext", "Resvg", "R2"],
       github: "https://github.com/starc007/edge-og",
       image: "/draft.png",
@@ -125,7 +125,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1228,
       title: "Claude Command Center",
       description:
-        "Native macOS app for managing Claude Code sessions, ports, costs, and MCP servers. Reads ~/.claude/projects directly. Liquid-glass UI, spring animations.",
+        "A native macOS app to see all your Claude Code sessions, kill stuck ports, track token costs, and manage MCP servers in one place.",
       techStack: ["Swift", "SwiftUI", "AppKit"],
       github: "https://github.com/starc007/claude-command-center",
       demo: "https://x.com/saurra3h/status/2046946888180727974?s=20",
@@ -138,7 +138,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1229,
       title: "menutodo",
       description:
-        "Native macOS menu bar todo app with liquid glass UI. Local JSON storage at ~/.menutodo.json — Claude Code reads/writes directly via file I/O, no MCP needed.",
+        "A small todo app that lives in your macOS menu bar. Saves to a local JSON file so Claude Code can read and write your todos directly.",
       techStack: ["Swift", "SwiftUI"],
       github: "https://github.com/starc007/menutodo",
       image: "/draft.png",
@@ -150,7 +150,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 1230,
       title: "Merin",
       description:
-        "AI creator studio. Generate YouTube thumbnails, product photos, UGC videos, and AI influencers from a prompt. Powered by Gemini Imagen and Veo 3.1.",
+        "An AI tool for creators. Generate YouTube thumbnails, product photos, and short videos from a prompt.",
       techStack: ["Next.js", "Typescript", "Gemini", "Veo", "Polar"],
       demo: "https://merin.app",
       image: "/draft.png",
@@ -177,7 +177,7 @@ export const RECENT_PROJECTS: Project[] = (
       id: 123,
       title: "MPP Playground",
       description:
-        "A devtools-style playground for the Tempo and MPP. Inspect any MPP endpoint, pay with a passkey-based Tempo Wallet, and generate hosted payment links — all in one place.",
+        "A devtools-style playground for Tempo and MPP. Inspect any MPP endpoint, pay with a passkey-based Tempo Wallet, and generate hosted payment links, all in one place.",
       techStack: [
         "Solidity",
         "Typescript",

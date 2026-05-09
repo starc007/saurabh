@@ -22,9 +22,10 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Saurabh — Design Engineer & Product Builder",
+  metadataBase: new URL("https://saura3h.xyz"),
+  title: "Saurabh | Design Engineer & Product Builder",
   description:
-    "Design Engineer building fast, precise tools for developers and crypto-native experiences. React, Next.js, Rust.",
+    "Frontend engineer building tools for developers and crypto products. Works with React, Next.js, and Rust.",
   keywords: [
     "Saurabh",
     "Design Engineer",
@@ -39,12 +40,19 @@ export const metadata: Metadata = {
   creator: "Saurabh",
   icons: { icon: "/profile.png" },
   openGraph: {
-    title: "Saurabh — Design Engineer & Product Builder",
+    title: "Saurabh | Design Engineer & Product Builder",
     description:
       "Design Engineer building fast, precise tools for developers and crypto-native experiences.",
     url: "https://saura3h.xyz",
     siteName: "Saurabh",
-    images: [{ url: "/profile.png" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saurabh | Design Engineer & Product Builder",
+    description:
+      "Design Engineer building fast, precise tools for developers and crypto-native experiences.",
+    creator: "@saurra3h",
   },
 };
 
@@ -67,7 +75,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
         <ThemeProvider>
-          <main className="max-w-[680px] mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">
+          <main className="max-w-170 mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">
             {children}
             <Footer />
           </main>
