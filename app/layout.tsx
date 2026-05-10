@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { GeistPixelSquare } from "geist/font/pixel";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -72,7 +65,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
         <ThemeProvider>
           <main className="max-w-170 mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">

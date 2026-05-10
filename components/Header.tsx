@@ -50,11 +50,11 @@ const Header = () => {
         </motion.div>
 
         {/* Headline */}
-        <motion.div variants={item} className="flex flex-col gap-1">
-          <h1 className="text-[42px] sm:text-[52px] font-black text-ink tracking-[-0.03em] leading-[1.02]">
+        <motion.div variants={item} className="flex flex-col gap-1 font-pixel">
+          <h1 className="text-[36px] sm:text-[44px] text-ink leading-[1.05] font-bold">
             Design Engineer
           </h1>
-          <h1 className="text-[42px] sm:text-[52px] text-ink-2 tracking-[-0.03em] leading-[1.02] font-black">
+          <h1 className="text-[36px] sm:text-[44px] text-ink-2 leading-[1.05] font-bold">
             &amp; Product Builder
             <span className="text-lime">.</span>
           </h1>
