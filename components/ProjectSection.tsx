@@ -3,10 +3,10 @@
 import React from "react";
 import CustomSection from "./CustomSection";
 import { FEATURED_PROJECTS } from "@/utils/constant";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FeaturedProjectItem from "./FeaturedProjectItem";
 import { useRouter } from "next/navigation";
+import { Button } from "./beui/Button";
 
 const ProjectSection = () => {
   const router = useRouter();
@@ -23,15 +23,15 @@ const ProjectSection = () => {
         ))}
       </div>
       <div className="mt-6">
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.97 }}
+        <Button
+          variant="outline"
+          size="sm"
           onClick={() => router.push("/projects")}
-          className="inline-flex items-center gap-1.5 text-[12px] font-medium text-ink-2 hover:text-ink border border-edge px-4 py-2 rounded-full hover:border-ink-3 transition-colors group"
+          className="group text-ink-2 hover:text-ink hover:border-ink-3"
         >
           View all projects
           <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
-        </motion.button>
+        </Button>
       </div>
     </CustomSection>
   );

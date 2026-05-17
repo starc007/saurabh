@@ -1,35 +1,30 @@
-import { Mail } from "lucide-react";
-import { GithubIcon, LinkedInIcon, XIcon } from "./icons";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const LINKS = [
-  { icon: XIcon, href: "https://x.com/saurra3h", label: "Twitter / X" },
-  { icon: GithubIcon, href: "https://github.com/starc007", label: "Github" },
-  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/starc007", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/saurra3h", label: "Twitter / X" },
+  { icon: Github, href: "https://github.com/starc007", label: "Github" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/starc007", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:saurabh10102@gmail.com", label: "Email" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="pt-16 border-t border-edge-subtle flex flex-col items-center gap-5">
-      <div className="flex gap-6 items-center">
+    <footer className="flex flex-col items-center gap-5 border-t border-edge-subtle pt-16">
+      <div className="flex items-center gap-6">
         {LINKS.map(({ icon: Icon, href, label }) => (
           <a
             key={label}
             href={href}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
             aria-label={label}
-            className="text-ink-3 hover:text-ink transition-colors"
+            className="text-ink-3 transition-colors hover:text-ink"
           >
-            <Icon size={16} />
+            <Icon className="h-4 w-4" strokeWidth={1.8} />
           </a>
         ))}
-        <a
-          href="mailto:saurabh10102@gmail.com"
-          aria-label="Email"
-          className="text-ink-3 hover:text-ink transition-colors"
-        >
-          <Mail size={16} strokeWidth={1.8} />
-        </a>
       </div>
-      <p className="text-[11px] text-ink-3 font-mono">© 2026 Saurabh</p>
+      <p className="font-mono text-[11px] text-ink-3">© 2026 Saurabh</p>
     </footer>
   );
 };
