@@ -49,6 +49,21 @@ const mapProject = (p: Project): Project => ({
 export const RECENT_PROJECTS: Project[] = (
   [
     {
+      id: 1240,
+      title: "beUI v2",
+      description:
+        "Bespoke motion components for React. No Radix, no shadcn. Just motion. Includes agent-friendly registry endpoints (llms.txt, /r) so coding agents can install components in one fetch.",
+      techStack: ["React 19", "Next 15", "Tailwind v4", "Motion", "TypeScript"],
+      github: "https://github.com/starc007/ui-components",
+      demo: "https://beui.saura3h.xyz",
+      image: "/draft.png",
+      date: "May, 2026",
+      tag: ["Personal", "Open Source"],
+      categories: ["product", "experiment"],
+      featured: true,
+      note: "Shipped v2 with 14+ hand-built motion components, multi-variant button family, and an llms.txt / /r/{slug} registry so AI agents can drop components straight into a project.",
+    },
+    {
       id: 1223,
       title: "Hydra Agent",
       description:
@@ -480,19 +495,6 @@ export const ALL_PROJECTS: Project[] = (
       categories: ["product"],
       featured: true,
       note: "Built the tech alone with a non-tech cofounder. Scaled to 5,000+ users. Sunset in 2024.",
-    },
-    {
-      title: "beUi",
-      description:
-        "Build better, build faster. A collection of free UI components & templates for your next project.",
-      github: "https://github.com/starc007/ui-components",
-      demo: "https://beui.saura3h.xyz",
-      techStack: ["React", "Typescript", "Tailwindcss", "Framer Motion"],
-      isOSS: true,
-      videoLink: "",
-      tag: ["Personal", "Open Source"],
-      date: "June, 2024",
-      categories: ["experiment"],
     },
     {
       id: 77,

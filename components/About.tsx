@@ -38,7 +38,17 @@ const About = () => {
       >
         I&apos;m a frontend engineer based in India. I build small, fast tools for
         developers and crypto products. I care a lot about how they look and
-        feel. These days I&apos;m deep into agentic payments and AI + crypto.
+        feel. These days I&apos;m deep into agentic payments and AI + crypto, and
+        shipping{" "}
+        <a
+          href="https://beui.saura3h.xyz"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="font-medium text-ink underline decoration-edge underline-offset-4 transition-colors hover:text-lime hover:decoration-lime"
+        >
+          beUI
+        </a>{" "}
+        — bespoke motion components for React.
         Always down to talk tech or anime.
       </p>
 
