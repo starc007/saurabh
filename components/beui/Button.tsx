@@ -12,7 +12,10 @@ import { cn } from "@/utils/cn";
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
 export type ButtonSize = "sm" | "md" | "lg" | "icon";
 
-export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
+export interface ButtonProps extends Omit<
+  HTMLMotionProps<"button">,
+  "children"
+> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   pressScale?: number;
@@ -22,9 +25,10 @@ export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children">
 const VARIANT_CLASS: Record<ButtonVariant, string> = {
   primary: "bg-ink text-canvas hover:bg-ink/90",
   secondary:
-    "border border-edge bg-canvas-raised text-ink hover:border-ink-3 hover:bg-canvas-sunken",
+    "border border-edge/40 bg-canvas-raised text-ink hover:border-ink-3 hover:bg-canvas-sunken",
   ghost: "text-ink-2 hover:text-ink hover:bg-canvas-raised",
-  outline: "border border-edge bg-transparent text-ink hover:bg-canvas-raised",
+  outline:
+    "border border-edge/40 bg-transparent text-ink hover:bg-canvas-raised",
 };
 
 const SIZE_CLASS: Record<ButtonSize, string> = {
@@ -34,32 +38,46 @@ const SIZE_CLASS: Record<ButtonSize, string> = {
   icon: "h-8 w-8 rounded-lg",
 };
 
-const PRESS_SPRING = { type: "spring" as const, stiffness: 500, damping: 30, mass: 0.6 };
+const PRESS_SPRING = {
+  type: "spring" as const,
+  stiffness: 500,
+  damping: 30,
+  mass: 0.6,
+};
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { variant = "primary", size = "md", pressScale = 0.93, className, children, ...rest },
-  ref,
-) {
-  return (
-    <motion.button
-      ref={ref}
-      type="button"
-      whileTap={{ scale: pressScale }}
-      whileHover={{ scale: 1.02 }}
-      transition={PRESS_SPRING}
-      className={cn(
-        "inline-flex items-center justify-center font-medium select-none transition-colors",
-        "disabled:pointer-events-none disabled:opacity-50",
-        VARIANT_CLASS[variant],
-        SIZE_CLASS[size],
-        className,
-      )}
-      {...rest}
-    >
-      {children}
-    </motion.button>
-  );
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  function Button(
+    {
+      variant = "primary",
+      size = "md",
+      pressScale = 0.93,
+      className,
+      children,
+      ...rest
+    },
+    ref,
+  ) {
+    return (
+      <motion.button
+        ref={ref}
+        type="button"
+        whileTap={{ scale: pressScale }}
+        whileHover={{ scale: 1.02 }}
+        transition={PRESS_SPRING}
+        className={cn(
+          "inline-flex items-center justify-center font-medium select-none transition-colors",
+          "disabled:pointer-events-none disabled:opacity-50",
+          VARIANT_CLASS[variant],
+          SIZE_CLASS[size],
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </motion.button>
+    );
+  },
+);
 
 /* ============================================================
  * Stateful Button (idle → loading → success / error)
@@ -76,7 +94,12 @@ export interface StatefulButtonProps extends Omit<ButtonProps, "children"> {
   icon?: ReactNode;
 }
 
-const SWAP_SPRING = { type: "spring" as const, stiffness: 460, damping: 30, mass: 0.55 };
+const SWAP_SPRING = {
+  type: "spring" as const,
+  stiffness: 460,
+  damping: 30,
+  mass: 0.55,
+};
 
 function Slot({ keyId, children }: { keyId: string; children: ReactNode }) {
   return (
@@ -93,7 +116,10 @@ function Slot({ keyId, children }: { keyId: string; children: ReactNode }) {
   );
 }
 
-export const StatefulButton = forwardRef<HTMLButtonElement, StatefulButtonProps>(function StatefulButton(
+export const StatefulButton = forwardRef<
+  HTMLButtonElement,
+  StatefulButtonProps
+>(function StatefulButton(
   {
     state = "idle",
     children,
@@ -108,7 +134,12 @@ export const StatefulButton = forwardRef<HTMLButtonElement, StatefulButtonProps>
 ) {
   const isBusy = state === "loading";
   return (
-    <Button ref={ref} disabled={disabled || isBusy} aria-busy={isBusy} {...rest}>
+    <Button
+      ref={ref}
+      disabled={disabled || isBusy}
+      aria-busy={isBusy}
+      {...rest}
+    >
       <motion.span
         layout
         transition={SWAP_SPRING}
@@ -156,7 +187,10 @@ export interface MagneticButtonProps extends ButtonProps {
   magneticClassName?: string;
 }
 
-export const MagneticButton = forwardRef<HTMLButtonElement, MagneticButtonProps>(function MagneticButton(
+export const MagneticButton = forwardRef<
+  HTMLButtonElement,
+  MagneticButtonProps
+>(function MagneticButton(
   { strength = 0.25, magneticClassName, children, ...rest },
   ref,
 ) {

@@ -27,10 +27,13 @@ const ProjectSection = () => {
           variant="outline"
           size="sm"
           onClick={() => router.push("/projects")}
-          className="group text-ink-2 hover:text-ink hover:border-ink-3"
+          className="group text-ink-2"
         >
           View all projects
-          <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight
+            size={13}
+            className="group-hover:translate-x-0.5 transition-transform"
+          />
         </Button>
       </div>
     </CustomSection>
