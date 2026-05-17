@@ -69,7 +69,7 @@ export function Dock({
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "inline-flex h-auto items-end gap-1.5 rounded-2xl px-2 py-1",
-        "border border-edge bg-canvas/20 backdrop-blur-xl backdrop-saturate-150",
+        "border border-edge/40 bg-canvas/20 backdrop-blur-xl backdrop-saturate-150",
         "shadow-[0_4px_24px_rgba(0,0,0,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]",
         className,
       )}

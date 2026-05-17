@@ -4,6 +4,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import React, { useState } from "react";
 import { Project } from "@/utils/constant";
 import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedNumber } from "./beui/AnimatedNumber";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -69,8 +70,9 @@ const FeaturedProjectItem: React.FC<{
               </span>
             ))}
             {project.users && (
-              <span className="text-[10px] font-medium text-lime bg-lime-bg px-2 py-0.5 rounded-sm">
-                {project.users.toLocaleString()}+ users
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-lime bg-lime-bg px-2 py-0.5 rounded-sm">
+                <AnimatedNumber value={project.users} duration={1.6} />
+                <span>+ users</span>
               </span>
             )}
           </div>

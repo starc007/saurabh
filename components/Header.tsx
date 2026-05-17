@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { TextReveal } from "./beui/TextReveal";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -18,6 +19,11 @@ const item = {
   hidden: { opacity: 0, y: 14 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 };
+
+const HEADLINE_START = 0.25;
+const HEADLINE_STAGGER = 0.08;
+// 2 words "Design Engineer" then 3 "& Product Builder." — bio appears after.
+const BIO_DELAY = HEADLINE_START + 5 * HEADLINE_STAGGER + 0.35;
 
 const Header = () => {
   return (
@@ -49,20 +55,35 @@ const Header = () => {
           <ThemeToggle />
         </motion.div>
 
-        {/* Headline */}
-        <motion.div variants={item} className="flex flex-col gap-1 font-pixel">
-          <h1 className="text-[36px] sm:text-[44px] text-ink leading-[1.05] font-bold">
-            Design Engineer
-          </h1>
-          <h1 className="text-[36px] sm:text-[44px] text-ink-2 leading-[1.05] font-bold">
-            &amp; Product Builder
-            <span className="text-lime">.</span>
-          </h1>
-        </motion.div>
+        {/* Headline — word-by-word slide-up + blur */}
+        <div className="flex flex-col gap-1 font-pixel">
+          <TextReveal
+            as="h1"
+            text="Design Engineer"
+            delay={HEADLINE_START}
+            stagger={HEADLINE_STAGGER}
+            blur={10}
+            yOffset="50%"
+            className="text-[36px] sm:text-[44px] font-bold leading-[1.05] text-ink"
+          />
+          <TextReveal
+            as="h1"
+            text="& Product Builder."
+            delay={HEADLINE_START + 2 * HEADLINE_STAGGER}
+            stagger={HEADLINE_STAGGER}
+            blur={10}
+            yOffset="50%"
+            className="text-[36px] sm:text-[44px] font-bold leading-[1.05] text-ink-2"
+          >
+            <span className="sr-only">.</span>
+          </TextReveal>
+        </div>
 
         {/* Bio */}
         <motion.p
-          variants={item}
+          initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: BIO_DELAY, duration: 0.55, ease }}
           className="text-[15px] text-ink-2 leading-[1.65] max-w-[460px]"
           style={{ textWrap: "pretty" } as React.CSSProperties}
         >
@@ -71,7 +92,12 @@ const Header = () => {
         </motion.p>
 
         {/* CTAs */}
-        <motion.div variants={item} className="flex gap-2.5 flex-wrap">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: BIO_DELAY + 0.15, duration: 0.55, ease }}
+          className="flex gap-2.5 flex-wrap"
+        >
           <a
             href="/resume.pdf"
             target="_blank"

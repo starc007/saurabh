@@ -8,7 +8,7 @@ const TechStack = () => {
         {TECH_STACK.map((skill, i) => (
           <span
             key={i}
-            className="px-3 py-1.5 border border-edge rounded-md text-[12px] font-mono text-ink-2 hover:border-ink-3 hover:text-ink transition-colors"
+            className="px-3 py-1.5 border border-edge rounded-full text-[12px] font-mono text-ink-2 hover:text-ink transition-colors"
           >
             {skill}
           </span>
