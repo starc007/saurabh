@@ -1,0 +1,46 @@
+# Saurabh
+
+> Agent-readable context for Saurabh's portfolio website.
+
+Saurabh is a design engineer and product builder based in India. He builds small, fast tools for developers and crypto products, mostly with React, Next.js, TypeScript, Rust, Cloudflare, and Framer Motion.
+
+Website: https://saura3h.xyz
+Projects: https://saura3h.xyz/projects
+Resume: https://saura3h.xyz/resume.pdf
+GitHub: https://github.com/starc007
+X: https://x.com/saurra3h
+LinkedIn: https://www.linkedin.com/in/starc007
+Email: saurabh10102@gmail.com
+Calendar: https://cal.com/saurra3h/30min
+
+## Primary Focus
+
+- Design engineering and frontend systems
+- Developer tools and AI-agent-friendly software
+- Crypto-native products, wallets, payments, and infrastructure
+- High-performance React, Next.js, TypeScript, Rust, and Cloudflare projects
+
+## Current Work
+
+- Frontend Engineer at NodeOps
+- Building beUI, a bespoke motion component system for React with agent-friendly registry endpoints
+- Exploring agentic payments, AI + crypto, Tempo, Solana, MPP, and wallet safety systems
+
+## Notable Projects
+
+- beUI v2: bespoke motion components for React with llms.txt and registry endpoints.
+- Hydra Agent: autonomous Uniswap v4 LP management on Cloudflare Workers.
+- Programmable Virtual Addresses: Tempo smart contracts for programmable token payment splits.
+- Sentinel: reputation and limits system for AI agent wallets.
+- agent-operator: TypeScript SDK for agent wallets with safety rules and Telegram approvals.
+- Relay CLI: Rust CLI for the Relay cross-chain bridge and swap protocol.
+- Wave App: social wallet app on Solana with 300+ users.
+- DateMate: Telegram matching bot with 1,100+ users.
+- Sanchar: professional networking product scaled to 5,000+ users.
+
+## More Context
+
+For a fuller profile, project inventory, and agent guidance, read:
+
+- https://saura3h.xyz/llms-full.txt
+
