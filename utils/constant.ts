@@ -58,7 +58,7 @@ export const RECENT_PROJECTS: Project[] = (
       demo: "https://beui.saura3h.xyz",
       date: "May, 2026",
       tag: ["Personal", "Open Source"],
-      categories: ["product", "experiment"],
+      categories: ["product"],
       featured: true,
     },
     {

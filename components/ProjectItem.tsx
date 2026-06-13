@@ -1,18 +1,24 @@
 "use client";
 
 import { ArrowUpRight, Github } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { Project } from "@/utils/constant";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Tooltip } from "./beui/Tooltip";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
+// Apple-form spring — the morph character of the Dynamic Island, a touch snappier
+// since rows expand on hover dozens of times.
+const ISLAND_SPRING = { type: "spring", duration: 0.5, bounce: 0.2 } as const;
 
 const ProjectItem: React.FC<{
   project: Project;
   index: number;
   isLast: boolean;
 }> = ({ project, index }) => {
+  const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
+  const stack = project.techStack || project.tech || [];
   const date = project.date || project.year;
   const primaryLink =
     project.demoLink || project.demo || project.githubLink || project.github;
@@ -23,7 +29,9 @@ const ProjectItem: React.FC<{
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.03, duration: 0.4, ease }}
-      className="group relative bg-canvas transition-colors duration-200 hover:border-edge hover:bg-canvas-raised/40"
+      onHoverStart={() => setOpen(true)}
+      onHoverEnd={() => setOpen(false)}
+      className="group relative rounded-lg bg-canvas transition-colors duration-200 hover:bg-canvas-raised"
     >
       {/* Overlay link makes the whole row a target; inner actions sit above it. */}
       {primaryLink && (
@@ -40,7 +48,7 @@ const ProjectItem: React.FC<{
         {/* Row 1 — title + tags on the left, date + actions on the right */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
-            <h3 className="shrink-0 text-[13.5px] font-semibold text-ink tracking-[-0.01em] transition-colors duration-200">
+            <h3 className="shrink-0 text-[13.5px] font-semibold text-ink tracking-[-0.01em]">
               {project.title}
             </h3>
             {project.tag?.slice(0, 1).map((t, idx) => (
@@ -104,10 +112,43 @@ const ProjectItem: React.FC<{
           </div>
         </div>
 
-        {/* Row 2 — one-line description */}
-        <p className="mt-0.5 truncate text-[12px] text-ink-2">
-          {project.description}
-        </p>
+        {/* Hover-expand — collapsed to the first description line, springs open to
+            the full description + tech + note, morphing like the Dynamic Island. */}
+        <motion.div
+          initial={false}
+          animate={{ height: open ? "auto" : "1.25rem" }}
+          transition={reduce ? { duration: 0 } : { height: ISLAND_SPRING }}
+          style={{ overflow: "hidden" }}
+          className="mt-0.5"
+        >
+          <p className="text-[12px] leading-5 text-ink-2">
+            {project.description}
+          </p>
+          <div className="flex flex-col gap-1.5 pt-2">
+            {stack.length > 0 && (
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {stack.slice(0, 6).map((s, idx) => (
+                  <React.Fragment key={idx}>
+                    {idx > 0 && (
+                      <span className="text-ink-3 text-[10px]">·</span>
+                    )}
+                    <span className="text-[11px] text-ink-3 font-mono">
+                      {s}
+                    </span>
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
+            {project.note && (
+              <p className="flex items-start gap-2 text-[12px] text-ink-2 italic leading-[1.5]">
+                <span className="text-accent not-italic select-none mt-[2px]">
+                  ↳
+                </span>
+                <span>{project.note}</span>
+              </p>
+            )}
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
