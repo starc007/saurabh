@@ -68,8 +68,8 @@ export function Dock({
       onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "inline-flex h-auto items-end gap-1.5 rounded-2xl px-2 py-1",
-        "border border-edge/40 bg-canvas/20 backdrop-blur-xl backdrop-saturate-150",
+        "inline-flex h-auto items-end rounded-2xl px-2 py-1",
+        "border border-edge/40 bg-canvas/10 backdrop-blur-lg backdrop-saturate-150",
         "shadow-[0_4px_24px_rgba(0,0,0,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]",
         className,
       )}

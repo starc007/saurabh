@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowUpRight, Github } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 import { Project } from "@/utils/constant";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -11,39 +11,22 @@ const ProjectItem: React.FC<{
   project: Project;
   index: number;
   isLast: boolean;
-}> = ({ project, index, isLast }) => {
-  const [hovered, setHovered] = useState(false);
+}> = ({ project, index }) => {
   const stack = project.techStack || project.tech || [];
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.04, duration: 0.5, ease }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative group py-4 cursor-default ${!isLast ? "border-b border-edge-subtle" : ""}`}
+      className="relative rounded-xl border border-edge-subtle bg-canvas px-3.5 py-3"
     >
-      {/* Hover fill — slides in from left */}
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            key="hover-bg"
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            exit={{ scaleX: 0 }}
-            transition={{ duration: 0.25, ease }}
-            className="absolute inset-0 -mx-4 rounded-lg bg-canvas-raised pointer-events-none"
-          />
-        )}
-      </AnimatePresence>
-
-      <div className="relative flex justify-between items-start gap-4">
+      <div className="flex justify-between items-start gap-4">
         <div className="flex-1 min-w-0">
           {/* Title + tags */}
           <div className="flex items-center gap-2 flex-wrap mb-1.5">
-            <h3 className="text-[14px] font-semibold text-ink tracking-[-0.01em] group-hover:text-lime transition-colors duration-200">
+            <h3 className="text-[14px] font-semibold text-ink tracking-[-0.01em]">
               {project.title}
             </h3>
             {project.tag?.map((t, idx) => (
@@ -66,7 +49,10 @@ const ProjectItem: React.FC<{
           </div>
 
           {/* Description */}
-          <p className="text-[13px] text-ink-2 leading-[1.6] mb-2.5 max-w-125" style={{ textWrap: "pretty" } as React.CSSProperties}>
+          <p
+            className="text-[13px] text-ink-2 leading-[1.6] mb-2.5 max-w-125"
+            style={{ textWrap: "pretty" } as React.CSSProperties}
+          >
             {project.description}
           </p>
 

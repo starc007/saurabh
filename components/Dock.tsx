@@ -42,7 +42,12 @@ const Dock: React.FC = () => {
         transition={{ delay: 0.5, type: "spring", stiffness: 220, damping: 26 }}
         className="pointer-events-auto"
       >
-        <BeDock>
+        <BeDock
+          // size={28}
+          // magnification={46}
+          // distance={100}
+          className="px-1.5"
+        >
           {DOCK_ITEMS.map((item, i) => {
             const Icon = item.icon;
             const active =
@@ -52,7 +57,7 @@ const Dock: React.FC = () => {
             const isExternal = item.href.startsWith("http");
             const Inner = (
               <Icon
-                size={20}
+                size={17}
                 strokeWidth={1.8}
                 className={active ? "text-ink" : "text-ink/40"}
               />

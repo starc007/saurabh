@@ -12,7 +12,7 @@ const ProjectSection = () => {
   const router = useRouter();
   return (
     <CustomSection title="Featured" id="projects">
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-2.5">
         {FEATURED_PROJECTS.map((project, i) => (
           <FeaturedProjectItem
             key={`featured-${i}`}

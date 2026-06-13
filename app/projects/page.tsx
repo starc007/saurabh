@@ -59,7 +59,7 @@ const ProjectPage = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="flex flex-col"
+            className="flex flex-col gap-2.5"
           >
             {filtered.length === 0 ? (
               <p className="text-[13px] text-ink-3 py-8 text-center">

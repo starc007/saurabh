@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowUpRight, Github } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 import { Project } from "@/utils/constant";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { AnimatedNumber } from "./beui/AnimatedNumber";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -12,40 +12,19 @@ const FeaturedProjectItem: React.FC<{
   project: Project;
   index: number;
   isLast: boolean;
-}> = ({ project, index, isLast }) => {
-  const [hovered, setHovered] = useState(false);
+}> = ({ project, index }) => {
   const stack = project.techStack || project.tech || [];
   const num = String(index + 1).padStart(2, "0");
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.5, ease }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative group py-6 cursor-default ${!isLast ? "border-b border-edge-subtle" : ""}`}
+      className="relative rounded-xl border border-edge-subtle bg-canvas px-4 py-4"
     >
-      {/* Hover fill */}
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            key="hover-bg"
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            exit={{ scaleX: 0 }}
-            transition={{ duration: 0.25, ease }}
-            className="absolute inset-0 -mx-4 rounded-lg bg-canvas-raised pointer-events-none"
-          />
-        )}
-      </AnimatePresence>
-
-      <motion.div
-        animate={{ x: hovered ? 4 : 0 }}
-        transition={{ duration: 0.2, ease }}
-        className="relative flex justify-between items-start gap-5"
-      >
+      <div className="flex justify-between items-start gap-5">
         {/* Number prefix */}
         <span className="text-[11px] font-mono text-lime pt-1.5 tabular-nums select-none">
           {num}
@@ -54,7 +33,7 @@ const FeaturedProjectItem: React.FC<{
         <div className="flex-1 min-w-0">
           {/* Title + tags */}
           <div className="flex items-baseline gap-2.5 flex-wrap mb-1.5">
-            <h3 className="text-[18px] font-bold text-ink tracking-[-0.02em] group-hover:text-lime transition-colors duration-200">
+            <h3 className="text-[18px] font-bold text-ink tracking-[-0.02em]">
               {project.title}
             </h3>
             {project.tag?.map((t, idx) => (
@@ -134,7 +113,7 @@ const FeaturedProjectItem: React.FC<{
             )}
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
