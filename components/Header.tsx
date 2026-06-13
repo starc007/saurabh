@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import { TextReveal } from "./beui/TextReveal";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -52,7 +51,6 @@ const Header = () => {
               saurabh
             </span>
           </div>
-          <ThemeToggle />
         </motion.div>
 
         {/* Headline — word-by-word slide-up + blur */}

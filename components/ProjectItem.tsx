@@ -23,7 +23,7 @@ const ProjectItem: React.FC<{
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.03, duration: 0.4, ease }}
-      className="group relative rounded-lg border border-edge-subtle bg-canvas transition-colors duration-200 hover:border-edge hover:bg-canvas-raised/40"
+      className="group relative bg-canvas transition-colors duration-200 hover:border-edge hover:bg-canvas-raised/40"
     >
       {/* Overlay link makes the whole row a target; inner actions sit above it. */}
       {primaryLink && (
@@ -40,7 +40,7 @@ const ProjectItem: React.FC<{
         {/* Row 1 — title + tags on the left, date + actions on the right */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
-            <h3 className="shrink-0 text-[13.5px] font-semibold text-ink tracking-[-0.01em] transition-colors duration-200 [@media(hover:hover)]:group-hover:text-accent">
+            <h3 className="shrink-0 text-[13.5px] font-semibold text-ink tracking-[-0.01em] transition-colors duration-200">
               {project.title}
             </h3>
             {project.tag?.slice(0, 1).map((t, idx) => (

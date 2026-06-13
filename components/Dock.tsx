@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import {
   Code,
   Github,
   Home,
-  Linkedin,
   Mail,
+  Moon,
+  Sun,
   Twitter,
   type LucideIcon,
 } from "lucide-react";
@@ -15,6 +16,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dock as BeDock, DockItem, DockSeparator } from "./beui/Dock";
 import { Tooltip } from "./beui/Tooltip";
+import { useTheme } from "./ThemeProvider";
 
 type DockItemDef = { icon: LucideIcon; label: string; href: string };
 
@@ -23,16 +25,12 @@ const DOCK_ITEMS: DockItemDef[] = [
   { icon: Code, label: "Projects", href: "/projects" },
   { icon: Github, label: "Github", href: "https://github.com/starc007" },
   { icon: Twitter, label: "Twitter", href: "https://x.com/saurra3h" },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/starc007",
-  },
   { icon: Mail, label: "Mail", href: "mailto:saurabh10102@gmail.com" },
 ];
 
 const Dock: React.FC = () => {
   const pathname = usePathname();
+  const { theme, toggle } = useTheme();
 
   return (
     <div className="fixed bottom-7 left-0 right-0 z-50 flex justify-center pointer-events-none">
@@ -96,6 +94,37 @@ const Dock: React.FC = () => {
               </React.Fragment>
             );
           })}
+
+          <DockSeparator />
+          <DockItem
+            aria-label="Toggle theme"
+            onClick={toggle}
+          >
+            <Tooltip
+              content="Theme"
+              side="top"
+              wrapperClassName="h-full w-full items-center justify-center cursor-pointer"
+            >
+              <span className="flex h-full w-full items-center justify-center text-ink/40">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={theme}
+                    initial={{ opacity: 0, rotate: -30, scale: 0.7 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: 30, scale: 0.7 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="inline-flex"
+                  >
+                    {theme === "dark" ? (
+                      <Sun size={17} strokeWidth={1.8} />
+                    ) : (
+                      <Moon size={17} strokeWidth={1.8} />
+                    )}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </Tooltip>
+          </DockItem>
         </BeDock>
       </motion.div>
     </div>
