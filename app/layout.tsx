@@ -6,6 +6,7 @@ import { GeistPixelSquare } from "geist/font/pixel";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
+import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const instrumentSerif = Instrument_Serif({
@@ -72,6 +73,8 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          <ProgressiveBlur position="top" />
+          <ProgressiveBlur position="bottom" />
           <Dock />
         </ThemeProvider>
       </body>
