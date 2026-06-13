@@ -1,7 +1,7 @@
 "use client";
 
 import { EVERY_PROJECT } from "@/utils/constant";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -59,7 +59,7 @@ const ProjectPage = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="flex flex-col gap-2.5"
+            className="flex flex-col gap-1.5"
           >
             {filtered.length === 0 ? (
               <p className="text-[13px] text-ink-3 py-8 text-center">

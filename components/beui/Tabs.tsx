@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, MotionConfig, type Transition } from "framer-motion";
+import { motion, MotionConfig, type Transition } from "motion/react";
 import { createContext, useContext, useId, useState, type ReactNode } from "react";
 import { cn } from "@/utils/cn";
 

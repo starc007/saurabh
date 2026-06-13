@@ -12,9 +12,9 @@
   --ink: #141210;
   --ink-2: #6b6762;
   --ink-3: #a09c96;
-  --lime: #5c8a20;
-  --lime-bg: rgba(92, 138, 32, 0.08);
-  --lime-glow: rgba(92, 138, 32, 0.15);
+  --accent: #c2620e;
+  --accent-bg: rgba(194, 98, 14, 0.09);
+  --accent-glow: rgba(194, 98, 14, 0.15);
 }
 
 /* ─── Dark mode ─── */
@@ -27,9 +27,9 @@
   --ink: #ececec;
   --ink-2: #888888;
   --ink-3: #444444;
-  --lime: #a3e635;
-  --lime-bg: rgba(163, 230, 53, 0.06);
-  --lime-glow: rgba(163, 230, 53, 0.12);
+  --accent: #f59e0b;
+  --accent-bg: rgba(245, 158, 11, 0.07);
+  --accent-glow: rgba(245, 158, 11, 0.12);
 }
 
 @theme inline {
@@ -41,8 +41,8 @@
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
-  --color-lime: var(--lime);
-  --color-lime-bg: var(--lime-bg);
+  --color-accent: var(--accent);
+  --color-accent-bg: var(--accent-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-instrument-serif);
@@ -77,7 +77,7 @@ body::after {
 }
 
 ::selection {
-  background: var(--lime);
+  background: var(--accent);
   color: #000;
 }
 

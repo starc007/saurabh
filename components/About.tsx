@@ -1,7 +1,7 @@
 "use client";
 
 import CustomSection from "./CustomSection";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -44,7 +44,7 @@ const About = () => {
           href="https://beui.saura3h.xyz"
           target="_blank"
           rel="noreferrer noopener"
-          className="font-medium text-ink underline decoration-edge underline-offset-4 transition-colors hover:text-lime hover:decoration-lime"
+          className="font-medium text-ink underline decoration-edge underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
         >
           beUI
         </a>{" "}
@@ -69,7 +69,7 @@ const About = () => {
                     href={r.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-lime transition-colors"
+                    className="hover:text-accent transition-colors"
                   >
                     {r.company}
                   </a>
@@ -79,8 +79,8 @@ const About = () => {
               </span>
               {r.current && (
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-lime" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
                 </span>
               )}
               <span className="text-[12px] text-ink-2 truncate">{r.role}</span>

@@ -7,7 +7,7 @@ import {
   useTransform,
   type MotionValue,
   type SpringOptions,
-} from "framer-motion";
+} from "motion/react";
 import {
   Children,
   cloneElement,

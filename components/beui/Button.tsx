@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, type HTMLMotionProps } from "framer-motion";
+import { AnimatePresence, motion, type HTMLMotionProps } from "motion/react";
 import { Check, Loader2, X } from "lucide-react";
 import { forwardRef, type ReactNode, useRef } from "react";
 import { cn } from "@/utils/cn";
@@ -180,7 +180,7 @@ export const StatefulButton = forwardRef<
  * Magnetic Button
  * ============================================================ */
 
-import { useMotionValue, useSpring } from "framer-motion";
+import { useMotionValue, useSpring } from "motion/react";
 
 export interface MagneticButtonProps extends ButtonProps {
   strength?: number;

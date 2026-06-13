@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "./ThemeProvider";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Button } from "./beui/Button";
 
 const SunIcon = () => (
