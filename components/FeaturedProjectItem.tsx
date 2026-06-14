@@ -18,6 +18,9 @@ const FeaturedProjectItem: React.FC<{
   isLast: boolean;
 }> = ({ project, index }) => {
   const [open, setOpen] = useState(false);
+  const [isTouch] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia("(hover: none)").matches
+  );
   const reduce = useReducedMotion();
   const stack = project.techStack || project.tech || [];
   const date = project.date || project.year;
@@ -118,7 +121,7 @@ const FeaturedProjectItem: React.FC<{
             the full description + tech + note, morphing like the Dynamic Island. */}
         <motion.div
           initial={false}
-          animate={{ height: open ? "auto" : "1.25rem" }}
+          animate={{ height: open || isTouch ? "auto" : "1.25rem" }}
           transition={reduce ? { duration: 0 } : { height: ISLAND_SPRING }}
           style={{ overflow: "hidden" }}
           className="mt-0.5"
