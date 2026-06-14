@@ -18,9 +18,9 @@ const FilterChips: React.FC<{
   counts?: Partial<Record<FilterValue, number>>;
 }> = ({ active, onChange, counts }) => {
   return (
-    <div className="mb-7 flex flex-wrap items-center">
+    <div className="mb-7 overflow-x-auto pb-1 [scrollbar-width:none] [-webkit-overflow-scrolling:touch]">
       <Tabs value={active} onValueChange={(v) => onChange(v as FilterValue)} variant="pill">
-        <TabsList>
+        <TabsList className="min-w-max">
           {FILTERS.map((f) => {
             const count = counts?.[f.value];
             return (

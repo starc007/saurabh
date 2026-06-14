@@ -36,7 +36,7 @@ const ProjectPage = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="-mt-8"
+      className="mt-0"
     >
       <button
         onClick={() => router.push("/")}
