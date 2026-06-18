@@ -55,7 +55,7 @@ export const RECENT_PROJECTS: Project[] = (
         "Simple motion components for React. Copy, paste, done. Includes agent-friendly registry endpoints (llms.txt, /r) so coding agents can install components in one fetch.",
       techStack: ["React 19", "Next 15", "Tailwind v4", "Motion", "TypeScript"],
       github: "https://github.com/starc007/ui-components",
-      demo: "https://beui.saura3h.xyz",
+      demo: "https://beui.dev",
       date: "May, 2026",
       tag: ["Personal", "Open Source"],
       categories: ["product"],

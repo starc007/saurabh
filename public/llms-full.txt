@@ -61,7 +61,7 @@ He focuses on the intersection of visual precision and software performance, wit
 
 Bespoke motion components for React. No Radix, no shadcn. Just motion. Includes agent-friendly registry endpoints such as llms.txt and component registry routes so coding agents can install components in one fetch.
 
-- Demo: https://beui.saura3h.xyz
+- Demo: https://beui.dev
 - GitHub: https://github.com/starc007/ui-components
 - Stack: React 19, Next 15, Tailwind v4, Motion, TypeScript
 - Tags: Personal, Open Source
@@ -212,4 +212,3 @@ The deployed portfolio is a Next.js app. Public agent files are served from:
 - /llms-full.txt
 
 The main source data for this file is the portfolio metadata, About section, dock/footer links, and project data used by the `/projects` page.
-

@@ -41,7 +41,7 @@ const About = () => {
         feel. These days I&apos;m deep into agentic payments and AI + crypto, and
         shipping{" "}
         <a
-          href="https://beui.saura3h.xyz"
+          href="https://beui.dev"
           target="_blank"
           rel="noreferrer noopener"
           className="font-medium text-ink underline decoration-edge underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
