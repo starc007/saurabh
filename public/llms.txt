@@ -23,12 +23,14 @@ Calendar: https://cal.com/saurra3h/30min
 ## Current Work
 
 - Frontend Engineer at NodeOps
-- Building beUI, a bespoke motion component system for React with agent-friendly registry endpoints
+- Building beUI, a free open-source motion component library for React and Next.js with shadcn-compatible, agent-friendly registry endpoints
+- Building beUI Pro, the premium companion with production-ready motion components and blocks
 - Exploring agentic payments, AI + crypto, Tempo, Solana, MPP, and wallet safety systems
 
 ## Notable Projects
 
-- beUI v2: bespoke motion components for React with llms.txt and registry endpoints.
+- beUI: free open-source motion components and blocks for React and Next.js, distributed through shadcn-compatible registry endpoints.
+- beUI Pro: premium production-ready motion components and blocks with lifetime access.
 - Hydra Agent: autonomous Uniswap v4 LP management on Cloudflare Workers.
 - Programmable Virtual Addresses: Tempo smart contracts for programmable token payment splits.
 - Sentinel: reputation and limits system for AI agent wallets.
@@ -43,4 +45,3 @@ Calendar: https://cal.com/saurra3h/30min
 For a fuller profile, project inventory, and agent guidance, read:
 
 - https://saura3h.xyz/llms-full.txt
-

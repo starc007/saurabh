@@ -50,14 +50,26 @@ export const RECENT_PROJECTS: Project[] = (
   [
     {
       id: 1240,
-      title: "beUI v2",
+      title: "beUI",
       description:
-        "Simple motion components for React. Copy, paste, done. Includes agent-friendly registry endpoints (llms.txt, /r) so coding agents can install components in one fetch.",
+        "A free, open-source motion component library for React and Next.js. Ships polished primitives and product-ready blocks through shadcn-compatible registry endpoints, with agent-friendly docs and install routes.",
       techStack: ["React 19", "Next 15", "Tailwind v4", "Motion", "TypeScript"],
       github: "https://github.com/starc007/ui-components",
       demo: "https://beui.dev",
-      date: "May, 2026",
+      date: "July, 2026",
       tag: ["Personal", "Open Source"],
+      categories: ["product"],
+      featured: true,
+    },
+    {
+      id: 1241,
+      title: "beUI Pro",
+      description:
+        "The premium companion to beUI: production-ready motion components and blocks for React and Next.js, sold with lifetime access.",
+      techStack: ["React 19", "Next.js", "Tailwind CSS", "Motion", "TypeScript"],
+      demo: "https://pro.beui.dev",
+      date: "July, 2026",
+      tag: ["Personal", "Product"],
       categories: ["product"],
       featured: true,
     },

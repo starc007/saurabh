@@ -51,20 +51,29 @@ He focuses on the intersection of visual precision and software performance, wit
 
 - Building agent-readable and agent-installable software.
 - Making UI systems that feel precise, fast, and bespoke.
+- Growing beUI as an open-source library and beUI Pro as its premium product line.
 - Exploring agentic payments and AI + crypto workflows.
 - Building wallet safety tools with limits, alerts, and approval flows.
 - Shipping small experiments quickly and preserving useful public demos.
 
 ## Featured Projects
 
-### beUI v2
+### beUI
 
-Bespoke motion components for React. No Radix, no shadcn. Just motion. Includes agent-friendly registry endpoints such as llms.txt and component registry routes so coding agents can install components in one fetch.
+A free, open-source motion component library for React and Next.js. It includes polished primitives and product-ready blocks distributed through shadcn-compatible registry endpoints, plus agent-friendly documentation and install routes.
 
 - Demo: https://beui.dev
 - GitHub: https://github.com/starc007/ui-components
 - Stack: React 19, Next 15, Tailwind v4, Motion, TypeScript
 - Tags: Personal, Open Source
+
+### beUI Pro
+
+The premium companion to beUI, focused on production-ready motion components and blocks for React and Next.js. Available with lifetime access.
+
+- Demo: https://pro.beui.dev
+- Stack: React 19, Next.js, Tailwind CSS, Motion, TypeScript
+- Tags: Personal, Product
 
 ### Hydra Agent
 
