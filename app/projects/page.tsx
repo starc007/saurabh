@@ -3,11 +3,12 @@
 import { EVERY_PROJECT } from "@/utils/constant";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import CustomSection from "@/components/CustomSection";
 import ProjectItem from "@/components/ProjectItem";
 import FilterChips, { FilterValue } from "@/components/FilterChips";
+import { trackProjectFilterApplied } from "@/utils/analytics";
 
 const ProjectPage = () => {
   const router = useRouter();
@@ -28,6 +29,14 @@ const ProjectPage = () => {
     if (filter === "all") return EVERY_PROJECT;
     return EVERY_PROJECT.filter((p) => p.categories?.includes(filter));
   }, [filter]);
+
+  const previousFilter = useRef(filter);
+  useEffect(() => {
+    // Record the committed filter result, skipping initial mount and reselection.
+    if (previousFilter.current === filter) return;
+    previousFilter.current = filter;
+    trackProjectFilterApplied(filter, filtered.length);
+  }, [filter, filtered.length]);
 
   return (
     <motion.div

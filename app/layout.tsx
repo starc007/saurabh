@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Dock from "@/components/Dock";
 import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { TracwellAnalytics } from "@/components/TracwellAnalytics";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -68,6 +69,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
+        <TracwellAnalytics />
         <ThemeProvider>
           <main className="max-w-170 mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">
             {children}
