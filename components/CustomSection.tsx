@@ -1,29 +1,12 @@
-import { motion } from "motion/react";
-import React from "react";
+import type { ReactNode } from "react";
 
-const CustomSection: React.FC<{
-  title: string;
-  children: React.ReactNode;
-  id?: string;
-  className?: string;
-}> = ({ title, children, id, className = "" }) => {
+export default function CustomSection({ title, children, id, className = "" }: {
+  title: string; children: ReactNode; id?: string; className?: string;
+}) {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`mb-20 scroll-mt-24 ${className}`}
-      id={id}
-    >
-      <div className="flex items-center gap-3 mb-7">
-        <span className="text-sm font-medium text-ink-3 tracking-[0.18em] whitespace-nowrap">
-          {title}
-        </span>
-      </div>
+    <section className={`portfolio-section enter ${className}`} id={id}>
+      <h2 className="eyebrow mb-4">{title}</h2>
       {children}
-    </motion.section>
+    </section>
   );
-};
-
-export default CustomSection;
+}

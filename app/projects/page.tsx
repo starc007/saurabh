@@ -1,17 +1,15 @@
 "use client";
 
 import { EVERY_PROJECT } from "@/utils/constant";
-import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import CustomSection from "@/components/CustomSection";
 import ProjectItem from "@/components/ProjectItem";
 import FilterChips, { FilterValue } from "@/components/FilterChips";
 import { trackProjectFilterApplied } from "@/utils/analytics";
 
 const ProjectPage = () => {
-  const router = useRouter();
   const [filter, setFilter] = useState<FilterValue>("all");
 
   const counts = useMemo(
@@ -39,37 +37,15 @@ const ProjectPage = () => {
   }, [filter, filtered.length]);
 
   return (
-    <motion.div
-      key="projects-all"
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="mt-0"
-    >
-      <button
-        onClick={() => router.push("/")}
-        className="flex items-center gap-2 text-[12px] font-medium text-ink-2 hover:text-ink transition-colors mb-14 group"
-      >
-        <ArrowLeft
-          size={13}
-          className="group-hover:-translate-x-0.5 transition-transform"
-        />
-        Back
-      </button>
+    <div className="enter">
+      <Link href="/" className="text-link mb-6 text-[12px] text-ink-2">
+        <ArrowLeft size={13} /> Home
+      </Link>
 
       <CustomSection title="All Projects">
         <FilterChips active={filter} onChange={setFilter} counts={counts} />
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={filter}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="flex flex-col gap-1.5"
-          >
+        <div key={filter} className="filter-results" aria-live="polite">
             {filtered.length === 0 ? (
               <p className="text-[13px] text-ink-3 py-8 text-center">
                 No projects in this category yet.
@@ -84,10 +60,9 @@ const ProjectPage = () => {
                 />
               ))
             )}
-          </motion.div>
-        </AnimatePresence>
+        </div>
       </CustomSection>
-    </motion.div>
+    </div>
   );
 };
 

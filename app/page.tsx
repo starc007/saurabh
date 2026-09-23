@@ -1,5 +1,6 @@
 "use client";
 
+import Highlights from "@/components/Highlights";
 import Header from "@/components/Header";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";
@@ -9,8 +10,9 @@ const Home = () => {
   return (
     <>
       <Header />
-      <About />
+      <Highlights />
       <ProjectSection />
+      <About />
       <TechStack />
     </>
   );

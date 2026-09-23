@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { GeistPixelSquare } from "geist/font/pixel";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Dock from "@/components/Dock";
-import { ProgressiveBlur } from "@/components/ProgressiveBlur";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import SiteNav from "@/components/SiteNav";
+import HoverPreview from "@/components/HoverPreview";
 import { TracwellAnalytics } from "@/components/TracwellAnalytics";
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saura3h.xyz"),
@@ -57,28 +48,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Prevent theme flash on load */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&d)){document.documentElement.classList.add('dark')}})()`,
-          }}
-        />
-      </head>
+    <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${instrumentSerif.variable} antialiased relative min-h-screen bg-canvas text-ink`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
         <TracwellAnalytics />
-        <ThemeProvider>
-          <main className="max-w-170 mx-auto px-6 sm:px-8 pt-20 sm:pt-28 pb-40 sm:pb-52">
+
+          <main className="max-w-156 mx-auto px-6 sm:px-8 pt-8 sm:pt-18 pb-8 sm:pb-12">
+            <SiteNav />
             {children}
             <Footer />
           </main>
-          <ProgressiveBlur position="top" />
-          <ProgressiveBlur position="bottom" />
-          <Dock />
-        </ThemeProvider>
+        <HoverPreview />
       </body>
     </html>
   );

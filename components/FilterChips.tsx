@@ -1,6 +1,5 @@
 "use client";
 
-import { Tabs, TabsList, TabsTrigger } from "./beui/Tabs";
 
 export type FilterValue = "all" | "product" | "experiment" | "web3" | "hackathon";
 
@@ -18,24 +17,14 @@ const FilterChips: React.FC<{
   counts?: Partial<Record<FilterValue, number>>;
 }> = ({ active, onChange, counts }) => {
   return (
-    <div className="mb-7 overflow-x-auto pb-1 [scrollbar-width:none] [-webkit-overflow-scrolling:touch]">
-      <Tabs value={active} onValueChange={(v) => onChange(v as FilterValue)} variant="pill">
-        <TabsList className="min-w-max">
-          {FILTERS.map((f) => {
-            const count = counts?.[f.value];
-            return (
-              <TabsTrigger key={f.value} value={f.value}>
-                <span className="inline-flex items-center gap-1.5">
-                  {f.label}
-                  {count !== undefined ? (
-                    <span className="font-mono text-[10px] opacity-70">{count}</span>
-                  ) : null}
-                </span>
-              </TabsTrigger>
-            );
-          })}
-        </TabsList>
-      </Tabs>
+    <div className="mb-3 flex flex-wrap gap-1" role="group" aria-label="Filter projects">
+      {FILTERS.map(({ value, label }) => (
+        <button key={value} type="button" aria-pressed={active === value}
+          onClick={() => onChange(value)}
+          className={`filter-button ${active === value ? "is-active" : ""}`}>
+          {label}<span className="font-mono text-[10px] text-ink-3">{counts?.[value]}</span>
+        </button>
+      ))}
     </div>
   );
 };
