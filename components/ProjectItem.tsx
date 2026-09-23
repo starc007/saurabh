@@ -1,3 +1,4 @@
+import { getProjectMetrics } from "@/utils/project-metrics";
 import { Github } from "lucide-react";
 import type { Project } from "@/utils/constant";
 
@@ -5,12 +6,7 @@ export default function ProjectItem({ project }: { project: Project; index?: num
   const demo = project.demoLink || project.demo;
   const source = project.githubLink || project.github;
   const primary = demo || source;
-  const metrics = [
-    ...(typeof project.users === "number" && project.users > 0
-      ? [`${project.users.toLocaleString("en-US")}+ users`]
-      : []),
-    ...(project.metrics ?? []),
-  ];
+  const metrics = getProjectMetrics(project);
   const stack = [...new Set(project.techStack ?? project.tech ?? [])];
   return (
     <article className="project-row group">

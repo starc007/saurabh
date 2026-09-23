@@ -1,3 +1,5 @@
+import { RECENT_PROJECTS } from "@/utils/constant";
+import { getProjectMetrics } from "@/utils/project-metrics";
 import HighlightsHeading from "./HighlightsHeading";
 
 const highlights = [
@@ -28,7 +30,10 @@ const highlights = [
     width: 1280,
     height: 800,
   },
-];
+ ].map(highlight => ({
+  ...highlight,
+  metrics: getProjectMetrics(RECENT_PROJECTS.find(project => project.title === highlight.title) ?? {}),
+}));
 
 export default function Highlights() {
   return (
@@ -53,6 +58,11 @@ export default function Highlights() {
                 <span className="highlight-date">{project.date}</span>
               </div>
               <p>{project.description}</p>
+              {project.metrics.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-accent">
+                  {project.metrics.map(metric => <span key={metric}>{metric}</span>)}
+                </div>
+              )}
             </div>
           </a>
         ))}
