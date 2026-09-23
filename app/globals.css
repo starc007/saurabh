@@ -12,6 +12,8 @@
   --ink-3: #72766c;
   --accent: #48634b;
   --accent-bg: #edf0e9;
+  --text-highlight: #f8b99d;
+  --text-highlight-ink: #35251e;
 }
 .dark {
   color-scheme: dark;
@@ -25,6 +27,8 @@
   --ink-3: #9ba18f;
   --accent: #bfcea9;
   --accent-bg: #293124;
+  --text-highlight: #714632;
+  --text-highlight-ink: #fff0e6;
 }
 @theme inline {
   --color-canvas: var(--canvas);
@@ -52,6 +56,8 @@ body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var
 .profile-nav { display: flex; align-items: center; gap: 13px; margin-left: auto; font-size: 11px; color: var(--ink-3); }
 .profile-nav a[aria-current="page"] { color: var(--ink); }
 .intro { font-size: 14px; line-height: 1.85; color: var(--ink-2); margin-bottom: 42px; }
+.intro mark { background: var(--text-highlight); color: var(--text-highlight-ink); padding: 1px 4px 2px; border-radius: 5px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.intro mark a, .intro mark a:hover { color: inherit; text-decoration-color: currentColor; }
 .intro p + p { margin-top: 17px; }
 .intro a { color: var(--ink); text-decoration: underline; text-decoration-color: #bfc4b8; text-underline-offset: 4px; transition: text-decoration-color 160ms ease, color 160ms ease; }
 .portfolio-section { margin-bottom: 38px; scroll-margin-top: 24px; }
@@ -78,14 +84,10 @@ body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var
   .highlight-grid { grid-auto-columns: 260px; }
   .highlight-art { padding: 20px; border-radius: 18px; }
 }
-.filter-button { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 10px; border-radius: 5px; font-size: 11px; color: var(--ink-2); cursor: pointer; transition: background-color 160ms ease, color 160ms ease; }
-.filter-button.is-active { background: var(--canvas-raised); color: var(--ink); }
-.preview-window { position: fixed; z-index: 100; border: 1px solid var(--edge); border-radius: 12px; background: var(--canvas); box-shadow: 0 4px 8px #242d2006, 0 12px 34px #242d2012; overflow: hidden; max-height: 210px; }
-.preview-titlebar { display: flex; align-items: center; gap: 7px; padding: 12px 13px 0; color: var(--ink); font-size: 12px; font-weight: 500; }
-.preview-titlebar > span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.preview-body { padding: 9px 13px 13px; font-size: 12px; line-height: 1.65; color: var(--ink-2); }
-.preview-body > p:first-child { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
-.preview-detail { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--edge-subtle); color: var(--ink-3); font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.filter-button { position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 10px; border-radius: 5px; font-size: 11px; color: var(--ink-2); cursor: pointer; transition: background-color 160ms ease, color 160ms ease; }
+.filter-button.is-active { color: var(--ink); }
+.filter-selection { position: absolute; inset: 0; border-radius: inherit; background: var(--canvas-raised); pointer-events: none; }
+.filter-label { position: relative; }
 a:focus-visible, button:focus-visible { outline: 2px solid #7b916e; outline-offset: 4px; border-radius: 3px; }
 .enter { animation: enter 350ms cubic-bezier(.23,1,.32,1) both; }
 .portfolio-section { animation-delay: 60ms; }
@@ -93,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #7b916e; outline-offs
   .text-link:hover, .profile-nav a:hover, .intro a:hover { color: var(--accent); }
   .intro a:hover { text-decoration-color: var(--accent); }
   .text-link:hover svg { transform: translate(2px, -2px); }
-  .icon-button:hover, .filter-button:hover { background: var(--canvas-raised); color: var(--ink); }
+  .icon-button:hover, .filter-button:not(.is-active):hover { background: var(--canvas-raised); color: var(--ink); }
   .highlight:hover .highlight-screenshot { transform: translateY(-3px); }
 }
 @keyframes enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }

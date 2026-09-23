@@ -51,6 +51,7 @@ export const RECENT_PROJECTS: Project[] = (
     {
       id: 1242,
       title: "Tracwell",
+      techStack: ["Next.js", "TypeScript", "Cloudflare Workers", "Hono", "ClickHouse"],
       description:
         "Website and product analytics that connect traffic, signups, and revenue.",
       demo: "https://tracwell.app",

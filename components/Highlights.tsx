@@ -5,11 +5,9 @@ const highlights = [
     title: "Tracwell",
     domain: "tracwell.app",
     description: "Website & product analytics",
-    detail: "Website and product analytics that connect traffic, signups, and revenue.",
     image: "/projects/tracwell.png",
     width: 1280,
     height: 720,
-    launch: "Launched September 2026",
     date: "Sep 2026",
   },
   {
@@ -17,7 +15,6 @@ const highlights = [
     date: "2026",
     domain: "beui.dev",
     description: "Open-source motion components",
-    detail: "Open-source motion components for React and Next.js.",
     image: "/projects/beui.png",
     width: 1280,
     height: 720,
@@ -27,7 +24,6 @@ const highlights = [
     date: "2026",
     domain: "pro.beui.dev",
     description: "Premium components & templates",
-    detail: "Production-ready motion components and blocks for React and Next.js.",
     image: "/projects/beui-pro.png",
     width: 1280,
     height: 800,
@@ -46,9 +42,6 @@ export default function Highlights() {
             target="_blank"
             rel="noopener noreferrer"
             className="highlight"
-            data-preview-title={project.title}
-            data-preview-description={project.detail}
-            data-preview-detail={project.launch ?? project.domain}
           >
             <div className="highlight-art">
               {/* eslint-disable-next-line @next/next/no-img-element */}

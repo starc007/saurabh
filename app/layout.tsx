@@ -5,7 +5,6 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import SiteNav from "@/components/SiteNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import HoverPreview from "@/components/HoverPreview";
 import { TracwellAnalytics } from "@/components/TracwellAnalytics";
 
 export const metadata: Metadata = {
@@ -64,7 +63,6 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
-        <HoverPreview />
         </ThemeProvider>
       </body>
     </html>
