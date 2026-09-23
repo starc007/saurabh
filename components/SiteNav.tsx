@@ -1,6 +1,8 @@
 "use client";
 
+import { SharedLayoutBg } from "./beui/SharedLayoutBg";
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 import { usePathname } from "next/navigation";
 
 export default function SiteNav() {
@@ -16,8 +18,11 @@ export default function SiteNav() {
         <p className="profile-role">Design engineer & product builder</p>
       </div>
       <nav aria-label="Main navigation" className="profile-nav">
+        <SharedLayoutBg inset={7} style={{ flexDirection: "row", width: "auto", gap: 13 }}>
         <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>Home</Link>
         <Link href="/projects" aria-current={pathname === "/projects" ? "page" : undefined}>Projects</Link>
+        </SharedLayoutBg>
+        <ThemeToggle />
       </nav>
     </header>
   );

@@ -1,24 +1,68 @@
-import { ArrowUpRight, Check, MousePointer2, Plus } from "lucide-react";
+import HighlightsHeading from "./HighlightsHeading";
+
+const highlights = [
+  {
+    title: "Tracwell",
+    domain: "tracwell.app",
+    description: "Website & product analytics",
+    detail: "Website and product analytics that connect traffic, signups, and revenue.",
+    image: "/projects/tracwell.png",
+    width: 1280,
+    height: 720,
+    launch: "Launched September 2026",
+    date: "Sep 2026",
+  },
+  {
+    title: "beUI",
+    date: "2026",
+    domain: "beui.dev",
+    description: "Open-source motion components",
+    detail: "Open-source motion components for React and Next.js.",
+    image: "/projects/beui.png",
+    width: 1280,
+    height: 720,
+  },
+  {
+    title: "beUI Pro",
+    date: "2026",
+    domain: "pro.beui.dev",
+    description: "Premium components & templates",
+    detail: "Production-ready motion components and blocks for React and Next.js.",
+    image: "/projects/beui-pro.png",
+    width: 1280,
+    height: 800,
+  },
+];
 
 export default function Highlights() {
   return (
-    <section className="portfolio-section enter" aria-labelledby="highlights-title">
-      <h2 id="highlights-title" className="eyebrow mb-4">A few things I’ve made</h2>
+    <section className="portfolio-section highlights-section enter" aria-labelledby="highlights-title">
+      <HighlightsHeading />
       <div className="highlight-grid">
-        <a href="https://beui.dev" target="_blank" rel="noopener noreferrer" className="highlight" data-preview-title="beUI" data-preview-description="Open-source motion components for React and Next.js." data-preview-detail="React · Motion · Tailwind CSS">
-          <div className="highlight-art component-art" aria-hidden="true">
-            <div className="sample-toolbar"><span><Plus size={17} /></span><span className="sample-selected"><Check size={17} /></span><span><MousePointer2 size={16} /></span></div>
-            <span className="art-caption">A little interaction. A lot of care.</span>
-          </div>
-          <div className="highlight-caption"><span><strong>beUI</strong><small>Components with a little personality</small></span><ArrowUpRight size={15} /></div>
-        </a>
-        <a href="https://pro.beui.dev" target="_blank" rel="noopener noreferrer" className="highlight" data-preview-title="beUI Pro" data-preview-description="Production-ready motion components and blocks for React and Next.js." data-preview-detail="Design · Development · Motion">
-          <div className="highlight-art composition-art" aria-hidden="true">
-            <div className="mini-composition"><div className="mini-sidebar"><i /><i /><i /></div><div className="mini-content"><span className="mini-title"/><div className="mini-cards"><i/><i/></div><span className="mini-line"/><span className="mini-line short"/></div></div>
-            <span className="art-caption">From the details to the whole.</span>
-          </div>
-          <div className="highlight-caption"><span><strong>beUI Pro</strong><small>Interfaces, ready to make your own</small></span><ArrowUpRight size={15} /></div>
-        </a>
+        {highlights.map(project => (
+          <a
+            key={project.domain}
+            href={`https://${project.domain}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="highlight"
+            data-preview-title={project.title}
+            data-preview-description={project.detail}
+            data-preview-detail={project.launch ?? project.domain}
+          >
+            <div className="highlight-art">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={project.image} alt={`${project.title} website screenshot`} width={project.width} height={project.height} className="highlight-screenshot" loading="lazy" />
+            </div>
+            <div className="highlight-caption">
+              <div className="highlight-heading">
+                <h3>{project.title}</h3>
+                <span className="highlight-date">{project.date}</span>
+              </div>
+              <p>{project.description}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );

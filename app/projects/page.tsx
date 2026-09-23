@@ -1,7 +1,7 @@
 "use client";
 
+import { SharedLayoutBg } from "@/components/beui/SharedLayoutBg";
 import { EVERY_PROJECT } from "@/utils/constant";
-import { ArrowLeft } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import CustomSection from "@/components/CustomSection";
@@ -39,7 +39,7 @@ const ProjectPage = () => {
   return (
     <div className="enter">
       <Link href="/" className="text-link mb-6 text-[12px] text-ink-2">
-        <ArrowLeft size={13} /> Home
+         Home
       </Link>
 
       <CustomSection title="All Projects">
@@ -51,14 +51,18 @@ const ProjectPage = () => {
                 No projects in this category yet.
               </p>
             ) : (
-              filtered.map((project, i, arr) => (
+              <SharedLayoutBg inset={10}>
+              {filtered.map((project, i, arr) => (
+                <div key={`${filter}-${project.title}-${i}`}>
                 <ProjectItem
                   key={`${filter}-${project.title}-${i}`}
                   project={project}
                   index={i}
                   isLast={i === arr.length - 1}
                 />
-              ))
+                </div>
+              ))}
+              </SharedLayoutBg>
             )}
         </div>
       </CustomSection>

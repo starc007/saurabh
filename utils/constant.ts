@@ -49,6 +49,18 @@ const mapProject = (p: Project): Project => ({
 export const RECENT_PROJECTS: Project[] = (
   [
     {
+      id: 1242,
+      title: "Tracwell",
+      description:
+        "Website and product analytics that connect traffic, signups, and revenue.",
+      demo: "https://tracwell.app",
+      date: "September, 2026",
+      note: "Launched September 2026",
+      tag: ["Personal", "Product"],
+      categories: ["product"],
+      featured: true,
+    },
+    {
       id: 1240,
       title: "beUI",
       description:

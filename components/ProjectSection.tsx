@@ -1,5 +1,5 @@
+import { SharedLayoutBg } from "./beui/SharedLayoutBg";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import CustomSection from "./CustomSection";
 import { FEATURED_PROJECTS } from "@/utils/constant";
 import ProjectItem from "./ProjectItem";
@@ -15,10 +15,10 @@ const SUMMARIES: Record<string, string> = {
 export default function ProjectSection() {
   return (
     <CustomSection title="More projects" id="projects">
-      <div className="-mt-2">
-        {FEATURED_PROJECTS.slice(2, 7).map(project => <ProjectItem key={project.id ?? project.title} project={{ ...project, description: SUMMARIES[project.title] ?? project.description }} />)}
-      </div>
-      <Link href="/projects" className="text-link mt-4 text-[12px] text-ink-2">All projects <ArrowRight size={13} /></Link>
+      <SharedLayoutBg className="-mt-2" inset={10}>
+        {FEATURED_PROJECTS.filter(project => !["Tracwell", "beUI", "beUI Pro"].includes(project.title)).slice(0, 5).map(project => <div key={project.id ?? project.title}><ProjectItem project={{ ...project, description: SUMMARIES[project.title] ?? project.description }} /></div>)}
+      </SharedLayoutBg>
+      <Link href="/projects" className="text-link mt-4 text-[12px] text-ink-2">All projects </Link>
     </CustomSection>
   );
 }

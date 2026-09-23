@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SiteNav from "@/components/SiteNav";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import HoverPreview from "@/components/HoverPreview";
 import { TracwellAnalytics } from "@/components/TracwellAnalytics";
 
@@ -48,11 +49,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{document.documentElement.classList.toggle('dark',localStorage.getItem('theme')==='dark')}catch{}` }} />
+      </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased relative min-h-screen bg-canvas text-ink`}
       >
         <TracwellAnalytics />
+        <ThemeProvider>
 
           <main className="max-w-156 mx-auto px-6 sm:px-8 pt-8 sm:pt-18 pb-8 sm:pb-12">
             <SiteNav />
@@ -60,6 +65,7 @@ export default function RootLayout({
             <Footer />
           </main>
         <HoverPreview />
+        </ThemeProvider>
       </body>
     </html>
   );

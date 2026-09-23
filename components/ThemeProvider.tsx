@@ -1,44 +1,38 @@
 "use client";
 
-import { createContext, useContext, useCallback, useState, useEffect } from "react";
+import { createContext, useContext, useSyncExternalStore } from "react";
 
 type Theme = "dark" | "light";
+const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({ theme: "light", toggle: () => {} });
 
-interface ThemeContextValue {
-  theme: Theme;
-  toggle: () => void;
+function subscribe(callback: () => void) {
+  const sync = (event: StorageEvent) => {
+    if (event.key !== "theme" && event.key !== null) return;
+    document.documentElement.classList.toggle("dark", event.newValue === "dark");
+    callback();
+  };
+  window.addEventListener("themechange", callback);
+  window.addEventListener("storage", sync);
+  return () => {
+    window.removeEventListener("themechange", callback);
+    window.removeEventListener("storage", sync);
+  };
 }
 
-const ThemeContext = createContext<ThemeContextValue>({
-  theme: "dark",
-  toggle: () => {},
-});
+function snapshot(): Theme {
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+function toggle() {
+  const next = snapshot() === "dark" ? "light" : "dark";
+  document.documentElement.classList.toggle("dark", next === "dark");
+  try { localStorage.setItem("theme", next); } catch { /* Theme still works when storage is unavailable. */ }
+  window.dispatchEvent(new Event("themechange"));
+}
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    const initial = stored ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    setTheme(initial);
-    document.documentElement.classList.toggle("dark", initial === "dark");
-  }, []);
-
-  const toggle = useCallback(() => {
-    const next: Theme = theme === "dark" ? "light" : "dark";
-    // Smooth transition flash
-    document.documentElement.classList.add("transitioning");
-    setTimeout(() => document.documentElement.classList.remove("transitioning"), 300);
-    document.documentElement.classList.toggle("dark", next === "dark");
-    localStorage.setItem("theme", next);
-    setTheme(next);
-  }, [theme]);
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  const theme = useSyncExternalStore(subscribe, snapshot, () => "light" as const);
+  return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
 }
 
 export const useTheme = () => useContext(ThemeContext);

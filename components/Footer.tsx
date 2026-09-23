@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 
 const LINKS = [
   { href: "mailto:saurabh10102@gmail.com", label: "Email" },
@@ -12,7 +11,7 @@ export default function Footer() {
     <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-edge pt-5 text-[11px] text-ink-2">
       <p>© 2026 Saurabh</p>
       <div className="flex items-center gap-4">
-        {LINKS.map(({ href, label }) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-link">{label}<ArrowUpRight size={10} /></a>)}
+        {LINKS.map(({ href, label }) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-link">{label}</a>)}
       </div>
     </footer>
   );

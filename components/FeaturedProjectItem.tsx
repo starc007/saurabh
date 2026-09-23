@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import React, { useState } from "react";
 import { Project } from "@/utils/constant";
 import { motion, useReducedMotion } from "motion/react";
@@ -106,10 +106,7 @@ const FeaturedProjectItem: React.FC<{
                     className="relative z-20 grid h-6 w-6 place-items-center rounded text-ink-3 transition-colors hover:bg-accent-bg hover:text-accent"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <ArrowUpRight
-                      size={13}
-                      className="transition-transform duration-200 [@media(hover:hover)]:group-hover:-translate-y-0.5 [@media(hover:hover)]:group-hover:translate-x-0.5"
-                    />
+                    <span className="text-[10px]">Demo</span>
                   </a>
                 </Tooltip>
               )}
@@ -146,9 +143,6 @@ const FeaturedProjectItem: React.FC<{
             )}
             {project.note && (
               <p className="flex items-start gap-2 text-[12px] text-ink-2 italic leading-[1.5]">
-                <span className="text-accent not-italic select-none mt-[2px]">
-                  ↳
-                </span>
                 <span>{project.note}</span>
               </p>
             )}

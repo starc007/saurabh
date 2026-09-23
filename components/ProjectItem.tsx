@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import type { Project } from "@/utils/constant";
 
 export default function ProjectItem({ project }: { project: Project; index?: number; isLast?: boolean }) {
@@ -9,7 +9,7 @@ export default function ProjectItem({ project }: { project: Project; index?: num
     <article className="project-row group" data-preview-title={project.title} data-preview-description={project.description} data-preview-detail={(project.techStack || project.tech || []).join(" · ")}>
       <div className="min-w-0 flex-1">
         <h3 className="text-[13px] font-medium tracking-[-0.015em]">
-          {primary ? <a href={primary} target="_blank" rel="noopener noreferrer" className="text-link">{project.title}<ArrowUpRight size={12} className="project-arrow" /></a> : project.title}
+          {primary ? <a href={primary} target="_blank" rel="noopener noreferrer" className="text-link">{project.title}</a> : project.title}
         </h3>
         <p className="mt-1 text-[12px] leading-[1.65] text-ink-2">{project.description}</p>
         {project.note && <p className="mt-1 text-[11px] leading-relaxed text-ink-3">{project.note}</p>}
