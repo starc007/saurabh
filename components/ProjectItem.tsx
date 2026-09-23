@@ -5,12 +5,23 @@ export default function ProjectItem({ project }: { project: Project; index?: num
   const demo = project.demoLink || project.demo;
   const source = project.githubLink || project.github;
   const primary = demo || source;
+  const metrics = [
+    ...(typeof project.users === "number" && project.users > 0
+      ? [`${project.users.toLocaleString("en-US")}+ users`]
+      : []),
+    ...(project.metrics ?? []),
+  ];
   const stack = [...new Set(project.techStack ?? project.tech ?? [])];
   return (
     <article className="project-row group">
       <div className="min-w-0 flex-1">
-        <h3 className="text-[13px] font-medium tracking-[-0.015em]">
+        <h3 className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[13px] font-medium tracking-[-0.015em]">
           {primary ? <a href={primary} target="_blank" rel="noopener noreferrer" className="text-link">{project.title}</a> : project.title}
+          {metrics.map(metric => (
+            <span key={metric} className="text-[10px] font-normal text-accent">
+              {metric}
+            </span>
+          ))}
         </h3>
         <p className="mt-1 text-[12px] leading-[1.65] text-ink-2">{project.description}</p>
         {stack.length > 0 && (

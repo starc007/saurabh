@@ -24,6 +24,7 @@ export interface Project {
   isOSS?: boolean;
   isFreelance?: boolean;
   users?: number;
+  metrics?: string[];
 }
 
 export const TECH_STACK = [
@@ -64,6 +65,8 @@ export const RECENT_PROJECTS: Project[] = (
     {
       id: 1240,
       title: "beUI",
+      users: 180,
+      metrics: ["2Mn+ page views"],
       description:
         "A free, open-source motion component library for React and Next.js. Ships polished primitives and product-ready blocks through shadcn-compatible registry endpoints, with agent-friendly docs and install routes.",
       techStack: ["React 19", "Next 15", "Tailwind v4", "Motion", "TypeScript"],
@@ -77,6 +80,7 @@ export const RECENT_PROJECTS: Project[] = (
     {
       id: 1241,
       title: "beUI Pro",
+      metrics: ["20k+ revenue"],
       description:
         "The premium companion to beUI: production-ready motion components and blocks for React and Next.js, sold with lifetime access.",
       techStack: ["React 19", "Next.js", "Tailwind CSS", "Motion", "TypeScript"],

@@ -3,7 +3,6 @@
 import { SharedLayoutBg } from "@/components/beui/SharedLayoutBg";
 import { EVERY_PROJECT } from "@/utils/constant";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
 import CustomSection from "@/components/CustomSection";
 import ProjectItem from "@/components/ProjectItem";
 import FilterChips, { FilterValue } from "@/components/FilterChips";
@@ -38,10 +37,6 @@ const ProjectPage = () => {
 
   return (
     <div className="enter">
-      <Link href="/" className="text-link mb-6 text-[12px] text-ink-2">
-         Home
-      </Link>
-
       <CustomSection title="All Projects">
         <FilterChips active={filter} onChange={setFilter} counts={counts} />
 

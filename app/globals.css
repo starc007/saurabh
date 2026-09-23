@@ -53,8 +53,13 @@ body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var
 .profile-avatar img { border-radius: 14px; }
 .profile-name { font-size: 15px; font-weight: 500; letter-spacing: -.025em; }
 .profile-role { margin-top: 3px; font-size: 12px; color: var(--ink-2); }
-.profile-nav { display: flex; align-items: center; gap: 13px; margin-left: auto; font-size: 11px; color: var(--ink-3); }
-.profile-nav a[aria-current="page"] { color: var(--ink); }
+.profile-nav { display: flex; align-items: center; gap: 8px; margin-left: auto; font-size: 11px; color: var(--ink-3); }
+.nav-tabs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--canvas-raised); }
+.nav-tab { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; color: var(--ink-2); transition: color 160ms ease; }
+.nav-tab[aria-current="page"] { color: var(--ink); }
+.nav-tab-indicator { position: absolute; inset: 0; border-radius: inherit; background: var(--canvas); box-shadow: 0 1px 3px #0000000d; pointer-events: none; }
+.nav-tab-label { position: relative; }
+.nav-tab:focus-visible { outline-offset: 3px; border-radius: 50%; }
 .intro { font-size: 14px; line-height: 1.85; color: var(--ink-2); margin-bottom: 42px; }
 .intro mark { background: var(--text-highlight); color: var(--text-highlight-ink); padding: 1px 4px 2px; border-radius: 5px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .intro mark a, .intro mark a:hover { color: inherit; text-decoration-color: currentColor; }
@@ -92,7 +97,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #7b916e; outline-offs
 .enter { animation: enter 350ms cubic-bezier(.23,1,.32,1) both; }
 .portfolio-section { animation-delay: 60ms; }
 @media (hover: hover) and (pointer: fine) {
-  .text-link:hover, .profile-nav a:hover, .intro a:hover { color: var(--accent); }
+  .text-link:hover, .intro a:hover { color: var(--accent); }
+  .nav-tab:hover { color: var(--ink); }
   .intro a:hover { text-decoration-color: var(--accent); }
   .text-link:hover svg { transform: translate(2px, -2px); }
   .icon-button:hover, .filter-button:not(.is-active):hover { background: var(--canvas-raised); color: var(--ink); }
