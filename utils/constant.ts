@@ -50,6 +50,18 @@ const mapProject = (p: Project): Project => ({
 export const RECENT_PROJECTS: Project[] = (
   [
     {
+      id: 1243,
+      title: "Pulse",
+      description:
+        "A native macOS activity monitor. See which apps cause spikes, save a moment, and keep your history on your Mac.",
+      demo: "https://pulsemac.app",
+      date: "2026",
+      metrics: ["50+ licenses sold"],
+      tag: ["Personal", "Product"],
+      categories: ["product"],
+      featured: true,
+    },
+    {
       id: 1242,
       title: "Tracwell",
       techStack: ["Next.js", "TypeScript", "Cloudflare Workers", "Hono", "ClickHouse"],

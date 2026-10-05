@@ -58,6 +58,14 @@ He focuses on the intersection of visual precision and software performance, wit
 
 ## Featured Projects
 
+### Pulse
+
+A native macOS activity monitor. See which apps cause spikes, save a moment, and keep your history on your Mac.
+
+- Demo: https://pulsemac.app
+- Traction: 50+ licenses sold
+- Tags: Personal, Product
+
 ### beUI
 
 A free, open-source motion component library for React and Next.js. It includes polished primitives and product-ready blocks distributed through shadcn-compatible registry endpoints, plus agent-friendly documentation and install routes.

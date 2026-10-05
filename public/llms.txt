@@ -29,6 +29,7 @@ Calendar: https://cal.com/saurra3h/30min
 
 ## Notable Projects
 
+- Pulse: native macOS activity monitor with local history. 50+ licenses sold. Website: https://pulsemac.app
 - beUI: free open-source motion components and blocks for React and Next.js, distributed through shadcn-compatible registry endpoints.
 - beUI Pro: premium production-ready motion components and blocks with lifetime access.
 - Hydra Agent: autonomous Uniswap v4 LP management on Cloudflare Workers.
